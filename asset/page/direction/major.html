@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>មុខជំនាញ</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    .img-scale {
+        transition: all 0.3s ease;
+    }
+
+    .card:hover .img-scale {
+        transform: scale(1.05) !important;
+    }
+
+    .card-transform {
+        transition: all 0.3s ease;
+    }
+
+    .card-transform:hover {
+        transform: translateY(-10px);
+    }
+
+    @media screen and (min-width: 100px) {
+        .major-img {
+            height: 200px !important;
+        }
+    }
+
+    @media screen and (min-width: 576px) {
+        .major-img {
+            height: 250px !important;
+        }
+    }
+
+    @media screen and (min-width: 756px) {
+        .major-img {
+            height: 250px !important;
+        }
+    }
+
+    @media screen and (min-width: 996px) {
+        .major-img {
+            height: 200px !important;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        .major-img {
+            height: 300px !important;
+        }
+    }
+
+    .card:hover .img-scale {
+        transform: scale(1.05) !important;
+    }
+
+    .card-transform {
+        transition: all 0.3s ease;
+    }
+
+    .card-transform:hover {
+        transform: translateY(-10px);
+    }
+</style>
+
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../us/home.html">
+                    <img id="logo" src="../../image/project-logo/logo01.png" alt="Logo" style="width: 75px;">
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <!-- notification  -->
+                        <div class="dropdown">
+                            <a class="btn border-0 mt-1 me-2" href="../profile/notification.html" role="button">
+                                <i class="bi bi-bell px-2 position-relative fs-5">
+                                    <span class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                        style="left: 21px; padding: 3px; top: 1px;">
+                                        <span class="visually-hidden">New alerts</span>
+                                    </span>
+                                </i>
+                            </a>
+
+                            <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                                <li>
+                                    <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                        style="width: 320px;">
+                                        <div class="p-2">
+                                            <h5>សារជូនដំណឹង</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- list notification  -->
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-2.svg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                ជំរាបសួរ! ខ្ញុំចង់សួរអំពីការចុះឈ្មោះសម្រាប់វគ្គសិក្សាថ្មី។
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-3.jpg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-1.png"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <div>
+                                    <a href="../profile/notification.html"
+                                        class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <!-- profile  -->
+                        <div class="dropdown">
+                            <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <img src="../../image/project-logo/profile-img.jpg"
+                                    class="img-fluid rounded-circle object-fit-cover" style="width: 40px; height: 40px;"
+                                    alt />
+                            </a>
+
+                            <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                <li><a class="dropdown-item" href="../profile/proflie.html"><i
+                                            class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                                <li><a class="dropdown-item" href="../profile/edit_profile.html"><i
+                                            class="bi bi-gear me-2"></i>ការកំណត់</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../profile/favorite.html"><i
+                                            class="bi bi-bookmark me-2"></i>រក្សាទុក</a>
+                                </li>
+                                <li><a class="dropdown-item" href="" data-bs-toggle="modal"
+                                        data-bs-target="#logoutModal"><i
+                                            class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div class="d-flex justify-content-end align-items-center d-flex d-lg-none" role="search">
+                            <!-- profile  -->
+                            <div class="profile">
+                                <a href="../profile/proflie.html">
+                                    <img src="../../image/project-logo/profile-img.jpg"
+                                        class="img-fluid rounded-circle object-fit-cover"
+                                        style="width: 40px; height: 40px;" alt />
+                                </a>
+                            </div>
+                            <h5 class="pt-3 ps-2">សួស្តី!​​ តុលា</h5>
+                        </div>
+
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="assets/image/logo.png" class="img-fluid"
+                                    style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../us/home.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 active dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a></li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li><a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <!-- notification  -->
+                    <div class="dropdown">
+                        <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-bell position-relative fs-5">
+                                <span
+                                    class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                    style="left: 21px; padding: 4px; top: 1px;">
+                                    <span class="visually-hidden">New
+                                        alerts</span>
+                                </span>
+                            </i>
+                        </a>
+
+                        <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                            <li>
+                                <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                    style="width: 320px;">
+                                    <div class="p-2">
+                                        <h5>សារជូនដំណឹង</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- list notification  -->
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ឥឡូវនេះវគ្គអាហារូបករណ៍ថ្មីបានបើកឱ្យចុះឈ្មោះហើយ។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! នឹងមានព្រឹត្តិការណ៍ពិសេសនៅសប្ដាហ៍ក្រោយ សូមអញ្ជើញចូលរួម។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-3.jpg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ការងារថ្មីមួយកំពុងបើកឱ្យដាក់ពាក្យ សូមចូលមើលព័ត៌មានលម្អិត។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <div>
+                                <a href="../profile/notification.html"
+                                    class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- profile  -->
+                    <div class="dropdown">
+                        <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../image/project-logo/profile-img.jpg"
+                                class="img-fluid rounded-circle object-fit-cover" style="width: 40px; height: 40px;"
+                                alt />
+                        </a>
+
+                        <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                            <li><a class="dropdown-item" href="../profile/proflie.html"><i
+                                        class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                            <li><a class="dropdown-item" href="../profile/edit_profile.html"><i
+                                        class="bi bi-gear me-2"></i>ការកំណត់</a></li>
+                            <li><a class="dropdown-item" href="../profile/favorite.html"><i
+                                        class="bi bi-bookmark me-2"></i>រក្សាទុក</a></li>
+                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                        class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="py-10">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <a href="majordetail.html">
+                            <div class="card border-0 position-relative overflow-hidden">
+                                <img src="../../image/major/management.jpg"
+                                    class="img-fluid rounded-2 object-fit-cover img-scale" style="height: 400px;" alt>
+
+                                <!-- Overlay -->
+                                <div
+                                    class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25 overflow-hidden">
+                                </div>
+                                <span class="text-white fw-bold position-absolute bottom-0 p-5 fs-4">អាជីវកម្ម
+                                    និង
+                                    ការគ្រប់គ្រង</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12" data-aos="fade-down">
+                                <a href="majordetail.html">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/cs.avif"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 220px;" alt>
+
+                                        <!-- Overlay -->
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+                                        <span
+                                            class="text-white fw-bold position-absolute bottom-0 p-3">បច្ចេកវិទ្យាព័ត៌មាន
+                                            និង វិទ្យាសាស្ត្រកុំព្យូទ័រ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" data-aos="fade-up">
+                                <a href="majordetail.html">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/law.jpg"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 150px;" alt>
+
+                                        <!-- Overlay -->
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+                                        <span class="text-white fw-bold position-absolute bottom-0 p-3">ច្បាប់
+                                            និង
+                                            វិទ្យាសាស្ត្រនយោបាយ</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 col-md-6" data-aos="fade-left">
+                                <a href="majordetail.html">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/health.webp"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 150px;" alt>
+
+                                        <!-- Overlay -->
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+                                        <span
+                                            class="text-white fw-bold position-absolute bottom-0 p-3">វិទ្យាសាស្ត្រសុខាភិបាល</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- content  -->
+        <section>
+            <div class="container">
+                <h4 class="major-title" data-aos="fade-up">
+                    មុខជំនាញពេញនិយមនៅកម្ពុជា
+                </h4>
+                <div class="row g-4">
+                    <p class="major-text" data-aos="fade-up">តើអ្នកមានបញ្ហាអំពីមុខជំនាញដែលខ្លួនពេញចិត្តមែនទេ?</p>
+                    <div class="col-md-12 col-lg-9">
+                        <div class="row py-5 g-4">
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="200">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/card-cs.jpg"
+                                            class="card-img-top object-fit-cover major-img" style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            បច្ចេកវិទ្យា</div>
+                                        <h4 class="card-title p-3">
+                                            វិទ្យាសាស្ត្រកុំព្យូទ័រ
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            វិទ្យាសាស្ត្រកុំព្យូទ័រ
+                                            គឺជាមុខជំនាញដែលសិក្សាអំពីទ្រឹស្តី
+                                            និងការអនុវត្តន៍ក្នុងការបង្កើត
+                                            ប្រើប្រាស់
+                                            និងគ្រប់គ្រងប្រព័ន្ធកុំព្យូទ័រ។
+                                            វាផ្តោតលើការសិក្សាផ្នែកកម្មវិធី
+                                            បច្ចេកវិទ្យា
+                                            និងវិធីសាស្ត្រដែលអាចដោះស្រាយបញ្ហាដោយប្រើកុំព្យូទ័រ។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="300">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/History-Political-Science.jpg"
+                                            class="card-img-top object-fit-cover major-img " style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            ច្បាប់</div>
+                                        <h4 class="card-title p-3">
+                                            ច្បាប់
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            វិស័យច្បាប់ គឺជាជំនាញសិក្សាពាក់ព័ន្ធនឹងច្បាប់ជាតិ និងអន្តរជាតិ។
+                                            និស្សិតនឹងសិក្សាពីច្បាប់ព្រហ្មទណ្ឌ, ច្បាប់ស៊ីវិល, ច្បាប់ពាណិជ្ជកម្ម
+                                            និងសិទ្ធិមនុស្ស។ ការសិក្សាវិស័យនេះអាចបង្កើតឱកាសការងារជាច្រើន ដូចជា មេធាវី,
+                                            ចៅក្រម, ឬទីប្រឹក្សាផ្នែកច្បាប់។ វាជាជំនាញមានតំរូវការខ្ពស់ក្នុងប្រទេសកម្ពុជា
+                                            ដែលកំពុងអភិវឌ្ឍប្រព័ន្ធច្បាប់។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="200">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/business.png"
+                                            class="card-img-top object-fit-cover major-img" style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            សេដ្ឋកិច្ច</div>
+                                        <h4 class="card-title p-3">
+                                            សេដ្ឋកិច្ច និង អាជីវកម្ម
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            សេដ្ឋកិច្ច ជាវិស័យសិក្សាពាក់ព័ន្ធនឹងការផលិត, ចំណាយ និងការចែកចាយធនធាន។
+                                            និស្សិតនឹងរៀនអំពីសេដ្ឋកិច្ចមូលដ្ឋាន, មីក្រូសេដ្ឋកិច្ច, ម៉ាក្រូសេដ្ឋកិច្ច
+                                            និងហិរញ្ញវត្ថុ។ វាជាជំនាញពេញនិយមសម្រាប់អ្នកចង់ធ្វើការនៅក្នុងវិស័យធនាគារ,
+                                            ហិរញ្ញវត្ថុ, ឬការវិនិយោគ។ សេដ្ឋកិច្ចក៏ជួយដល់ការគ្រប់គ្រងសហគ្រាស
+                                            និងអាជីវកម្មផងដែរ។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="300">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/education.webp"
+                                            class="card-img-top object-fit-cover major-img" style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            ការអប់រំ</div>
+                                        <h4 class="card-title p-3">
+                                            សង្គមវិទ្យា
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            សង្គមវិទ្យា ជាវិស័យសិក្សាពាក់ព័ន្ធនឹងសង្គមមនុស្ស និងអាកប្បកិរិយារបស់ពួកគេ។
+                                            និស្សិតនឹងរៀនអំពីស្ថាប័នសង្គម, វប្បធម៌, ការប្រែប្រួលសង្គម និងបញ្ហាសង្គម។
+                                            វាជាជំនាញសំខាន់សម្រាប់អ្នកចង់ធ្វើការក្នុងអង្គការសង្គម, ការស្រាវជ្រាវ
+                                            ឬការអប់រំ។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="200">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/health-science.jpg"
+                                            class="card-img-top object-fit-cover major-img" style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            សុខភាព</div>
+                                        <h4 class="card-title p-3">
+                                            វិទ្យាសាស្ត្រសុខភាព
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            វិទ្យាសាស្ត្រសុខភាព ជាវិស័យដែលផ្តោតលើការយល់ដឹងអំពីសុខភាពមនុស្ស ការព្យាបាល
+                                            និងការការពារ។ និស្សិតនឹងសិក្សាពីជីវវិទ្យា, គីមីវិទ្យា, អាហារូបត្ថម្ភ,
+                                            ឱសថវិទ្យា និងការថែទាំសុខភាព។ វាជាជំនាញមានតំរូវការខ្ពស់
+                                            ដោយសារកម្ពុជាកំពុងអភិវឌ្ឍវិស័យសុខាភិបាល។ បញ្ចប់ការសិក្សា
+                                            អ្នកអាចធ្វើការនៅមន្ទីរពេទ្យ, មន្ទីរពិសោធន៍ ឬអង្គការអន្តរជាតិ។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-sm-6 card-transform" data-aos="fade-up" data-aos-delay="300">
+                                <a href="majordetail.html" class="text-decoration-none bg-card-theme">
+                                    <div class="card border-0 shadow-sm position-relative bg-card-theme card-hover"
+                                        data-bs-theme="light">
+                                        <img src="../../image/major/Tourism & Hospitality.jpg"
+                                            class="card-img-top object-fit-cover major-img" style="height: 300px;" alt>
+                                        <div
+                                            class="tag position-absolute bottom-50 ms-4 bg-footer text-white px-2 rounded-2">
+                                            ទេសចរណ៍</div>
+                                        <h4 class="card-title p-3">
+                                            មគ្គុទ្ទេសក៍ទេសចរណ៍
+                                        </h4>
+                                        <p class="card-text px-3 clamp-3">
+                                            មគ្គុទ្ទេសក៍ទេសចរណ៍ គឺជាអាជីពមួយដែលពាក់ព័ន្ធនឹងការណែនាំ
+                                            និងផ្តល់ព័ត៌មានដល់ភ្ញៀវទេសចរ អំពីប្រវត្តិសាស្ត្រ វប្បធម៌ ទេសភាពធម្មជាតិ
+                                            និងកន្លែងពិសេសៗនៅកម្ពុជា។ មុខជំនាញនេះតម្រូវឲ្យមានចំណេះដឹងទូលំទូលាយ
+                                            ពីភាសាបរទេស (ជាពិសេសភាសាអង់គ្លេស និងភាសាចិន) ជំនាញបកស្រាយ
+                                            និងសមត្ថភាពទំនាក់ទំនងល្អ។
+                                        </p>
+                                        <a href="majordetail.html" class="text-end px-5 py-3 bg-card-theme">មើលបន្ថែម<i
+                                                class="bi bi-arrow-right-short"></i></a>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 ">
+                        <div class="row g-4 position-sticky top-0" style="height: max-content;">
+                            <h4 class="card-title pt-15 pb-3">
+                                មុខជំនាញដែលពួកយើងណែនាំ
+                            </h4>
+                            <div class="col-lg-12" data-aos="fade-left">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/History-Political-Science.jpg"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 100px;" alt="">
+
+                                        <!-- Overlay -->
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+
+                                        <span
+                                            class="text-white text-center fw-bold position-absolute start-50 translate-middle-x"
+                                            style="top: 40%;">ច្បាប់</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-12" data-aos="fade-left" data-aos-delay="200">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/business.png"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 100px;" alt="">
+
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+
+                                        <span
+                                            class="text-white text-center fw-bold position-absolute start-50 translate-middle-x"
+                                            style="top: 40%;">ការគ្រប់គ្រងអាជីវកម្ម</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-12" data-aos="fade-left" data-aos-delay="400">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/education.webp"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 100px;" alt="">
+
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+
+                                        <span
+                                            class="text-white text-center fw-bold position-absolute start-50 translate-middle-x"
+                                            style="top: 40%;">សង្គមវិទ្យា</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-lg-12 mb-5" data-aos="fade-left" data-aos-delay="600">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card border-0 position-relative overflow-hidden">
+                                        <img src="../../image/major/health-science.jpg"
+                                            class="img-fluid rounded-2 object-fit-cover img-scale"
+                                            style="height: 100px;" alt="">
+
+                                        <div
+                                            class="overlay bg-black top-0 start-0 position-absolute w-100 h-100 rounded-2 opacity-25">
+                                        </div>
+
+                                        <span
+                                            class="text-white text-center fw-bold position-absolute start-50 translate-middle-x"
+                                            style="top: 40%;">វិទ្យាសាស្ត្រសុខភាព</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- slide  -->
+        <section class="py-10" data-aos="fade-up">
+            <div class="container">
+                <h4 class="mb-4">មុខជំនាញលើវិស័យផ្សេងៗ</h4>
+                <p class>សូមអញ្ជើញអានព័ត៌មានបន្ថែមអំពីការគ្រប់គ្រងអាជីវកម្ម
+                    និងវិស័យផ្សេងៗ។</p>
+                <div class="row">
+
+                    <div class="swiper mySwiper pb-10 py-4 px-5">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/major/civil.webp"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">វិស្វកម្មសំណង់</h5>
+                                            <p class="card-text fs-6 clamp-3">វិស្វកម្មសំណង់
+                                                គឺជាវិស័យពាក់ព័ន្ធនឹងការរចនា និងសាងសង់អគារជនសម្បត្តិ
+                                                និងហេដ្ឋារចនាសម្ព័ន្ធ ដូចជាផ្លូវ, ស្ពាន, អគារ និងប្រព័ន្ធទឹក។
+                                                កម្ពុជាកំពុងអភិវឌ្ឍទីក្រុងនិងឧស្សាហកម្ម បង្កើតឱកាសធំសម្រាប់វិស្វករសំណង់។
+                                                និស្សិតនឹងទទួលបានចំណេះដឹងពីគណិតវិទ្យា, រូបវិទ្យា និងបច្ចេកទេសសំណង់
+                                                ដើម្បីអាចបំពេញតួនាទីជាវិស្វករសំខាន់ៗ។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/major/elec.jpg" style="height: 200px; object-fit: cover;"
+                                            class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">វិទ្យាសាស្ត្រអគ្គិសនី និងអេឡិចត្រូនិច</h5>
+                                            <p class="card-text fs-6 clamp-3">ជំនាញនេះផ្តោតលើការសិក្សា
+                                                និងអភិវឌ្ឍបច្ចេកវិទ្យាអគ្គិសនី និងឧបករណ៍អេឡិចត្រូនិច។
+                                                និស្សិតនឹងរៀនអំពីសៀគ្វីអគ្គិសនី, ប្រព័ន្ធបញ្ជា,
+                                                បច្ចេកវិទ្យាដំណើរការដោយកុំព្យូទ័រ និងបច្ចេកវិទ្យាថ្មីៗ។ វាជាជំនាញពេញនិយម
+                                                ព្រោះមានតំរូវការក្នុងឧស្សាហកម្មផលិតកម្ម និងបច្ចេកវិទ្យាថ្មី។
+                                                បញ្ចប់ការសិក្សា អ្នកអាចធ្វើការជាវិស្វករអគ្គិសនី ឬអេឡិចត្រូនិច។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/major/bio.webp" style="height: 200px; object-fit: cover;"
+                                            class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">ជីវវិទ្យា</h5>
+                                            <p class="card-text fs-6 clamp-3">ជីវវិទ្យា គឺជាវិស័យសិក្សាអំពីជីវិត
+                                                និងប្រព័ន្ធរស់។ និស្សិតនឹងសិក្សាពីកោសិកា, ជាតិពុល, ប្រព័ន្ធសរីរាង្គ
+                                                និងបរិស្ថាន។ ជីវវិទ្យាមានការភ្ជាប់ជាមួយវិស័យសុខភាព, កសិកម្ម,
+                                                និងការអភិរក្សធម្មជាតិ។ វាជាមូលដ្ឋានសម្រាប់អ្នកចង់បន្តការសិក្សាផ្នែកពេទ្យ
+                                                ឬជំនាញស្រាវជ្រាវវិទ្យាសាស្ត្រ។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/major/publiv.webp"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">រដ្ឋបាលសាធារណៈ</h5>
+                                            <p class="card-text fs-6 clamp-3">រដ្ឋបាលសាធារណៈ
+                                                ជាវិស័យដែលផ្តោតលើការគ្រប់គ្រង និងដឹកនាំក្នុងស្ថាប័នរដ្ឋ
+                                                និងអង្គភាពសាធារណៈ។ និស្សិតនឹងសិក្សាពីគោលនយោបាយសាធារណៈ, ការគ្រប់គ្រងធនធាន
+                                                និងការចេញសេចក្តីសម្រេច។
+                                                វាជាជំនាញសំខាន់សម្រាប់អ្នកចង់ធ្វើការជាមន្ត្រីរាជការ ឬទីប្រឹក្សារដ្ឋបាល។
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="majordetail.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/major/Poli-Sci.png"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">វិទ្យាសាស្ត្រនយោបាយ</h5>
+                                            <p class="card-text fs-6 clamp-3">វិទ្យាសាស្ត្រនយោបាយ
+                                                ជាវិស័យសិក្សាអំពីអំណាច, ប្រព័ន្ធនយោបាយ និងទំនាក់ទំនងអន្តរជាតិ។
+                                                និស្សិតនឹងរៀនអំពីប្រវត្តិនយោបាយ, ទ្រឹស្តីនយោបាយ និងការគ្រប់គ្រងប្រទេស។
+                                                វាជាជំនាញសំខាន់សម្រាប់អ្នកចង់ចូលទៅក្នុងវិស័យនយោបាយ, ការទូត
+                                                ឬអង្គការអន្តរជាតិ។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
+
+</html>

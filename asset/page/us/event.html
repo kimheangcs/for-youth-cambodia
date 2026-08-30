@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ព្រឹត្តិការណ៍</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+     <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    .event-img {
+        height: 300px;
+    }
+
+    .card-event {
+        height: 200px;
+    }
+</style>
+
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../us/home.html">
+                    <img id="logo" src="../../image/project-logo/logo01.png" alt="Logo" style="width: 75px;">
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <!-- notification -->
+                        <div class="dropdown">
+                            <a class="btn border-0 mt-1 me-2" href="../profile/notification.html" role="button">
+                                <i class="bi bi-bell px-2 position-relative fs-5">
+                                    <span class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                        style="left: 21px; padding: 3px; top: 1px;">
+                                        <span class="visually-hidden">New alerts</span>
+                                    </span>
+                                </i>
+                            </a>
+                        </div>
+
+                        <!-- profile  -->
+                        <div class="dropdown">
+                            <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                    style="width: 40px; height: 40px;" alt />
+                            </a>
+                        
+                            <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                <li><a class="dropdown-item" href="../profile/proflie.html"><i
+                                            class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                                <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a>
+                                </li>
+                                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                            class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div class="d-flex justify-content-end align-items-center d-flex d-lg-none" role="search">
+                            <!-- profile  -->
+                            <div class="profile">
+                                <a href="../profile/proflie.html">
+                                    <img src="../../image/project-logo/profile-img.jpg"
+                                        class="img-fluid rounded-circle object-fit-cover"
+                                        style="width: 40px; height: 40px;" alt />
+                                </a>
+                            </div>
+                            <h5 class="pt-3 ps-2">សួស្តី!​​ តុលា</h5>
+                        </div>
+
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="assets/image/logo.png" class="img-fluid"
+                                    style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../us/home.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a></li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li><a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link active px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <!-- notification  -->
+                    <div class="dropdown">
+                        <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-bell position-relative fs-5">
+                                <span
+                                    class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                    style="left: 21px; padding: 4px; top: 1px;">
+                                    <span class="visually-hidden">New
+                                        alerts</span>
+                                </span>
+                            </i>
+                        </a>
+
+                        <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                            <li>
+                                <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                    style="width: 320px;">
+                                    <div class="p-2">
+                                        <h5>សារជូនដំណឹង</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- list notification  -->
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ឥឡូវនេះវគ្គអាហារូបករណ៍ថ្មីបានបើកឱ្យចុះឈ្មោះហើយ។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! នឹងមានព្រឹត្តិការណ៍ពិសេសនៅសប្ដាហ៍ក្រោយ សូមអញ្ជើញចូលរួម។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-3.jpg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ការងារថ្មីមួយកំពុងបើកឱ្យដាក់ពាក្យ សូមចូលមើលព័ត៌មានលម្អិត។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <div>
+                                <a href="../profile/notification.html"
+                                    class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- profile  -->
+                    <div class="dropdown">
+                        <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                style="width: 40px; height: 40px;" alt />
+                        </a>
+                    
+                        <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                            <li><a class="dropdown-item" href="../profile/proflie.html"><i class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                            <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a></li>
+                            <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a></li>
+                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section>
+            <!-- Scholarship Form Modal -->
+            <div class="modal fade" id="scholarshipModal" tabindex="-1" aria-labelledby="scholarshipModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content shadow-lg border-0">
+            
+                        <!-- Header -->
+                        <div class="modal-header bg-footer text-white">
+                            <h5 class="modal-title" id="scholarshipModalLabel">ពាក្យស្នើការចុះឈ្មោះ</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="បិទ"></button>
+                        </div>
+            
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <form id="scholarshipForm">
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">ឈ្មោះពេញ</label>
+                                    <input type="text" class="form-control bg-card-theme" id="fullname" name="fullname"
+                                        placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">អ៊ីមែល</label>
+                                    <input type="email" class="form-control bg-card-theme" id="email" name="email" placeholder="example@gmail.com"
+                                        required>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">លេខទូរស័ព្ទ</label>
+                                    <input type="tel" class="form-control bg-card-theme" id="phone" name="phone" placeholder="0XX-XXX-XXX"
+                                        required>
+                                </div>
+            
+                                <div class="mb-3">
+                                    <label for="reason" class="form-label">គោលបំណង</label>
+                                    <textarea class="form-control bg-card-theme" id="reason" name="reason" rows="3"
+                                        placeholder="សូមពិពណ៌នាខ្លីៗ..." required></textarea>
+                                </div>
+                            </form>
+                        </div>
+            
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                            <button type="button" form="scholarshipForm" data-bs-toggle="modal" data-bs-target="#topModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                        </div>
+            
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="topModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                        <div class="modal-content border-0  shadow p-4 bg-success text-white text-center">
+                            <i class="bi bi-check2-circle" style="font-size: 3rem;"></i>
+                            <span class="fs-4">ទទួលបានជោគជ័យ!</span>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- Modals -->
+            <!-- Event Modal 1 -->
+            <div class="modal fade" id="eventModal1" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">សិក្ខាសាលាអភិរក្សជីវចម្រុះ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>កាលបរិច្ឆេទ:</strong> ២៥ តុលា ២០២៥</p>
+                            <p><strong>ម៉ោង:</strong> ០៨:០០ - ១៦:០០</p>
+                            <p><strong>កន្លែង:</strong> មជ្ឈមណ្ឌលស្រាវជ្រាវ RUPP, រាជធានីភ្នំពេញ</p>
+                            <h6>ពិពណ៌នាសកម្មភាព</h6>
+                            <p>សិក្ខាសាលានេះនឹងបង្រៀនពីវិធីសាស្ត្រសម្រាប់ធ្វើការស្ទង់មតិវណ្ណៈ,
+                                ការបង្កើតបណ្ណសារ DNA សំរាប់អាណតនិច្ច
+                                និងអនុវត្តវិធីសាស្ត្រក្នុងការអភិរក្សប្រភេទគ្រប់ព្រម។</p>
+                            <h6>វាគ្មិន</h6>
+                            <ul>
+                                <li>ប.ហួង សាមឿន — អ្នកស្រាវជ្រាវ CBC</li>
+                                <li>Dr. Lina Svensson — Visitor researcher (Sweden)</li>
+                            </ul>
+                            <h6>ចុះឈ្មោះ</h6>
+                            <p>ចុះឈ្មោះតាម <a href="#">form</a> ឬអ៊ីម៉ែល ទៅ <a
+                                    href="mailto:events@rupp.edu.kh">events@rupp.edu.kh</a></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal"
+                                class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បិទ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Modal 2 -->
+            <div class="modal fade" id="eventModal2" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">វគ្គសិក្សា៖ មេឌីយ៉ា និង AI សម្រាប់វេជ្ជសាស្ត្រ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>កាលបរិច្ឆេទ:</strong> ១០ វិច្ឆិកា ២០២៥</p>
+                            <p><strong>ម៉ោង:</strong> ០៩:០០ - ១៦:៣០</p>
+                            <p><strong>កន្លែង:</strong> Norton University / Online</p>
+                            <p>វគ្គសិក្សានេះផ្តល់ជូនទ្រឹស្តី និងហេតុផលអនុវត្តក្នុងការប្រើ AI
+                                សម្រាប់ករណីវេជ្ជសាស្ត្រពិតប្រាកដ
+                                និងដំណើរការទិន្នន័យត្រៀមសម្រាប់គម្រោងស្រាវជ្រាវ ឬធ្វើការងារ។</p>
+                            <h6>លក្ខខណ្ឌចូលរួម</h6>
+                            <ul>
+                                <li>មានចំណេះដឹងមូលដ្ឋាន Programming (Python)</li>
+                                <li>ចំណាយពេល 1 ថ្ងៃសិក្សា (ហាងសិក្សាតាមម៉ោង)</li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal"
+                                class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បិទ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Modal 3 -->
+            <div class="modal fade" id="eventModal3" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">សិក្ខាសាលា Bio-Engineering និង Food Technology</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>កាលបរិច្ឆេទ:</strong> ១៥ ធ្នូ ២០២៥</p>
+                            <p><strong>ម៉ោង:</strong> ០៨:៣០ - ១៧:០០</p>
+                            <p><strong>កន្លែង:</strong> Institute of Technology of Cambodia (ITC)</p>
+                            <p>ផ្តោតលើការបង្កើត និងអភិវឌ្ឍផលិតផលអាហារ ដោយប្រើវិទ្យាសាស្ត្រ
+                                ជីវបច្ចេកវិទ្យា និងវិធានការបច្ចេកទេសក្នុងរោងចក្រ។</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal"
+                                class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បិទ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Event Modal 4 -->
+            <div class="modal fade" id="eventModal4" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">សន្និសីទបរិស្ថាន និងស្ថិតិទិន្នន័យ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>កាលបរិច្ឆេទ:</strong> ២០ មករា ២០២៦</p>
+                            <p><strong>ម៉ោង:</strong> ០៩:០០ - ១៨:០០</p>
+                            <p><strong>កន្លែង:</strong> RUPP Conference Hបន្ថែម</p>
+                            <p>សន្និសីទនេះនឹងប្រមូលអ្នកស្រាវជ្រាវ និងភ្នាក់ងារចាប់ពីមន្ត្រីរដ្ឋ
+                                ដើម្បីពិភាក្សាអំពីទិន្នន័យដែលអាចជួយដល់ការសម្រេចចិត្តគោលនយោបាយបរិស្ថាន។
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal"
+                                class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បិទ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-10">
+            <div class="container">
+                <div class="row g-3">
+                    <div class="col-md-8 d-none d-md-block" data-aos="fade-right">
+                        <div class="card border-0 shadow-sm position-relative overflow-hidden">
+                            <img src="../../image/eventt/e1.jpg" class="card-img event-img object-fit-cover" alt="">
+        
+                            <!-- Overlay Tag + Button -->
+                            <div class="position-absolute start-0 w-100 h-100 p-3 bg-dark bg-opacity-25 text-white">
+                                <div class="position-absolute" style="top: 170px;">
+                                    <h5 class="mb-2">អាជីវកម្ម</h5>
+                                    <span>ថ្ងៃព្រហស្បតិ៍ ទី៩ ខែតុលា ឆ្នាំ២០២៥</span>
+                                    <br>
+                                    <button class="btn btn-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-4 d-none d-md-block" data-aos="fade-down">
+                        <div class="card border-0 shadow-sm position-relative overflow-hidden">
+                            <img src="../../image/eventt/e2.png" class="card-img event-img object-fit-cover" alt="">
+                            <!-- Overlay Tag + Button -->
+                            <div class="position-absolute start-0 w-100 h-100 p-3 bg-dark bg-opacity-25 text-white">
+                                <div class="position-absolute" style="top: 170px;">
+                                    <h5 class="mb-2">បទពិសោធន៍</h5>
+                                    <span>ថ្ងៃចន្ទ ទី១ ខែមករា ឆ្នាំ២០២៥</span>
+                                    <br>
+                                    <button class="btn btn-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-4 d-none d-md-block" data-aos="fade-right">
+                        <div class="card border-0 shadow-sm position-relative overflow-hidden">
+                            <img src="../../image/eventt/e3.jpg" class="card-img event-img object-fit-cover" alt="">
+                            <!-- Overlay Tag + Button -->
+                            <div class="position-absolute start-0 w-100 h-100 p-3 bg-dark bg-opacity-25 text-white">
+                                <div class="position-absolute" style="top: 170px;">
+                                    <h5 class="mb-2">វគ្គសិក្សាអនឡាញ</h5>
+                                    <span>ថ្ងៃព្រហស្បតិ៍ ទី១៥ ខែឧសភា ឆ្នាំ២០២៥</span>
+                                    <br>
+                                    <button class="btn btn-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="col-md-8 d-none d-md-block" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm position-relative overflow-hidden">
+                            <img src="../../image/eventt/e4.jpg" class="card-img event-img object-fit-cover" alt="">
+                            <!-- Overlay Tag + Button -->
+                            <div class="position-absolute start-0 w-100 h-100 p-3 bg-dark bg-opacity-25 text-white">
+                                <div class="position-absolute" style="top: 170px;">
+                                    <h5 class="mb-2">ប្រព័ន្ធផ្សព្វផ្សាយ</h5>
+                                    <span>ថ្ងៃពុធ ទី៣១ ខែធ្នូ ឆ្នាំ២០២៥</span>
+                                    <br>
+                                    <button class="btn btn-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Mobile Swiper -->
+                    <div class="col-12 d-block d-md-none" data-aos="zoom-in">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide rounded-4 bg-body-theme position-relative overflow-hidden">
+                                    <img src="../../image/eventt/e1.jpg" class="rounded-4 w-100" alt="">
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                                        <h6>Event Title 1</h6>
+                                        <button class="btn btn-sm btn-light rounded-pill">View</button>
+                                    </div>
+                                </div>
+        
+                                <div class="swiper-slide rounded-4 bg-body-theme position-relative overflow-hidden">
+                                    <img src="../../image/eventt/e2.png" class="rounded-4 w-100" alt="">
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                                        <h6>Event Title 2</h6>
+                                        <button class="btn btn-sm btn-light rounded-pill">View</button>
+                                    </div>
+                                </div>
+        
+                                <div class="swiper-slide rounded-4 bg-body-theme position-relative overflow-hidden">
+                                    <img src="../../image/eventt/e3.jpg" class="rounded-4 w-100" alt="">
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                                        <h6>Event Title 3</h6>
+                                        <button class="btn btn-sm btn-light rounded-pill">View</button>
+                                    </div>
+                                </div>
+        
+                                <div class="swiper-slide rounded-4 bg-body-theme position-relative overflow-hidden">
+                                    <img src="../../image/eventt/e4.jpg" class="rounded-4 w-100" alt="">
+                                    <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-50 text-white">
+                                        <h6>Event Title 4</h6>
+                                        <button class="btn btn-sm btn-light rounded-pill">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </section>
+
+        <!-- md flex  -->
+        <section class="d-none d-md-block">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-8">
+                        <h4 class="pb-3" data-aos="fade-right" >ព្រឹត្តិការណ៍</h4>
+                        <div class="row g-3">
+                            <div class="col-12" data-aos="fade-right" data-aos-delay="150">
+                                <div class="card border-0 bg-card-theme shadow-sm p-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="card border-0 bg-card-theme">
+                                                <img src="../../image/eventt/animal.jpg"
+                                                    class="card-img card-event object-fit-cover" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card border-0 bg-card-theme">
+                                                <h4 class="clamp-1">សិក្ខាសាលាអភិរក្សជីវចម្រុះ</h4>
+                                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២៥ តុលា
+                                                    ២០២៥
+                                                    &nbsp; <i class="bi bi-clock"></i> ០៨:០០ - ១៦:០០</p>
+                                                <p class="mb-2"><i class="bi bi-geo-alt"></i> មជ្ឈមណ្ឌលស្រាវជ្រាវ RUPP,
+                                                    រាជធានីភ្នំពេញ</p>
+                                                <p class="card-text clamp-2">
+                                                    សិក្ខាសាលានេះផ្តោតលើវិធីសាស្ត្រពាក់ព័ន្ធនឹងការស្ទង់មតិ
+                                                    និងការអភិរក្សប្រភេទសត្វនិងរុក្ខជាតិក្នុងសួនជាតិ និងតំបន់ធម្មជាតិ។
+                                                    មានវាគ្មិនពី CBC និងអង្គការអន្តរជាតិ។</p>
+                                                <div class="mt-auto d-flex gap-2">
+                                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal" data-bs-target="#eventModal2">មើលលម្អិត</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal"
+                                                        class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-right" data-aos-delay="200">
+                                <div class="card border-0 bg-card-theme shadow-sm p-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="card border-0 bg-card-theme">
+                                                <img src="../../image/eventt/ai.png"
+                                                    class="card-img card-event object-fit-cover" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card border-0 bg-card-theme">
+                                                <h4 class="clamp-1">វគ្គសិក្សា៖ មេឌីយ៉ា និង AI សម្រាប់វេជ្ជសាស្ត្រ</h4>
+                                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១០
+                                                    វិច្ឆិកា ២០២៥ &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៦:៣០</p>
+                                                <p class="mb-2"><i class="bi bi-geo-alt"></i> សាលាសិក្សា Norton
+                                                    University / Online</p>
+                                                <p class="card-text clamp-2">វគ្គនេះនឹងបង្ហាញពីវិធីប្រើ AI
+                                                    ក្នុងការវិភាគទិន្នន័យវេជ្ជសាស្ត្រ និងគ្រប់គ្រងរូបភាពវេទិកា (medical
+                                                    imaging)។ សមាជិកនឹងទទួលបានវិញ្ញាបនបត្រ។</p>
+                                                <div class="mt-auto d-flex gap-2">
+                                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                        data-bs-target="#eventModal2">មើលលម្អិត</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-right" data-aos-delay="250">
+                                <div class="card border-0 bg-card-theme shadow-sm p-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="card border-0 bg-card-theme">
+                                                <img src="../../image/eventt/bio.png"
+                                                    class="card-img card-event object-fit-cover" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card border-0 bg-card-theme">
+                                                <h4 class="clamp-1">សិក្ខាសាលា Bio-Engineering និង Food Technology</h4>
+                                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១៥ ធ្នូ
+                                                    ២០២៥ &nbsp; <i class="bi bi-clock"></i> ០៨:៣០ - ១៧:០០</p>
+                                                <p class="mb-2"><i class="bi bi-geo-alt"></i> Institute of Technology of
+                                                    Cambodia (ITC)</p>
+                                                <p class="card-text clamp-2">អភិវឌ្ឍផលិតផលអាហារ
+                                                    និងបច្ចេកវិទ្យាពិសេសសម្រាប់ឧស្សាហកម្មកសិកម្ម-អាហារ
+                                                    ដោយអ្នកជំនាញពិភពលោក។</p>
+                                                <div class="mt-auto d-flex gap-2">
+                                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                        data-bs-target="#eventModal3">មើលលម្អិត</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-right" data-aos-delay="300">
+                                <div class="card border-0 bg-card-theme shadow-sm p-3">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="card border-0 bg-card-theme">
+                                                <img src="../../image/eventt/evi.png"
+                                                    class="card-img card-event object-fit-cover" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-8">
+                                            <div class="card border-0 bg-card-theme">
+                                                <h4 class="clamp-1">សន្និសីទបរិស្ថាន និងស្ថិតិទិន្នន័យ</h4>
+                                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២០ មករា
+                                                    ២០២៦ &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៨:០០</p>
+                                                <p class="mb-2"><i class="bi bi-geo-alt"></i> RUPP Conference Hបន្ថែម</p>
+                                                <p class="card-text clamp-2">សន្និសីទចែករំលែកលទ្ធផលស្រាវជ្រាវបរិស្ថាន
+                                                    និងទិន្នន័យសម្រាប់គម្រោងពាក់ព័ន្ធនានា។</p>
+                                                <div class="mt-auto d-flex gap-2">
+                                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                        data-bs-target="#eventModal4">មើលលម្អិត</button>
+                                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-left">
+                        <div class="position-sticky top-0">
+                            <h4 class="pb-3">ព្រឹត្តិការណ៌ជិតមកដល់</h4>
+                            <div class="card border-0 shadow-sm bg-card-theme">
+                                <img src="../../image/eventt/soon.jpg" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">វគ្គសិក្សា Data Science និង Visualization</h5>
+                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២០ ឧសភា ២០២៦ &nbsp;
+                                        <i class="bi bi-clock"></i> ០៩:០០ - ១៦:០០
+                                    </p>
+                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> RUPP Data Lab</p>
+                                    <p class="card-text clamp-3">វគ្គសិក្សានេះនឹងបង្រៀន Python និង Visualization
+                                        សម្រាប់ទិន្នន័យពិត។</p>
+                                    <div class="mt-auto d-flex gap-2">
+                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                            data-bs-target="#eventModal5">មើលលម្អិត</button>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- modal  -->
+                    <div class="modal fade" id="eventModal5" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">វគ្គសិក្សា Data Science និង Visualization</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>សិក្ខាសាលាអំពីការបង្ហាញពីការប្រើ AI ក្នុងវេជ្ជសាស្ត្រ និងទិន្នន័យស្រាវជ្រាវ
+                                        សម្រាប់ទិន្នន័យពិត។
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- md none  -->
+        <section class="d-block d-md-none">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm bg-card-theme">
+                            <img src="../../image/eventt/animal.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="clamp-1">សិក្ខាសាលាអភិរក្សជីវចម្រុះ</h4>
+                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២៥ តុលា ២០២៥
+                                    &nbsp; <i class="bi bi-clock"></i> ០៨:០០ - ១៦:០០</p>
+                                <p class="mb-2 clamp-1"><i class="bi bi-geo-alt"></i> មជ្ឈមណ្ឌលស្រាវជ្រាវ RUPP,
+                                    រាជធានីភ្នំពេញ
+                                </p>
+                                <p class="card-text clamp-2">
+                                    សិក្ខាសាលានេះផ្តោតលើវិធីសាស្ត្រពាក់ព័ន្ធនឹងការស្ទង់មតិ
+                                    និងការអភិរក្សប្រភេទសត្វនិងរុក្ខជាតិក្នុងសួនជាតិ និងតំបន់ធម្មជាតិ។ មានវាគ្មិនពី CBC
+                                    និងអង្គការអន្តរជាតិ។
+                                </p>
+                                <div class="mt-auto d-flex gap-2">
+                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm bg-card-theme">
+                            <img src="../../image/eventt/ai.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="clamp-1">វគ្គសិក្សា៖ មេឌីយ៉ា និង AI សម្រាប់វេជ្ជសាស្ត្រ</h4>
+                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១០ វិច្ឆិកា ២០២៥
+                                    &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៦:៣០</p>
+                                <p class="mb-2 clamp-1"><i class="bi bi-geo-alt"></i> សាលាសិក្សា Norton University /
+                                    Online</p>
+                                <p class="card-text clamp-2">
+                                    វគ្គនេះនឹងបង្ហាញពីវិធីប្រើ AI ក្នុងការវិភាគទិន្នន័យវេជ្ជសាស្ត្រ
+                                    និងគ្រប់គ្រងរូបភាពវេទិកា (medical imaging)។ សមាជិកនឹងទទួលបានវិញ្ញាបនបត្រ។
+                                </p>
+                                <div class="mt-auto d-flex gap-2">
+                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal2">មើលលម្អិត</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm bg-card-theme">
+                            <img src="../../image/eventt/bio.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="clamp-1">សិក្ខាសាលា Bio-Engineering និង Food Technology</h4>
+                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១៥ ធ្នូ ២០២៥
+                                    &nbsp; <i class="bi bi-clock"></i> ០៨:៣០ - ១៧:០០</p>
+                                <p class="mb-2 clamp-1"><i class="bi bi-geo-alt"></i> Institute of Technology of
+                                    Cambodia (ITC)
+                                </p>
+                                <p class="card-text clamp-2">
+                                    អភិវឌ្ឍផលិតផលអាហារ និងបច្ចេកវិទ្យាពិសេសសម្រាប់ឧស្សាហកម្មកសិកម្ម-អាហារ
+                                    ដោយអ្នកជំនាញពិភពលោក។
+                                </p>
+                                <div class="mt-auto d-flex gap-2">
+                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal3">មើលលម្អិត</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm bg-card-theme">
+                            <img src="../../image/eventt/evi.png" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h4 class="clamp-1">សន្និសីទបរិស្ថាន និងស្ថិតិទិន្នន័យ</h4>
+                                <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២០ មករា ២០២៦
+                                    &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៨:០០</p>
+                                <p class="mb-2 clamp-1"><i class="bi bi-geo-alt"></i> RUPP Conference Hបន្ថែម</p>
+                                <p class="card-text clamp-2">
+                                    សន្និសីទចែករំលែកលទ្ធផលស្រាវជ្រាវបរិស្ថាន និងទិន្នន័យសម្រាប់គម្រោងពាក់ព័ន្ធនានា។
+                                </p>
+                                <div class="mt-auto d-flex gap-2">
+                                    <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                        data-bs-target="#eventModal4">មើលលម្អិត</button>
+                                    <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-15">
+            <div class="container">
+                <div class="row">   
+                    <h4 class="py-3" data-aos="fade-up">ព្រឹត្តិការណ៌ជិតមកដល់</h4>
+                    <div class="col-xl-6" data-aos="zoom-in-up">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row gy-3">
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/ani-evo.jpg"
+                                                    class="card-img-top object-fit-cover" alt="Biodiversity Workshop"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">សិក្ខាសាលាអភិរក្សជីវចម្រុះ</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២៥
+                                                        តុលា ២០២៥ &nbsp; <i class="bi bi-clock"></i> ០៨:០០ - ១៦:០០</p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> មជ្ឈមណ្ឌលស្រាវជ្រាវ
+                                                        RUPP</p>
+                                                    <p class="card-text clamp-3">សិក្ខាសាលាផ្តោតលើការអភិរក្សប្រភេទសត្វ
+                                                        និងរុក្ខជាតិ។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal1">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Event 2 -->
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/ai.jpg"
+                                                    class="card-img-top object-fit-cover" alt="AI Workshop"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">វគ្គសិក្សា៖ AI សម្រាប់វេជ្ជសាស្ត្រ</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១០
+                                                        វិច្ឆិកា ២០២៥ &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៦:៣០
+                                                    </p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> Norton University /
+                                                        Online</p>
+                                                    <p class="card-text clamp-3">វគ្គសិក្សានេះបង្ហាញពីការប្រើ AI
+                                                        ក្នុងការវិភាគទិន្នន័យវេជ្ជសាស្ត្រ។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal2">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row gy-3">
+                                        <!-- Event 3 -->
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/food.jpg"
+                                                    class="card-img-top object-fit-cover" alt="Food Biotech"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">សិក្ខាសាលា Bio-Engineering និង Food Tech</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១៥
+                                                        ធ្នូ ២០២៥ &nbsp; <i class="bi bi-clock"></i> ០៨:៣០ - ១៧:០០</p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> ITC</p>
+                                                    <p class="card-text clamp-3">ផ្តោតលើបច្ចេកវិទ្យាអាហារ
+                                                        និងជីវវិស្វកម្ម។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal3">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Event 4 -->
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/data.webp"
+                                                    class="card-img-top object-fit-cover" alt="Environment Conference"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">សន្និសីទបរិស្ថាន និងទិន្នន័យ</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២០
+                                                        មករា ២០២៦ &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៨:០០</p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> RUPP Conference Hall
+                                                    </p>
+                                                    <p class="card-text clamp-3">សន្និសីទផ្តោតលើទិន្នន័យ
+                                                        និងវិធីសាស្ត្រស្រាវជ្រាវ។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal4">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="row gy-3">
+                                        <!-- Event 5 -->
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/degital.webp"
+                                                    class="card-img-top object-fit-cover" alt="Tech Seminar"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">សិក្ខាសាលាបច្ចេកវិទ្យា និងឌីជីថល</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ១២
+                                                        មីនា ២០២៦ &nbsp; <i class="bi bi-clock"></i> ០៨:០០ - ១៦:០០</p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> RUPP Innovation Hub
+                                                    </p>
+                                                    <p class="card-text clamp-3">សិក្ខាសាលាអំពីឌីជីថល
+                                                        និងបច្ចេកវិទ្យាថ្មីៗសម្រាប់សិស្ស និងអ្នកស្រាវជ្រាវ។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal3">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Event 6 -->
+                                        <div class="col-md-6">
+                                            <div class="card border-0 bg-card-theme shadow-sm h-100">
+                                                <img src="../../image/eventt/robotics.jpg"
+                                                    class="card-img-top object-fit-cover" alt="Robotics Workshop"
+                                                    style="height:200px;">
+                                                <div class="card-body d-flex flex-column">
+                                                    <h5 class="card-title">វគ្គសិក្សា Robotics និង AI</h5>
+                                                    <p class="mb-2 text-muted"><i class="bi bi-calendar-event"></i> ២៥
+                                                        មេសា ២០២៦ &nbsp; <i class="bi bi-clock"></i> ០៩:០០ - ១៧:០០</p>
+                                                    <p class="mb-2"><i class="bi bi-geo-alt"></i> RUPP Robotics Lab</p>
+                                                    <p class="card-text clamp-3">វគ្គនេះផ្តោតលើការប្រើ Robotics និង AI
+                                                        សម្រាប់ការស្រាវជ្រាវ និងឧស្សាហកម្ម។</p>
+                                                    <div class="mt-auto d-flex gap-2">
+                                                        <button class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                                            data-bs-target="#eventModal4">មើលលម្អិត</button>
+                                                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-dark-blue">ចុះឈ្មោះ</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6" data-aos="fade-left">
+                        <h1 class="display-6 fw-bold pt-10">
+                            ព្រឹត្តិការណ៍ជិតមកដល់
+                        </h1>
+                        <p class="fs-5 clamp-4" style="text-align: justify;">
+                            តោះមកស្វែងយល់អំពីព្រឹត្តិការណ៍នានា ដែលកំពុងមកដល់នៅពេលឆាប់ៗនេះ។ អ្នកអាចចុះឈ្មោះ និងទទួលបានព័ត៌មានមើលលម្អិតពីកម្មវិធីសិក្សា និងសិក្ខាសាលា។
+                        </p>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#scholarshipModal" class="btn btn-gunmetal display-6 fw-medium">ចុះឈ្មោះឥឡូវនេះ</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script src="../js/script-folder.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ស្វែងរកអាហារូបករណ៍ក្រៅស្រុក</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+    
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+
+    .hero-image_out {
+        height: 700px;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        background-position: center;
+        animation: animate 30s linear infinite;
+    }
+    @keyframes animate {
+        0%{
+            background-image: url(../../image/schoolarshipimg/hero-out1.png);
+        }
+        25%{
+            background-image: url(../../image/schoolarshipimg/hero-out2.png);
+        }
+        50%{
+            background-image: url(../../image/schoolarshipimg/hero-out3.png);
+        }
+        70%{
+            background-image: url(../../image/schoolarshipimg/hero-out4.png);
+        }
+        100%{
+            background-image: url(../../image/schoolarshipimg/hero-out5.png);
+        }
+        
+    }
+    .step-number {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin: 0 auto 15px;
+    }
+
+
+
+
+
+
+
+    .hover_school {
+        transition: transform 0.3s, box-shadow 0.3s;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .hover_school:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+    .rupp {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .rupp img{
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .rupp:hover img {
+        transform: scale(1.1);
+    } 
+    .timeline-item {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+    .timeline {
+        position: relative;
+        padding-left: 30px;
+    }
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background-color: #ccc;
+    }
+    .timeline-dot {
+        position: absolute;
+        left: -35px;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #ccc;
+    }
+    
+</style>
+
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">
+                    <img id="logo" src="asset/image/project-logo/logo01.png" alt="Logo" style="width: 75px" />
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <a href="/asset/page/login/login.html" class="text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-dark-blue ">
+                                ចូលគណនី
+                            </button>
+                        </a>
+                        <a href="/asset/page/login/register.html"
+                            class="ps-2 text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-outline-dark-blue">
+                                បង្កើតគណនី
+                            </button>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="../../image/project-logo/logo01.png" id="logo2"
+                                    class="img-fluid" style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../../../index.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link active px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-card-theme">
+                                    <li>
+                                        <a class="dropdown-item" href="schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+    
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+                        <div
+                            class="d-flex justify-content-center pt-5 align-items-center d-flex d-lg-none bg-body-theme d-md-none ">
+                            <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                                <button class="btn btn-dark-blue">ចូលគណនី</button>
+                            </a>
+                            <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                                <button class="btn btn-outline-dark-blue">
+                                    បង្កើតគណនី
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                        <button class="btn btn-dark-blue">ចូលគណនី</button>
+                    </a>
+                    <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                        <button class="btn btn-outline-dark-blue">
+                            បង្កើតគណនី
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="hero-image_out text-white">
+            <div class="mx-auto text-center pb-4">
+                <h1>ស្វែងរកអាហារូបករណ៍ក្រៅស្រុក</h1>
+                <p>សិក្សានៅក្រៅប្រទេសសម្រាប់សិស្សានុសិស្សខ្មែរ</p>
+            </div>
+        </section>
+        <section>
+            <div class="container bg-card-theme py-4 position-absolute rounded-bottom-4 start-50 translate-middle" style="border-radius: 15px;">
+                <div class="row px-2">
+                    <div class="col-md-3 g-2">
+                        <select class="form-select bg-card-theme border-1">
+                            <option selected>ជ្រើសរើសវិស័យ</option>
+                            <option>វិទ្យាសាស្ត្រ</option>
+                            <option>បច្ចេកវិទ្យា</option>
+                            <option>សេដ្ឋកិច្ច</option>
+                            <option>សន្តិសុខសាយប័រ</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 g-2">
+                        <select class="form-select bg-card-theme border-1">
+                            <option selected class="border-0 shadow-none">ជ្រើសរើសប្រទេស</option>
+                            <option>ចក្រភពអង់គ្លេស</option>
+                            <option>សហរដ្ឋអាមេរិក</option>
+                            <option>អូស្ត្រាលី</option>
+                            <option>កាណាដា</option>
+                            <option>ចិន</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 g-2">
+                        <select class="form-select bg-card-theme border-1">
+                            <option selected>កម្រិតសិក្សា</option>
+                            <option>បរិញ្ញាបត្រ</option>
+                            <option>អនុបណ្ឌិត</option>
+                            <option>បណ្ឌិត</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3 g-2">
+                        <a  href="detail-out.html" class="btn btn-dark-blue text-wh w-100"><i class="bi bi-funnel"></i> តម្រង</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-6" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+            <div class="container mt-19 text-decoration-none">
+                <h1 class="text-center">អាហារូបករណ៍រដ្ឋាភិបាលនិងថ្នាក់ដឹក</h1>
+                <nav class="container mt-2">
+
+                    <ul class="nav nav-pills mb-4 d-flex justify-content-center" id="pills-tab" role="tablist">
+                        <li class="nav-item me-2" role="presentation">
+                            <button class="nav-link my-2 active" id="pills-web-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-web" type="button" role="tab"
+                                aria-controls="pills-web" aria-selected="true">ចក្រភពអង់គ្លេស</button>
+                        </li>
+                        <li class="nav-item me-2" role="presentation">
+                            <button class="nav-link my-2" id="pills-mobile-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-mobile" type="button" role="tab"
+                                aria-controls="pills-Mobile" aria-selected="false">សហរដ្ឋអាមេរិក</button>
+                        </li>
+                        <li class="nav-item me-2" role="presentation">
+                            <button class="nav-link my-2" id="pills-programming-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-programming" type="button" role="tab"
+                                aria-controls="pills-programming" aria-selected="false">កាណាដា</button>
+                        </li>
+                        <li class="nav-item me-2" role="presentation">
+                            <button class="nav-link my-2" id="pills-cyber-tab"
+                                data-bs-toggle="pill" data-bs-target="#pills-cyber" type="button" role="tab"
+                                aria-controls="pills-cyber" aria-selected="false">ប្រទេសចិន</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-web" role="tabpanel" aria-labelledby="pills-web-tab" tabindex="0">
+                            <div class="row g-4 g-4 g-md-3">
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school" data-aos="fade-up-right">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out1.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">មហាវិទ្យាល័យអន្តរជាតិ Dundee</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school" data-aos="fade-up">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out2.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Kent International College</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xl-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school" data-aos="fade-up-left">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out3.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ De Montfort</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-mobile" role="tabpanel" aria-labelledby="pills-mobile-tab" tabindex="0">
+                            <div class="row g-4 g-4 g-md-3">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out4.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Massachusetts Institute of Technology</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out5.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Harvard University</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out6.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Stanford University</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-programming" role="tabpanel" aria-labelledby="pills-programming-tab" tabindex="0">
+                            <div class="row g-4 g-4 g-md-3">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out7.png" class="object-fit-cover card-img" style="width: 100%;" alt=""></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Toronto</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out8.png" alt="" class="object-fit-cover card-img" style="width: 100%;"></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ McGill University</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out9.png" alt="" class="object-fit-cover card-img" style="width: 100%;"></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ  British Columbia</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="pills-cyber" role="tabpanel" aria-labelledby="pills-cyber-tab" tabindex="0">
+                            <div class="row g-4 g-md-3">
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out10.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យ Tsinghua (Tsinghua University)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out11.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យប៉េកាំង (Peking University)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out12.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យហ្វូតាន់ (Fudan University)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out13.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យជឺជាំង (Zhejiang University)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out14.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យសៀងហៃជាវថុង (Shanghai Jiao Tong University)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-4">
+                                    <div class="card shadow-sm bg-card-theme border-0 hover_school">
+                                        <div class="rupp"><img src="../../image/schoolarshipimg/school_out15.png" class="object-fit-cover card-img" style="width: 100%;" alt="" ></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យវិទ្យាសាស្រ្តនិងបច្ចេកវិទ្យាចិន (USTC)</h5>
+                                            <p class="card-text clamp-3">អាហារូបករណ៍នេះមានគោលបំណងជួយសិស្សានុសិស្សដែលមានស្ថានភាពពិបាកក្នុងការសិក្សា។ អាហារូបករណ៍នេះអាចគ្របដណ្តប់លើថ្លៃសិក្សា, សៀវភៅ, និងសម្ភារៈសិក្សាផ្សេងៗ។</p>
+                                        </div>
+                                        <div class="card-footer justify-content-between d-flex align-items-center">
+                                            <div>
+                                                <i class="bi bi-calendar"><small class="text-body-secondary"> ថ្ងៃផុតកំណត់៖​ ថ្ងៃទី១២ ខែធ្នូ ឆ្នាំ២០២៥</small></i>
+                                            </div>
+                                            <div>
+                                                <a href="detail-out.html" class="btn bg-footer end-0 text-white">ព័ត៌មានលម្អិត</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section class=" mt-15">
+
+        <!-- Application Steps -->
+        <section class="py-5" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+            <div class="container">
+                <h2 class="text-center section-title mb-5">ជំហាននៃការស្នើសុំអាហារូបករណ៍</h2>
+                
+                <div class="row g-4 g-md-3">
+                    <!-- Step 1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm bg-card-theme border-0 hover_school py-4">
+                            <div class="step-number text-white bg-footer">១</div>
+                            <h5 class="card-title text-center clamp-1">ការស្រាវជ្រាវ</h5>
+                            <p class="text-center clamp-2">ស្វែងរកអាហារូបករណ៍ដែលត្រូវនឹងលក្ខខណ្ឌរបស់អ្នក និងការសិក្សាដែលអ្នកចង់បន្ត</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm bg-card-theme border-0 hover_school py-4">
+                            <div class="step-number text-white bg-footer">២</div>
+                            <h5 class="card-title text-center clamp-1">ការរៀបចំឯកសារ</h5>
+                            <p class="text-center clamp-2">រៀបចំឯកសារចាំបាច់គ្រប់ប្រភេទ រួមទាំងលិខិតឆ្លងដែន សំបុត្របញ្ជាក់ការសិក្សា និងលិខិតឆ្លងដែន</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm bg-card-theme border-0 hover py-4">
+                            <div class="step-number text-white bg-footer">៣</div>
+                            <h5 class="card-title text-center">ការសរសេរសំបុត្រ</h5>
+                            <p class="text-center clamp-2">សរសេរសំបុត្រស្នើសុំអាហារូបករណ៍ដ៏កម្រ ដោយបង្ហាញពីសក្តានុពល និងគោលដៅរបស់អ្នក</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="card shadow-sm bg-card-theme border-0 hover_school py-4">
+                            <div class="step-number text-white bg-footer">៤</div>
+                            <h5 class="card-title text-center clamp-1">ការដាក់ពាក្យ</h5>
+                            <p class="text-center clamp-2">ដាក់ពាក្យអាហារូបករណ៍តាមអ៊ីនធឺណេត ឬតាមប្រព័ន្ធដែលគេចាត់ចែង ព្រមទាំងតាមដានស្ថានភាព</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Documents -->
+        <section class="py-5 bg-card-theme border-0 rounded-0">
+            <div class="container" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                <h2 class="text-center mb-5">ឯកសារចាំបាច់</h2>
+                
+                <div class="required-docs">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> ពាក្យស្នើសុំអាហារូបករណ៍</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> សំបុត្រឆ្លងដែន</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> សៀវភៅកំណត់ត្រាការសិក្សា</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> សញ្ញាបត្រការសិក្សា</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> លិខិតបញ្ជាក់ពីគ្រូ</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> សំបុត្របញ្ជាក់ប្រជាជន</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> រូបថត</li>
+                                <li class="list-group-item bg-transparent"><i class="bi bi-check-circle-fill text-success me-2"></i> លិខិតបញ្ជាក់ជំនាញភាសា</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Timeline -->
+        <section class="py-5">
+            <div class="container" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+                <h2 class="text-center section-title mb-5">ពេលវេលាស្នើសុំអាហារូបករណ៍</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="fw-bold fs-5 mb-2">ខែមករា - មេសា</h4>
+                            <p class="mb-0 clamp-2">ស្រាវជ្រាវអាហារូបករណ៍ និងរៀបចំឯកសារចាំបាច់</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="fw-bold fs-5 mb-2">ខែឧសភា - កក្កដា</h4>
+                            <p class="mb-0 clamp-2">ដាក់ពាក្យអាហារូបករណ៍ និងធ្វើតេស្តភាសា (បើត្រូវការ)</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="fw-bold fs-5 mb-2">ខែសីហា - តុលា</h4>
+                            <p class="mb-0 clamp-2">ទទួលលទ្ធផល និងរៀបចំឯកសារសម្រាប់ទៅសិក្សា</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4 class="fw-bold fs-5 mb-2">ខែវិច្ឆិកា - ធ្នូ</h4>
+                            <p class="mb-0 clamp-2">ចាប់ផ្តើមការសិក្សានៅបរទេស</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section -->
+        <section class="py-5 bg-card-theme border-0 shadow-sm rounded-0" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+            <div class="container">
+                <div class="contact-box">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3>ត្រូវការជំនួយបន្ថែម?</h3>
+                            <p>ទាក់ទងមកយើងខ្ញុំជាមួយនឹងអ្នកជំនាញរបស់យើងសម្រាប់ការប្រឹក្សាយោបល់</p>
+                        </div>
+                        <div class="col-md-4 text-md-end">
+                            <a href="../us/contact.html" class="btn btn-outline-dark-blue text-light">ទាក់ទងយើងខ្ញុំ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+
+</html>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ប្រវតិ្តរូប</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+     <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+    <header class="sticky-top z-3">
+      <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+        <div class="container">
+          <a class="navbar-brand" href="../us/home.html">
+            <img id="logo" src="../../image/project-logo/logo01.png" alt="Logo"
+              style="width: 75px;">
+          </a>
+          <div class="d-flex">
+            <!-- profile lg-none  -->
+            <div
+              class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+              <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+              </button>
+              <!-- notification  -->
+              <div class="dropdown">
+                <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="bi bi-bell px-2 position-relative fs-5">
+                    <span
+                      class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                      style="left: 21px; padding: 3px; top: 1px;">
+                      <span class="visually-hidden">New
+                        alerts</span>
+                    </span>
+                  </i>
+                </a>
+
+                <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                  <li>
+                    <div
+                      class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                      style="width: 320px;">
+                      <div class="p-2">
+                        <h5>សារជូនដំណឹង</h5>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- list notification  -->
+                  <li>
+                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                      <img src="../../image/project-logo/pf-2.svg"
+                        class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                        alt>
+                      <div class="notification">
+                        <p class="text clamp-2">
+                          ជំរាបសួរ! ខ្ញុំចង់សួរអំពីការចុះឈ្មោះសម្រាប់វគ្គសិក្សាថ្មី។
+                        </p>
+                      </div>
+                      <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                      <img src="../../image/project-logo/pf-3.jpg"
+                        class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                        alt>
+                      <div class="notification">
+                        <p class="text clamp-2">
+                          អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                        </p>
+                      </div>
+                      <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                      <img src="../../image/project-logo/pf-1.png"
+                        class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                        alt>
+                      <div class="notification">
+                        <p class="text clamp-2">
+                          អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                        </p>
+                      </div>
+                      <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                    </a>
+                  </li>
+                  <div>
+                    <a href="../profile/notification.html"
+                      class="nav-link text-end text-primary p-2 pe-4">មើល
+                      បន្ថែម</a>
+                  </div>
+                </ul>
+              </div>
+              <!-- profile  -->
+              <div class="profile">
+                <a href="../profile/proflie.html">
+                  <img src="../../image/project-logo/profile-img.jpg"
+                    class="img-fluid rounded-circle object-fit-cover"
+                    style="width: 40px; height: 40px;"
+                    alt />
+                </a>
+              </div>
+            </div>
+            <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+              aria-label="Toggle navigation">
+
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+          <!-- silde bar  -->
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <div class="d-flex justify-content-end align-items-center d-flex d-lg-none"
+                role="search">
+                <!-- profile  -->
+                <div class="profile">
+                  <a href="../profile/proflie.html">
+                    <img src="../../image/project-logo/profile-img.jpg"
+                      class="img-fluid rounded-circle object-fit-cover"
+                      style="width: 40px; height: 40px;" alt />
+                  </a>
+                </div>
+                <h5 class="pt-3 ps-2">សួស្តី!​​ តុលា</h5>
+              </div>
+
+              <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                <a class="navbar-brand" href="#"><img src="assets/image/logo.png" class="img-fluid"
+                    style="width: 60px" alt /></a>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body bg-body-theme align-items-center">
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link px-3" aria-current="page" href="../us/home.html"><i
+                      class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                </li>
+                <div class="dropdown">
+                  <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                  </a>
+
+                  <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                    <li><a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                    </li>
+                    <li><a class="dropdown-item"
+                        href="../direction/uni-show.html">សកលវិទ្យាល័យ</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                  </a>
+
+                  <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                    <li><a class="dropdown-item"
+                        href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a></li>
+                    <li><a class="dropdown-item"
+                        href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown">
+                  <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                  </a>
+
+                  <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a></li>
+                    <li><a class="dropdown-item"
+                        href="../work/private-work.html">ការងារឯកជន</a></li>
+                    <li><a class="dropdown-item"
+                        href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                    </li>
+                  </ul>
+                </div>
+                <li class="nav-item">
+                  <a href="../us/event.html" class="nav-link px-3 ">
+                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- profile lg-flex  -->
+          <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+            <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+              <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+            </button>
+            <!-- notification  -->
+            <div class="dropdown">
+              <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="bi bi-bell position-relative fs-5">
+                  <span
+                    class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                    style="left: 21px; padding: 4px; top: 1px;">
+                    <span class="visually-hidden">New
+                      alerts</span>
+                  </span>
+                </i>
+              </a>
+
+              <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                <li>
+                  <div
+                    class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                    style="width: 320px;">
+                    <div class="p-2">
+                      <h5>សារជូនដំណឹង</h5>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- list notification  -->
+                <li>
+                  <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                    <img src="../../image/project-logo/pf-2.svg"
+                      class="img-fluid rounded-circle me-3"
+                      style="width: 50px; height: 50px;" alt>
+                    <div class="notification">
+                      <p class="text clamp-2">
+                        ជំរាបសួរ! ខ្ញុំចង់សួរអំពីការចុះឈ្មោះសម្រាប់វគ្គសិក្សាថ្មី។
+                      </p>
+                    </div>
+                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                    <img src="../../image/project-logo/pf-3.jpg"
+                      class="img-fluid rounded-circle me-3"
+                      style="width: 50px; height: 50px;" alt>
+                    <div class="notification">
+                      <p class="text clamp-2">
+                        អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                      </p>
+                    </div>
+                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                    <img src="../../image/project-logo/pf-1.png"
+                      class="img-fluid rounded-circle me-3"
+                      style="width: 50px; height: 50px;" alt>
+                    <div class="notification">
+                      <p class="text clamp-2">
+                        អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                      </p>
+                    </div>
+                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                  </a>
+                </li>
+                <div>
+                  <a href="../profile/notification.html"
+                    class="nav-link text-end text-primary p-2 pe-4">មើល
+                    បន្ថែម</a>
+                </div>
+              </ul>
+            </div>
+            <!-- profile  -->
+            <div class="profile">
+              <a href="../profile/proflie.html">
+                <img src="../../image/project-logo/profile-img.jpg"
+                  class="img-fluid rounded-circle object-fit-cover"
+                  style="width: 40px; height: 40px;"
+                  alt />
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <main>
+      <!-- modal -->
+      <section>
+        <!-- change pfp -->
+        <div class="modal fade" id="change-pfp" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-card-theme">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  ផ្លាស់ប្ដូររូបភាព</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="col-12">
+                  <h6 class="mb-3">ជ្រើសរើសរូបភាពដើម្បីផ្លាស់ប្ដូរ</h6>
+                  <div class="custom-file-wrapper small-file">
+                    <input type="file" class="custom-file-input" id="smallFile">
+                    <label for="smallFile" class="custom-file-label">
+                      <div class="file-icon">
+                        <i class="fa fa-plus"></i>
+                      </div>
+                      <div class="file-text">
+                        <h5>Add File</h5>
+                        <p>Compact version</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark-blue"
+                  data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-dark-blue">Save
+                  changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- information -->
+        <div class="modal fade" id="information" data-bs-backdrop="static" data-bs-keyboard="false"
+          tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-card-theme">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">ពត៌មានផ្ទាល់ខ្លួន</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+                <ul class="list-unstyled">
+                  <li class="pfp-info">
+                    <span>ឈ្មោះខ្មែរ</span>
+                    :
+                    <span>តុលា</span>
+                  </li>
+                  <li class="pfp-info">
+                    <span>ឈ្មោះអង់គ្លេស</span>
+                    :
+                    <span>Tola</span>
+                  </li>
+                  <li class="pfp-info">
+                    <span>Email</span>
+                    :
+                    <span>tola@gmail.com</span>
+                  </li>
+                  <li class="pfp-info">
+                    <span>ភេទ</span>
+                    :
+                    <span>ប្រុស</span>
+                  </li>
+                  <li class="pfp-info">
+                    <span>ថ្ងៃខែឆ្នាំកំណើត</span>
+                    :
+                    <span>16 / 08 / 2002</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark-blue"
+                  data-bs-dismiss="modal">Close</button>
+                <a href="edit_profile.html" class="btn btn-dark-blue"><i
+                    class="bi bi-pencil-fill"></i>&nbsp;
+                  កែប្រែព័ត៌មានផ្ទាល់ខ្លួន</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- toast -->
+        <div class="toast-container position-fixed top-0 end-0 start-0 m-auto p-3">
+          <div id="liveToast"
+            class="toast bg-success-subtle text-success rounded-3 border border-success"
+            role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-body">
+              <i class="bi bi-check"></i>
+              <span>ចម្លងតំណភ្ជាប់ជោគជ័យ</span>
+            </div>
+          </div>
+        </div>
+        <!-- edit bio -->
+        <div class="modal fade" id="edit-bio" tabindex="-1" aria-labelledby="edit-bio"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="editBio">កែប្រែអំពីខ្ញុំ</h1>
+                <button type="button" class="btn-close shadow-none border-0" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">100 អក្សរ</label>
+                    <textarea class="form-control shadow-none border border-black"
+                      placeholder="កែប្រែអំពីខ្ញុំ"
+                      id="floatingTextarea2" rows="4" maxlength="100"
+                      style="resize: none;"></textarea>
+                  </div>
+                </form>
+                <button type="submit" class="btn btn-dark-blue d-block ms-auto"
+                  data-bs-dismiss="modal">ផ្លាស់ប្ដូរអំពីខ្ញុំ</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2 class="title my-5 fw-semibold">ប្រវតិ្តរូប</h2>
+          <div class="row align-items-start">
+            <div class="col-lg-6">
+              <div class="bg-card-theme shadow p-3 animate__animated animate__fadeInUp"
+                data-aos="fade-up">
+                <div class="card border-0 text-center text-lg-start bg-transparent">
+                  <div class="card-header bg-transparent border-0">
+                    <div class="d-flex justify-content-between">
+                      <div class="card-img pfp m-auto m-lg-0">
+                        <img
+                          src="../../image/project-logo/profile-img.jpg"
+                          alt>
+                        <button type="button" class="btn shadow-none border-0 change-pfp p-0 fs-4"
+                          data-bs-toggle="modal"
+                          data-bs-target="#change-pfp" title="change profile">
+                          <i class="bi bi-camera-fill"></i>
+                        </button>
+                      </div>
+                      <a href="edit_profile.html"
+                        class="text-decoration-none nav-link fs-3 setting">
+                        <i class="bi bi-gear"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="card-body pfp-name">
+                    <h4 class="card-title fw-semibold mb-0">តុលា</h4>
+                    <h6 class="card-title text-secondary"><span>@</span>tola1122</h6>
+                    <div class="d-flex align-items-center gap-2">
+                      <p class="card-text my-3">និស្សិតឆ្នាំទី 2 - Information Technology
+                        Engineering</p>
+                      <button type="button" class="btn" data-bs-toggle="modal"
+                        data-bs-target="#edit-bio"><i class="bi bi-pencil-fill"></i></button>
+                    </div>
+                    <button class="btn btn-outline-dark-blue border-0" data-bs-toggle="modal"
+                      data-bs-target="#information">ព័ត៌មានផ្ទាល់ខ្លួន</button>
+                    <div class="col-12">
+                      <div
+                        class="d-flex align-items-center justify-content-center justify-content-lg-between border rounded-3 mt-4 p-2">
+                        <input type="text" class="form-control border-0 bg-transparent"
+                          placeholder="https://www.for-youth-cambodial.com">
+                        <button type="button"
+                          class="btn d-block shadow-none border-0 text-nowrap btn-dark-blue"
+                          id="liveToastBtn">
+                          <i class="bi bi-link-45deg"></i>
+                          ចម្លងតំណភ្ជាប់
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-card-theme shadow p-3 my-4 animate__animated animate__fadeInUp"
+                data-aos="fade-up">
+                <div class="card border-0 bg-transparent">
+                  <div class="card-header border-0 bg-transparent">
+                    <h5 class="card-title fw-semibold m-0">ព័ត៌មានបន្ថែម</h5>
+                  </div>
+                  <div class="card-body">
+                    <p class="card-text">
+                      ជានិស្សិតឆ្នាំទី 3 នៃសកលវិទ្យាល័យភូមិន្ទភ្នំពេញ និងធ្លាប់ជាយុវជនស្ម័គ្រចិត្ត
+                      ផ្នែក IT Support នៅក្នុងព្រឺត្តិការណ៍ សុីហ្គេម រយៈពេល 2 ខែ។
+                      បច្ចុប្បន្នបានបញ្ចប់ការសិក្សាថ្នាក់ Web Frontend និង​ Nodejs ។
+                    </p>
+                  </div>
+                  <div class="card-footer bg-transparent border-0">
+                    <h5 class="card-title fw-semibold m-0">
+                      ជំនាញ និងមុខវិជ្ជាសិក្សា
+                    </h5>
+                    <div class="mt-4 d-flex flex-wrap gap-2">
+                      <span class="badge bg-danger fw-medium" style="font-size: 14px;">Computer Science</span>
+                      <span class="badge bg-danger fw-medium" style="font-size: 14px;">Web
+                        Development</span>
+                      <span class="badge bg-danger fw-medium" style="font-size: 14px;">Mobile
+                        Development</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-card-theme shadow p-3 my-4 animate__animated animate__fadeInUp"
+                data-aos="fade-up">
+                <ul
+                  class="nav nav-pills mb-3 gap-3 flex-nowrap overflow-y-hidden overflow-x-scroll skill article pb-3"
+                  id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link text-nowrap border px-4 py-1 active" id="pills-home-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-home" type="button" role="tab"
+                      aria-controls="pills-home" aria-selected="true">ស្នាដៃ</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link text-nowrap border px-4 py-1 " id="pills-profile-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-profile" type="button" role="tab"
+                      aria-controls="pills-profile" aria-selected="false">ជំនាញដែលធ្លាប់សិក្សា</button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link text-nowrap border px-4 py-1 " id="pills-contact-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-contact" type="button" role="tab"
+                      aria-controls="pills-contact" aria-selected="false">វគ្គសិក្សារផ្ទាល់</button>
+                  </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                  <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                    aria-labelledby="pills-home-tab" tabindex="0">
+                    <div class="row g-3">
+                      <div class="col-6">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2"><img
+                              src="https://i.pinimg.com/1200x/5f/26/81/5f26813372e8df83a35831389b757450.jpg"
+                              alt class="card-img border object-fit-cover" style="height: 200px;"></div>
+                        </div>
+                      </div>
+                      <div class="col-6">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2"><img
+                              src="https://i.pinimg.com/736x/f3/84/2e/f3842ec7d0c5545aa03b531e9e3df9b4.jpg"
+                              alt class="card-img border object-fit-cover" style="height: 200px;"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                    aria-labelledby="pills-profile-tab" tabindex="0">
+                    <div class="row g-3">
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-html.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">HTML</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-css.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">CSS</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-javascript.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">Javascript</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab" tabindex="0">
+                    <div class="row g-3">
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-react.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">React JS</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-node.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">Node.js</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-python.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">Python</h6>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card bg-card-theme border-0 rounded-3 nav-tab-shadow">
+                          <div class="card-body p-2">
+                            <img
+                              src="../../image/profile/course-laravel.jpg"
+                              alt class="card-img border">
+                          </div>
+                          <div class="card-footer border-0 bg-transparent py-0">
+                            <h6 class="card-title">Laravel</h6>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 position-sticky" style="top: 120px" data-aos="fade-up">
+              <div class="shadow p-3 bg-card-theme animate__animated animate__fadeInUp"
+                data-aos="fade-up">
+                <div class="card border-0 text-start bg-transparent">
+                  <div class="card-header border-0 bg-transparent">
+                    <h5 class="card-title fw-semibold m-0">ប្រវតិ្តនៃការអប់រំ</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="timeline">
+                      <li>
+                        <h5>បញ្ចប់ការប្រឡងឌីប្លូម</h5>
+                        <h6 class="float-right">28 August, 2019</h6>
+                        <p></p>
+                      </li>
+                      <li>
+                        <h5>បញ្ចប់ការប្រឡងបាក់ឌុប</h5>
+                        <h6 class="float-right">4 November, 2022</h6>
+                        <p></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer border-0 bg-transparent">
+                </div>
+              </div>
+              <div class="shadow p-3 bg-card-theme my-4 animate__animated animate__fadeInUp"
+                data-aos="fade-up">
+                <div class="card border-0 text-start bg-transparent">
+                  <div class="card-header border-0 bg-transparent">
+                    <h5 class="card-title fw-semibold m-0">ការអប់រំបច្ចុប្បន្ន</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="timeline">
+                      <li>
+                        <h5>ANT Technology Training Center</h5>
+                        <h6 class="float-right">16 June, 2025</h6>
+                        <p></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card-footer border-0 bg-transparent">
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-footer" data-aos="fade-up">
+      <div class="container py-5">
+        <div class="row text-white">
+          <div class="col-11 col-lg-5 col-xl-4">
+            <a class="navbar-brand" href="#">
+              <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+            </a>
+            <p class="footer-text clamp-3">
+              ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+              ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+              ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+              គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+              គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+              អាហារូបករណ៍ និងឱកាសការងារ
+              ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+              និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+            </p>
+            <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+            <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+            <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+            <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+          </div>
+
+          <div class="col-6 col-lg-3 col-xl-2 py-4">
+            <ul class="navbar-nav">
+              <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+              <li class="nav-item">
+                <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+              </li>
+              <li class="nav-item">
+                <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+              </li>
+              <li class="nav-item">
+                <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+              </li>
+              <li class="nav-item">
+                <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-3 col-xl-2 py-4">
+            <ul class="navbar-nav">
+              <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+              <li class="nav-item">
+                <a href="../schoolarship/schoolarship-in.html"
+                  class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+              </li>
+              <li class="nav-item">
+                <a href="../schoolarship/schoolarship-out.html"
+                  class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+              </li>
+              <li class="nav-item">
+                <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+            <ul class="navbar-nav">
+              <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+              <li class="nav-item">
+                <a
+                  href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                  class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                  ទួលគោក, ភ្នំពេញ</a>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link text-white">
+                  Email:
+                  <a href="mailto:foryouthcambodia@gmail.com"
+                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                </p>
+              </li>
+              <li class="nav-item">
+                <p class="nav-link text-white">
+                  លេខទូរស័ព្ទ:
+                  <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885)
+                    456
+                    7890</a>
+                </p>
+              </li>
+              <li class="nav-link">
+                <a href="#" class="nav-item"><img src="assets/image/app1 (1).png"
+                    class="img-fluid img-app"
+                    alt /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="text-white py-1" />
+        <div class="row">
+          <div class="col-12 footer-copyright d-flex justify-content-between">
+            <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <!-- aos link -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../../js/script-folder.js"></script>
+
+  <!-- Toast -->
+  <script>
+  const toastTrigger = document.getElementById('liveToastBtn')
+  const toastLiveExample = document.getElementById('liveToast')
+
+  if (toastTrigger) {
+    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    toastTrigger.addEventListener('click', () => {
+      toastBootstrap.show()
+    })
+  }
+</script>
+
+</html>

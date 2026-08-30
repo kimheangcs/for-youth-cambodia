@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>មុខជំនាញ</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    .clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        /* Number of lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .clamp-7 {
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        /* Number of lines */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .uni-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .rating {
+        height: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .rating-bar {
+        height: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #979090;
+    }
+
+    .profile-img {
+        width: 53px;
+        height: 50px;
+        object-fit: cover !important;
+    }
+
+    .form-control {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        resize: vertical;
+        font-size: 14px;
+        min-height: 100px !important;
+    }
+
+    .form-control:focus {
+        outline: none;
+        /* removes default outline */
+        border-color: #ffffff;
+        /* optional: add custom border color */
+        box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+        /* optional glow */
+    }
+</style>
+
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">
+                    <img id="logo" src="asset/image/project-logo/logo01.png" alt="Logo" style="width: 75px" />
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <a href="/asset/page/login/login.html" class="text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-dark-blue ">
+                                ចូលគណនី
+                            </button>
+                        </a>
+                        <a href="/asset/page/login/register.html"
+                            class="ps-2 text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-outline-dark-blue">
+                                បង្កើតគណនី
+                            </button>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="../../image/project-logo/logo01.png" id="logo2"
+                                    class="img-fluid" style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../../../index.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link active px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item" href="major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="university.html">សកលវិទ្យាល័យ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+    
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+                        <div
+                            class="d-flex justify-content-center pt-5 align-items-center d-flex d-lg-none bg-body-theme d-md-none ">
+                            <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                                <button class="btn btn-dark-blue">ចូលគណនី</button>
+                            </a>
+                            <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                                <button class="btn btn-outline-dark-blue">
+                                    បង្កើតគណនី
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                        <button class="btn btn-dark-blue">ចូលគណនី</button>
+                    </a>
+                    <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                        <button class="btn btn-outline-dark-blue">
+                            បង្កើតគណនី
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <!-- Top Small Modal -->
+            <div class="modal fade" id="topModal" tabindex="-1" aria-labelledby="topModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <h5 class="modal-title" id="topModalLabel">ជោគជ័យ</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            សកម្មភាពរបស់អ្នកបានជោគជ័យ!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row py-10 g-5">
+                    <div class="col-lg-4">
+                        <div class="row g-3">
+                            <div class="col-12" data-aos="fade-down">
+                                <div class="card border-0 shadow-sm">
+                                    <img src="../../image/major/computer.webp" class="card-img" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6" data-aos="fade-right">
+                                <div class="card border-0 shadow-sm">
+                                    <img src="../../image/major/cyber.jpg" class="card-img obe" alt="">
+                                </div>
+                            </div>
+                            <div class="col-6" data-aos="fade-up">
+                                <div class="card border-0 shadow-sm">
+                                    <img src="../../image/major/network.jpg" class="card-img" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 ps-5" data-aos="fade-left">
+                        <div class="card border-0 shadow-sm bg-card-theme p-5">
+                            <h1 class="card-title">វិទ្យាសាស្ត្រកុំព្យូទ័រ</h1>
+                            <p class="card-text clamp-3">វិទ្យាសាស្ត្រកុំព្យូទ័រ គឺជាមុខជំនាញដែលសិក្សាអំពីទ្រឹស្តី
+                                និងការអនុវត្តន៍ក្នុងការបង្កើត ប្រើប្រាស់ និងគ្រប់គ្រងប្រព័ន្ធកុំព្យូទ័រ។</p>
+                            <div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-muted"></i>
+                                <span>4.0/5.0</span>
+                            </div>
+                            <div class="card border-0 shadow-sm bg-warning bg-opacity-25 border border-start border-4 border-warning p-3 my-5">
+                                <p class="card-text">កម្រិត Junior (ថ្មីចូលការងារ)៖ ប្រហែល $500 – $900 / ខែ</p>
+                                <p class="card-text">កម្រិត Middle (មានបទពិសោធន៍)៖ ប្រហែល $900 – $1,500 / ខែ</p>
+                                <p class="card-text">កម្រិត Senior (មានបទពិសោធន៍ខ្ពស់)៖ ប្រហែល $1,500 – $2,500 / ខែ</p>
+                            </div>
+                            <div class="d-flex justify-content-end">
+                                <button type="button" class="btn-outline-dark-blue px-2" data-bs-toggle="modal" data-bs-target="#topModal"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</button>
+                                <a href="moredetial.html"><button
+                                        class="btn btn-dark-blue ms-3 p-2">មើលបន្ថែម</button></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8" data-aos="fade-up">
+                        <div class="card border-0 shadow-sm bg-card-theme p-5 mb-5">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    មុខវិជ្ជាសិក្សាសំខាន់ៗ
+                                </h4>
+                                <p class="card-text clamp-7">
+                                    វិទ្យាសាស្ត្រកុំព្យូទ័រ (Computer Science)
+                                    គឺជាវិស័យសិក្សាដ៏សំខាន់មួយនៅក្នុងបច្ចេកវិទ្យាឌីជីថល
+                                    ដែលផ្តោតលើការសិក្សាអំពីទ្រឹស្តី ការរចនា ការអភិវឌ្ឍន៍
+                                    និងការប្រើប្រាស់ប្រព័ន្ធកុំព្យូទ័រ និងកម្មវិធី។
+                                    វារួមមានការរៀនភាសាកម្មវិធីផ្សេងៗ ដូចជា Python, Java, C++ និង JavaScript
+                                    ក៏ដូចជាការសិក្សាអំពី
+                                    Database, Algorithms, Artificial Intelligence, Cybersecurity និងការអភិវឌ្ឍន៍កម្មវិធី
+                                    Web និង Mobile។
+                                    អ្នកដែលសិក្សាវិស័យនេះនឹងទទួលបានជំនាញក្នុងការសរសេរកូដ ការដោះស្រាយបញ្ហា ការគ្រប់គ្រង
+                                    Project និងការធ្វើការជាក្រុម។
+                                    ក្រោយពេលបញ្ចប់ការសិក្សា អ្នកអាចក្លាយជាអ្នកអភិវឌ្ឍន៍កម្មវិធី
+                                    អ្នកគ្រប់គ្រងប្រព័ន្ធទិន្នន័យ អ្នកជំនាញសន្តិសុខសាយបឺរ
+                                    ឬវិស្វករបញ្ញាសិប្បនិម្មិត។ វិស័យនេះមានតម្រូវការខ្ពស់នៅកម្ពុជាដូចគ្នា
+                                    ហើយផ្តល់ឱកាសឲ្យអ្នកទទួលបានប្រាក់ខែប្រកួតប្រជែង
+                                    ចាប់ពីប្រហែល $500 សម្រាប់កម្រិតចូលការងារ ដល់ជាង $3,000 សម្រាប់កម្រិតជាន់ខ្ពស់។
+                                </p>
+                                <h4 class="mt-5">ហេតុអ្វីត្រូវរៀន Computer Science?</h4>
+                                <ul>
+                                    <li>វាជាវិស័យ មានតម្រូវការខ្ពស់ ទាំងនៅកម្ពុជា និងអន្តរជាតិ</li>
+                                    <li>មានឱកាសធ្វើការជាមួយក្រុមហ៊ុនបច្ចេកវិទ្យាអន្តរជាតិ</li>
+                                    <li>អាចបង្កើត Startup ផ្ទាល់ខ្លួន (App, Website, Platform)</li>
+                                    <li>ជួយអភិវឌ្ឍសង្គមក្នុងដំណើរការបច្ចេកវិទ្យាឌីជីថល</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-aos="fade-up">
+                        <div class="card p-5 border-0 bg-card-theme shadow-sm mb-5">
+                            <div class="card-body">
+                                <h5 class="card-title mb-4 clamp-1">ការណែនាំសកលវិទ្យាល័យអំពីយើង</h5>
+                                <a href="../../page/direction/uni-show.html" class="text-decoration-none">
+                                    <img src="../../image/university/rupp_logo.png" class="img-fluid uni-logo" alt="">
+                                </a>
+                                <a href="../../page/direction/uni-show.html" class="text-decoration-none">
+                                    <img src="../../image/university/norton-u.png" class="img-fluid uni-logo" alt="">
+                                </a>
+                                <a href="../../page/direction/uni-show.html" class="text-decoration-none">
+                                    <img src="../../image/university/num.png" class="img-fluid uni-logo"
+                                        style="width: 55px; height: 55px;" alt="">
+                                </a>
+
+                                <h5 class="card-title pb-3 pt-5 clamp-3">
+                                    តើអ្នកចង់ផ្ដល់អត្ថប្រយោជន៍បន្ថែមមែនទេដើម្បីជួយក្នុងជម្រើសរបស់អ្នក?</h5>
+                                <ul>
+                                    <h6>ខ្ញុំអាចផ្ដល់ព័ត៌មានបន្ថែមអំពី៖</h6>
+                                    <li><a href="university.html"
+                                            class="text-decoration-none bg-card-theme">ការសិក្សានៅសាកលវិទ្យាល័យ</a></li>
+                                    <li><a href="../schoolarship/schoolarship-in.html"
+                                            class="text-decoration-none bg-card-theme">អាហារូបករណ៍ និងវគ្គសិក្សា</a>
+                                    </li>
+                                    <li><a href="../work/public-work.html"
+                                            class="text-decoration-none bg-card-theme">ឱកាសការងារ និងអាជីព</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-right">
+                        <h3 class="card-title pb-3">ការវាយតម្លៃ</h3>
+                        <div class="card bg-card-theme border-0 shadow-sm">
+                            <div class="card-body text-center py-5">
+                                <h1 class="card-title">4.0</h1>
+                                <p class="card-text">ការវាយតម្លៃសរុប 56 នាក់</p>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-muted"></i>
+                            </div>
+                        </div>
+
+                        <!-- rating bar  -->
+                        <div class="card-footer py-3">
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="rating my-2">
+                                        <div class="rating-bar" style="width: 80%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <span>80%</span>
+                                </div>
+
+                                <div class="col-9">
+                                    <div class="rating my-2">
+                                        <div class="rating-bar" style="width: 70%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <span>70%</span>
+                                </div>
+
+                                <div class="col-9">
+                                    <div class="rating my-2">
+                                        <div class="rating-bar" style="width: 65%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <span>65%</span>
+                                </div>
+
+                                <div class="col-9">
+                                    <div class="rating my-2">
+                                        <div class="rating-bar" style="width: 45%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <span>45%</span>
+                                </div>
+
+                                <div class="col-9">
+                                    <div class="rating my-2">
+                                        <div class="rating-bar" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <span>30%</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-8 ps-10">
+                        <h4 data-aos="fade-left">ការផ្តល់មតិ</h4>
+                        <div class="row">
+                            <div class="col-12" data-aos="fade-left">
+                                <div class="w-100 bg-white mt-5" style="height: 2px;"></div>
+                                <div class="card d-flex py-3 flex-row border-0">
+                                    <div class="profile">
+                                        <img src="../../image/project-logo/profile-img.jpg"
+                                            class="img-fluid rounded-circle profile-img" alt="">
+                                    </div>
+                                    <div class="profile-info ps-3 w-100">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <h5>តុលា</h5>
+                                            <div class="rate-profile">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-muted"></i>
+                                            </div>
+                                        </div>
+                                        <p class="fs-7">មិថុនា ១១, ២០២៥, ម៉ោង ១០:០០​ ព្រឹក</p>
+                                        <p>អរគុណច្រើនសម្រាប់ការចែករំលែកព័ត៌មាននេះ! មានប្រយោជន៍ខ្លាំងណាស់។ 😊</p>
+                                        <p class="btn-yes">តើវាមានប្រយោជន៍ទេ?</p>
+
+                                        <label for="" class="btn-outline-dark-blue px-2 pe-2"><i
+                                                class="bi bi-hand-thumbs-up me-1"></i>បាទ/ចាស</label><label for=""
+                                            class="btn-outline-dark-blue ms-3 px-2"><i
+                                                class="bi bi-hand-thumbs-down  me-1"></i>ទេ</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-left">
+                                <div class="w-100 bg-white mt-5" style="height: 2px;"></div>
+                                <div class="card d-flex py-3 flex-row border-0">
+                                    <div class="profile">
+                                        <img src="../../image/project-logo/profile-img.jpg"
+                                            class="img-fluid rounded-circle profile-img" alt="">
+                                    </div>
+                                    <div class="profile-info ps-3 w-100">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <h5>តុលា</h5>
+                                            <div class="rate-profile">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-muted"></i>
+                                            </div>
+                                        </div>
+                                        <p class="fs-7">មិថុនា ១១, ២០២៥, ម៉ោង ១០:០០​ ព្រឹក</p>
+                                        <p>អរគុណច្រើនសម្រាប់ការចែករំលែកព័ត៌មាននេះ! មានប្រយោជន៍ខ្លាំងណាស់។ 😊</p>
+                                        <p class="btn-yes">តើវាមានប្រយោជន៍ទេ?</p>
+
+                                        <label for="" class="btn-outline-dark-blue px-2 pe-2"><i
+                                                class="bi bi-hand-thumbs-up me-1"></i>បាទ/ចាស</label><label for=""
+                                            class="btn-outline-dark-blue ms-3 px-2"><i
+                                                class="bi bi-hand-thumbs-down  me-1"></i>ទេ</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-left">
+                                <div class="w-100 bg-white mt-5" style="height: 2px;"></div>
+                                <div class="card d-flex py-3 flex-row border-0">
+                                    <div class="profile">
+                                        <img src="../../image/project-logo/profile-img.jpg"
+                                            class="img-fluid rounded-circle profile-img" alt="">
+                                    </div>
+                                    <div class="profile-info ps-3 w-100">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <h5>តុលា</h5>
+                                            <div class="rate-profile">
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-warning"></i>
+                                                <i class="bi bi-star-fill text-muted"></i>
+                                            </div>
+                                        </div>
+                                        <p class="fs-7">មិថុនា ១១, ២០២៥, ម៉ោង ១០:០០​ ព្រឹក</p>
+                                        <p>អរគុណច្រើនសម្រាប់ការចែករំលែកព័ត៌មាននេះ! មានប្រយោជន៍ខ្លាំងណាស់។ 😊</p>
+                                        <p class="btn-yes">តើវាមានប្រយោជន៍ទេ?</p>
+
+                                        <label for="" class="btn-outline-dark-blue px-2 pe-2"><i
+                                                class="bi bi-hand-thumbs-up me-1"></i>បាទ/ចាស</label><label for=""
+                                            class="btn-outline-dark-blue ms-3 px-2"><i
+                                                class="bi bi-hand-thumbs-down  me-1"></i>ទេ</label>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12" data-aos="fade-left">
+                                <div class="dropdown">
+                                    <a class="btn btn-outline-dark-blue d-flex w-100 justify-content-between" href="#"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <div>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <i class="bi bi-star-fill text-warning"></i>
+                                            <span>[5/5]</span>
+                                        </div>
+                                        <i class="bi bi-chevron-down"></i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">
+                                                <div>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <span>[4/5]</span>
+                                                </div>
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#">
+                                                <div>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <span>[3/5]</span>
+                                                </div>
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#">
+                                                <div>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <span>[2/5]</span>
+                                                </div>
+                                            </a></li>
+                                        <li><a class="dropdown-item" href="#">
+                                                <div>
+                                                    <i class="bi bi-star-fill text-warning"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <i class="bi bi-star-fill text-muted"></i>
+                                                    <span>[1/5]</span>
+                                                </div>
+                                            </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <textarea class="form-control mt-3" placeholder="បញ្ចេញមតិរបស់អ្នក" name=""
+                                    id=""></textarea>
+                                <a href="../login/login.html" class="btn bg-footer text-white mt-3">បញ្ចេញមតិ</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- silde  -->
+        <section class="py-10" data-aos="fade-up">
+            <div class="container">
+                <h4 class="mb-4">សកលវិទ្យាល័យ</h4>
+                <p class>សូមអញ្ជើញអានព័ត៌មានបន្ថែមអំពីការគ្រប់គ្រងអាជីវកម្ម
+                    និងវិស័យផ្សេងៗ។</p>
+                <div class="row">
+
+                    <div class="swiper mySwiper pb-10 py-4 px-5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="uni-show.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/university/rupp.jpg"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ</h5>
+                                            <p class="card-text fs-6 clamp-3">សាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ
+                                                គឺជាសាកលវិទ្យាល័យសាធារណៈដ៏ធំជាងគេនៅកម្ពុជា
+                                                ដែលមានកម្មវិធីបរិញ្ញាបត្រនិងបណ្ឌិតសាស្ត្រផ្នែកវិទ្យាសាស្ត្រកុំព្យូទ័រ
+                                                និងបច្ចេកវិទ្យាព័ត៌មាន។
+                                                សាកលវិទ្យាល័យនេះមានការតភ្ជាប់ជាមួយស្ថាប័នអន្តរជាតិនានា
+                                                និងផ្តល់នូវបរិស្ថានសិក្សាដែលមានគុណភាពខ្ពស់។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="uni-show.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/university/puc.jpg"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យប៉ាន់ណាសាស្ត្រ</h5>
+                                            <p class="card-text fs-6 clamp-3">សាកលវិទ្យាល័យប៉ាន់ណាសាស្ត្រ
+                                                គឺជាសាកលវិទ្យាល័យឯកជនដែលផ្តល់ការសិក្សាផ្នែកវិទ្យាសាស្ត្រកុំព្យូទ័រ
+                                                តាមរយៈភាសាអង់គ្លេស។
+                                                កម្មវិធីបរិញ្ញាបត្រនេះមានគោលបំណងបណ្តុះបណ្តាលសិស្សឲ្យមានជំនាញទំនើបក្នុងការប្រើប្រាស់បច្ចេកវិទ្យាកុំព្យូទ័រ។
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="uni-show.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/university/itc.webp"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យបច្ចេកវិទ្យាកម្ពុជា</h5>
+                                            <p class="card-text fs-6 clamp-3">សាកលវិទ្យាល័យបច្ចេកវិទ្យាកម្ពុជា
+                                                គឺជាសាកលវិទ្យាល័យសាធារណៈដែលមានឈ្មោះល្បីល្បាញក្នុងវិស័យវិស្វកម្ម
+                                                និងបច្ចេកវិទ្យា។ កម្មវិធីបរិញ្ញាបត្រផ្នែកបច្ចេកវិទ្យាព័ត៌មាន
+                                                និងបណ្តាញកុំព្យូទ័រ
+                                                គឺជាកម្មវិធីដែលមានសក្តានុពលខ្ពស់សម្រាប់អ្នកចាប់អារម្មណ៍ក្នុងវិស័យនេះ។
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="uni-show.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/university/aupp.jpg"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យអាមេរិកាំងភ្នំពេញ</h5>
+                                            <p class="card-text fs-6 clamp-3">សាកលវិទ្យាល័យអាមេរិកាំងភ្នំពេញ
+                                                ផ្តល់ការសិក្សាផ្នែកបច្ចេកវិទ្យាព័ត៌មាន និងសុវត្ថិភាពបច្ចេកវិទ្យា
+                                                តាមរយៈគម្រោងសិក្សាដែលមានគុណភាពខ្ពស់
+                                                និងផ្តល់ឱកាសសិស្សទទួលបានបរិញ្ញាបត្រពីសាកលវិទ្យាល័យនៅសហរដ្ឋអាមេរិក។</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide bg-body-theme">
+                                <a href="uni-show.html" class="text-decoration-none">
+                                    <div class="card bg-card-theme bottom-0 text-start overflow-hidden">
+                                        <img src="../../image/university/kit.jpeg"
+                                            style="height: 200px; object-fit: cover;" class="card-img-top" alt="">
+                                        <div class="card-body pb-5">
+                                            <h5 class="card-title clamp-1">សាកលវិទ្យាល័យបច្ចេកវិទ្យាគិរីរម្យ</h5>
+                                            <p class="card-text fs-6 clamp-3">សាកលវិទ្យាល័យបច្ចេកវិទ្យាគិរីរម្យ
+                                                គឺជាសាកលវិទ្យាល័យឯកជនដែលផ្តោតលើការបណ្តុះបណ្តាលសិស្សក្នុងវិស័យបច្ចេកវិទ្យា
+                                                និងការប្រកបអាជីពជាអ្នកដឹកនាំអន្តរជាតិ។
+                                                កម្មវិធីបរិញ្ញាបត្រផ្នែកវិស្វកម្មកម្មវិធីទន់
+                                                និងការប្រកបអាជីពជាអ្នកដឹកនាំអន្តរជាតិ
+                                                គឺជាកម្មវិធីដែលមានគុណភាពខ្ពស់សម្រាប់អ្នកចាប់អារម្មណ៍ក្នុងវិស័យបច្ចេកវិទ្យា។
+                                            </p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+            1200: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+            1400: {
+                slidesPerView: 4,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
+
+</html>

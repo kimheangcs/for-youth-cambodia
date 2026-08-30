@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ស្វែងរកអាហារូបករណ៍ក្នុងស្រុក</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+    
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<!-- <div class="toast-container toast toast-body"></div> -->
+<style>
+    .required-field::after {
+        content: "*";
+        color: red;
+        margin-left: 3px;
+    }
+    .toast-container{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1055;
+    }
+    .success-icon {
+        font-size: 5rem;
+        color: #28a745;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+    .loading-spinner {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        vertical-align: -0.125em;
+        border: 0.2em solid currentColor;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: .75s linear infinite spinner-border;
+    }
+    @keyframes spinner-border {
+        to { transform: rotate(360deg); }
+    }
+</style>
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../us/home.html">
+                    <img id="logo" src="../../image/project-logo/logo01.png" alt="Logo" style="width: 75px;">
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <!-- notification  -->
+                        <div class="dropdown">
+                            <a class="btn border-0 mt-1 me-2" href="../profile/notification.html" role="button">
+                                <i class="bi bi-bell px-2 position-relative fs-5">
+                                    <span class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                        style="left: 21px; padding: 3px; top: 1px;">
+                                        <span class="visually-hidden">New alerts</span>
+                                    </span>
+                                </i>
+                            </a>
+
+                            <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                                <li>
+                                    <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                        style="width: 320px;">
+                                        <div class="p-2">
+                                            <h5>សារជូនដំណឹង</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- list notification  -->
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-2.svg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                ជំរាបសួរ! ខ្ញុំចង់សួរអំពីការចុះឈ្មោះសម្រាប់វគ្គសិក្សាថ្មី។
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-3.jpg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-1.png"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <div>
+                                    <a href="../profile/notification.html"
+                                        class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <!-- profile  -->
+                        <div class="dropdown">
+                            <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                    style="width: 40px; height: 40px;" alt />
+                            </a>
+                        
+                            <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                <li><a class="dropdown-item" href="../profile/proflie.html"><i
+                                            class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                                <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a>
+                                </li>
+                                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                            class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div class="d-flex justify-content-end align-items-center d-flex d-lg-none" role="search">
+                            <!-- profile  -->
+                            <div class="profile">
+                                <a href="../profile/proflie.html">
+                                    <img src="../../image/project-logo/profile-img.jpg"
+                                        class="img-fluid rounded-circle object-fit-cover"
+                                        style="width: 40px; height: 40px;" alt />
+                                </a>
+                            </div>
+                            <h5 class="pt-3 ps-2">សួស្តី!​​ តុលា</h5>
+                        </div>
+
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="assets/image/logo.png" class="img-fluid"
+                                    style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../us/home.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 active dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a></li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li><a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <!-- notification  -->
+                    <div class="dropdown">
+                        <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-bell position-relative fs-5">
+                                <span
+                                    class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                    style="left: 21px; padding: 4px; top: 1px;">
+                                    <span class="visually-hidden">New
+                                        alerts</span>
+                                </span>
+                            </i>
+                        </a>
+
+                        <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                            <li>
+                                <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                    style="width: 320px;">
+                                    <div class="p-2">
+                                        <h5>សារជូនដំណឹង</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- list notification  -->
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ឥឡូវនេះវគ្គអាហារូបករណ៍ថ្មីបានបើកឱ្យចុះឈ្មោះហើយ។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! នឹងមានព្រឹត្តិការណ៍ពិសេសនៅសប្ដាហ៍ក្រោយ សូមអញ្ជើញចូលរួម។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-3.jpg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ការងារថ្មីមួយកំពុងបើកឱ្យដាក់ពាក្យ សូមចូលមើលព័ត៌មានលម្អិត។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <div>
+                                <a href="../profile/notification.html"
+                                    class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- profile  -->
+                    <div class="dropdown">
+                        <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                style="width: 40px; height: 40px;" alt />
+                        </a>
+                    
+                        <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                            <li><a class="dropdown-item" href="../profile/proflie.html"><i class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                            <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a></li>
+                            <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a></li>
+                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <!-- Scholarship Detail -->
+    <main>
+        <!-- success modal  -->
+        <section>
+            <div class="modal fade" id="topModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-sm modal-dialog-centered">
+                        <div class="modal-content border-0  shadow p-4 bg-success text-white text-center">
+                            <i class="bi bi-check2-circle" style="font-size: 3rem;"></i>
+                            <span class="fs-4">ទទួលបានជោគជ័យ!</span>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="card shadow-sm bg-card-theme border-0">
+                            <div class="card-header bg-footer text-white">
+                                <h2 class="mb-0">អាហារូបករណ៍រដ្ឋាភិបាលនិងក្រសួងផ្សេង</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <span class="badge bg-success me-2">បរិញ្ញាបត្រ</span>
+                                    <span class="badge bg-info me-2">វិស័យ: វិទ្យាសាស្ត្រ</span>
+                                    <span class="badge bg-warning text-white">បិទ: ២៦ មិថុនា​ ២០២៦</span>
+                                </div>
+
+                                <h4><i class="bi bi-info-circle"></i> ព័ត៌មានទូទៅ</h4>
+                                <p class="ps-3">កម្មវិធី អាហារូបករណ៍ទេពកោសល្យឌីជីថលតេជោ ត្រូវបានបង្កើតឡើងក្រោមគោលនយោបាយរបស់សម្តេចហ៊ុន ម៉ាណែត ដើម្បីជំរុញការអភិវឌ្ឍធនធានមនុស្សជំនាញឌីជីថលក្នុងការបំផុសគំហើញដល់ការប្រែក្លាយសេដ្ឋកិច្ចកម្ពុជាទៅជាសេដ្ឋកិច្ចឌីជីថល។ កម្មវិធីនេះផ្តល់អាហារូបករណ៍ចំនួន ៥០០ កន្លែង សម្រាប់ឆ្នាំសិក្សា ២០២៥-២០២៦ ដើម្បីសិក្សាជំនាញដែលពាក់ព័ន្ធនឹងបច្ចេកវិទ្យាឌីជីថលនៅតាមគ្រឹះស្ថានឧត្តមសិក្សាដៃគូចំនួន ៦ របស់ក្រសួងប្រៃសណីយ៍និងទូរគមនាគមន៍។</p>
+
+                                <h4><i class="bi bi-award"></i> តម្លៃអាហារូបករណ៍</h4>
+                                <h6 class="ps-3">និស្សិតជ័យលាភីនឹងទទួលបានអត្ថប្រយោជន៍ដូចខាងក្រោម៖</h6>
+                                <ul>
+                                    <li>កុំព្យូទ័រយួរដៃ ១ គ្រឿង</li>
+                                    <li>ការរ៉ាប់រងថ្លៃសិក្សា ១០០% ដល់ចប់ថ្នាក់បរិញ្ញាបត្រ (តម្លៃសិក្សាប្រហាក់ប្រហែលពី ៣,១០០ - ២៤,៧០០ ដុល្លារ)</li>
+                                    <li>ឱកាសទទួលបានការងារល្អ និងប្រាក់បៀវត្សខ្ពស់ក្នុងអង្គការ និងក្រុមហ៊ុនផ្សេងៗ</li>
+                                    <li>ការគាំទ្រ និងជួយជ្រោមជ្រែងពីក្រសួងប្រៃសណីយ៍និងទូរគមនាគមន៍</li>
+                                </ul>
+
+                                <h4><i class="bi bi-clipboard-check"></i> លក្ខខណ្ឌសម្រាប់ដាក់ពាក្យ</h4>
+                                <ul>
+                                    <li>ជានិស្សិតកម្ពុជា</li>
+                                    <li>ជាសិស្សដែលប្រឡងជាប់សញ្ញាបត្រមធ្យមសិក្សាទុតិយភូមិឆ្នាំ២០២៥ មាននិទ្ទេសរួម A, B ឬ C</li>
+                                    <li>ឆ្លងកាត់ការប្រឡងប្រជែងលើវិញ្ញាសា គណិតវិទ្យា, តក្កវិទ្យា, និងភាសាអង់គ្លេស ព្រមទាំងការសម្ភាសន៍ផ្ទាល់មាត់</li>
+                                    <li>សិស្សដែលមានជីវភាពក្រីក្រ, មកពីតំបន់ដាច់ស្រយាល, ជនមានពិការភាព និងសិស្សនារី ត្រូវបានលើកទឹកចិត្តឱ្យដាក់ពាក្យ</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-card-theme">
+                                <div class="text-end">
+                                    <button type="button" class="btn btn-dark-blue" data-bs-toggle="modal" data-bs-target="#scholarshipModal">
+                                        ដាក់ពាក្យឥឡូវនេះ
+                                    </button>
+                                    <a href="../schoolarship/schoolarship-in.html" class="btn btn-outline-dark-blue text-end">ត្រឡប់ក្រោយ</a>
+                                </div>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="scholarshipModal" tabindex="-1" aria-labelledby="scholarshipModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header bg-footer text-white">
+                                                <h5 class="modal-title" id="scholarshipModalLabel"><i class="bi bi-mortarboard-fill me-2"></i>ទម្រង់ស្នើសុំអាហារូបករណ៍</h5>
+                                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body bg-card-theme">
+                                                <form id="scholarshipForm">
+                                                    <div class="mb-4">
+                                                        <h5 class="section-title">ព័ត៌មានផ្ទាល់ខ្លួន</h5>
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="firstName" class="form-label required-field">ឈ្មោះភាសាខ្មែរ</label>
+                                                                <input type="text" class="form-control" id="firstName" required>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="lastName" class="form-label required-field">ឈ្មោះឡាតាំង</label>
+                                                                <input type="text" class="form-control" id="lastName" required>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="row">
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="dob" class="form-label required-field">ថ្ងៃខែឆ្នាំកំណើត</label>
+                                                                <input type="date" class="form-control" id="dob" required>
+                                                            </div>
+                                                            <div class="col-md-6 mb-3">
+                                                                <label for="gender" class="form-label required-field">ភេទ</label>
+                                                                <select class="form-select" id="gender" required>
+                                                                    <option value="" selected disabled>សូមជ្រើសរើសភេទ</option>
+                                                                    <option value="male">ប្រុស</option>
+                                                                    <option value="female">ស្រី</option>
+                                                                    <option value="other">ផ្សេងៗ</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="phone" class="form-label required-field">លេខទូរស័ព្ទ</label>
+                                                            <input type="tel" class="form-control" id="phone" pattern="[0-9]{9,10}" required>
+                                                            <div class="form-text">លេខទូរស័ព្ទត្រូវតែមាន ៩ ឬ ១០ ខ្ទង់</div>
+                                                        </div>
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="email" class="form-label required-field">អាស័យដ្ឋានអ៊ីមែល</label>
+                                                            <input type="email" class="form-control" id="email" required>
+                                                        </div>
+                                                    </div>                                       
+                                                    <div class="mb-4">
+                                                        <h5 class="section-title khmer-font">ព័ត៌មានអាហារូបករណ៍</h5>
+                                                        <div class="mb-3">
+                                                            <label for="scholarshipType" class="form-label required-field">ប្រភេទអាហារូបករណ៍</label>
+                                                            <select class="form-select" id="scholarshipType" required>
+                                                                <option value="" selected disabled>សូមជ្រើសរើសប្រភេទអាហារូបករណ៍</option>
+                                                                <option value="full">អាហារូបករណ៍ពិសេស</option>
+                                                                <option value="partial">អាហារូបករណ៍១០០%</option>
+                                                                <option value="research">អាហារូបករណ៍៧០%</option>
+                                                            </select>
+                                                        </div>
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="reason" class="form-label required-field">មូលហេតុស្នើសុំ</label>
+                                                            <textarea class="form-control" id="reason" rows="3" required></textarea>
+                                                            <div class="form-text">សូមរៀបរាប់ពីមូលហេតុដែលអ្នកត្រូវការអាហារូបករណ៍នេះ</div>
+                                                        </div>
+                                                        
+                                                        <div class="mb-3">
+                                                            <label for="file" class="form-label">ប្រវត្តិរូបផ្ទាល់ខ្លួន</label>
+                                                            <input type="file" class="form-control" id="file" multiple required>
+                                                            <div class="form-text">ជ្រើសរើសឯកសាររូបថត, សំបុត្របញ្ជាក់ការសិក្សា, និងឯកសារផ្សេងៗ</div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer bg-card-theme">
+                                                <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                                                <button type="button" class="btn btn-dark-blue" id="submitBtn" data-bs-toggle="modal" data-bs-target="#topModal">
+                                                    <span class="submit-text">ដាក់ស្នើ</span>
+                                                    <span class="loading-spinner" style="display: none;"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Success Toast -->
+                                <div class="toast-container">
+                                    <div id="successToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                                        <div class="toast-header">
+                                            <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                            <strong class="me-auto">ជោគជ័យ</strong>
+                                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                                        </div>
+                                        <div class="toast-body">
+                                            <p>ការស្នើសុំអាហារូបករណ៍របស់អ្នកត្រូវបានដាក់ដោយជោគជ័យ!</p>
+                                            <p class="mb-0">យើងនឹងត្រឡប់ទៅរកអ្នកវិញក្នុងរយៈពេល ៧-១៤ថ្ងៃ។</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="col-lg-12">
+                            <div class="card shadow-sm mb-4 bg-card-theme border-0">
+                                <div class="card-header bg-footer text-white">
+                                    <h5 class="mb-0 py-2">ព័ត៌មានទាក់ទងនិងកន្លែងទទួលពាក្យ</h5>
+                                </div>
+                                <div class="card-body">
+                                    <h6><strong>ការចុះឈ្មោះប្រឡងធ្វើឡើងតាមគ្រឹះស្ថានដូចខាងក្រោម៖</strong></h6>
+                                    <p><strong>សម្រាប់</strong> CADT, ITC, ភូមិន្ទភ្នំពេញ, ផារ៉ាហ្គន និង សាកលវិទ្យាល័យជាតិគ្រប់គ្រង ៖ ចុះឈ្មោះ អនឡាញ</p>
+                                    <p><strong>ទូរស័ព្ទ:</strong> ០១៥ ៣៣៥ ៨៧៧ / ០៧៧ ៣៣៥ ៨៧៧</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <!-- Swiper -->
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide shadow-sm mb-4 bg-card-theme border-0">
+                                        <div class="card"><img src="../../image/schoolarshipimg/school_in1.png" alt="" class="object-fit-cover card-img" style="width: 100%;height: 250px;" /></div>
+                                    </div>
+                                    <div class="swiper-slide shadow-sm mb-4 bg-card-theme border-0">
+                                        <div class="card"><img src="../../image/schoolarshipimg/school_in7.png" alt="" class="object-fit-cover card-img" style="width: 100%;height: 250px;" /></div>
+                                    </div>
+                                    <div class="swiper-slide shadow-sm mb-4 bg-card-theme border-0">
+                                        <div class="card"><img src="../../image/schoolarshipimg/school_in2.png" alt="" class="object-fit-cover card-img" style="width: 100%;height: 250px;" /></div>
+                                    </div>
+                                    <div class="swiper-slide shadow-sm mb-4 bg-card-theme border-0">
+                                        <div class="card"><img src="../../image/schoolarshipimg/school_in4.png" alt="" class="object-fit-cover card-img" style="width: 100%;height: 250px;" /></div>
+                                    </div>
+                                    <div class="swiper-slide shadow-sm mb-4 bg-card-theme border-0">
+                                        <div class="card"><img src="../../image/schoolarshipimg/school_in3.png" alt="" class="object-fit-cover card-img" style="width: 100%;height: 250px;" /></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 mt-1">
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper_2">
+                            <div class="swiper-wrapper">
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/Ministry-of-Economy-and-Finance.png"  alt=""></div>
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/ministry_of_labour.png" alt="cs"></div>
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/partner-logo-debc.png" alt="ptc"></div>
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/partner-Ministry of Commerce.png"  alt=""></div>
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/partner-ntr-logo.png" alt=""></div>
+                            <div class="swiper-slide bg-body-theme"><img src="../../image/lending-img/Ministry_Dcc.png" alt="ant"></div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = submitBtn.querySelector('.submit-text');
+        const loadingSpinner = submitBtn.querySelector('.loading-spinner');
+        const successToast = document.getElementById('successToast');
+        const toast = new bootstrap.Toast(successToast);
+        const form = document.getElementById('scholarshipForm');
+        
+
+        submitBtn.addEventListener('click', function() {
+            // Check if form is valid
+            if (form.checkValidity()) {
+                // Show loading state
+                submitText.textContent = 'កំពុងដាក់ស្នើ...';
+                loadingSpinner.style.display = 'inline-block';
+                submitBtn.disabled = true;
+                
+                // Simulate 3 seconds waiting time
+                setTimeout(function() {
+                    // Hide loading state
+                    submitText.textContent = 'ដាក់ស្នើ';
+                    loadingSpinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                    
+                    // Show success toast
+                    toast.show();
+                    
+                    // Close modal after 2 seconds
+                    setTimeout(function() {
+                        const modal = bootstrap.Modal.getInstance(document.getElementById('scholarshipModal'));
+                        modal.hide();
+                        
+                        // Reset form
+                        form.reset();
+                    }, 2000);
+                }, 3000);
+            } else {
+                // Trigger browser native validation UI
+                form.reportValidity();
+            }
+        });
+    });
+
+
+    var swiper = new Swiper(".mySwiper", {
+      grabCursor: true,
+      effect: "creative",
+      autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+    });
+    var swiper = new Swiper(".mySwiper_2",{
+      slidesPerView: 3,
+      spaceBetween: 10,
+      loop: true,
+      freeMode: true, // smooth free scrolling
+      speed: 15000,    // higher = slower smooth scroll
+      autoplay: {
+        delay: 0,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+      },
+      allowTouchMove: false, // disable dragging
+    });
+
+    
+  </script>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+
+</html>

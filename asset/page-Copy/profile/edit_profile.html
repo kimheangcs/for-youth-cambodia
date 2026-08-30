@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ការកំណត់</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/profile.css" />
+
+     <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- swiper  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  </head>
+
+  <body>
+
+    <main>
+      <!--* modal -->
+      <section>
+        <!--* change pfp -->
+        <div class="modal fade" id="change-pfp" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-card-theme">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  ផ្លាស់ប្ដូររូបភាព</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="col-12">
+                  <h6 class="mb-3">ជ្រើសរើសរូបភាពដើម្បីផ្លាស់ប្ដូរ</h6>
+                  <div class="custom-file-wrapper small-file">
+                    <input type="file" class="custom-file-input" id="smallFile">
+                    <label for="smallFile" class="custom-file-label">
+                      <div class="file-icon">
+                        <i class="fa fa-plus"></i>
+                      </div>
+                      <div class="file-text">
+                        <h5>Add File</h5>
+                        <p>Compact version</p>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark-blue"
+                  data-bs-dismiss="modal">បិទ</button>
+                <button type="submit" class="btn btn-dark-blue">ផ្លាស់ប្ដូររូបភាព</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--* save change  -->
+        <div class="modal fade" id="saveChange" tabindex="-1" aria-labelledby="saveChange"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-card-theme">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">បញ្ជាក់លេខសម្ងាត់</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="save-change" class="form-label">បញ្ជាក់លេខសម្ងាត់</label>
+                    <input type="password" class="form-control shadow-none border-secondary"
+                      id="save-change">
+                  </div>
+                  <button type="submit"
+                    class="btn btn-outline-dark-blue d-block ms-auto">រក្សាទុកការផ្លាស់ប្តូរ</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--* disable -->
+        <div class="modal fade" id="disableAcc" tabindex="-1" aria-labelledby="disable"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id>បញ្ជាក់លេខសម្ងាត់ដើម្បីបិទគណនី</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for class="form-label">បញ្ជាក់លេខសម្ងាត់</label>
+                    <input type="password" class="form-control shadow-none border-secondary"
+                      id>
+                  </div>
+                  <button type="submit"
+                    class="btn btn-danger d-block ms-auto">បិទគណនី</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--* delete -->
+        <div class="modal fade" id="deleteAcc" tabindex="-1" aria-labelledby="delete"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5">បញ្ជាក់លេខសម្ងាត់ដើម្បីលុបគណនី</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for class="form-label">បញ្ជាក់លេខសម្ងាត់</label>
+                    <input type="password" class="form-control shadow-none border-secondary"
+                      id>
+                  </div>
+                  <button type="submit"
+                    class="btn btn-danger d-block ms-auto"><i class="bi bi-trash"></i>&nbsp;
+                    លុបគណនី</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--* add skill -->
+        <div class="modal fade" id="add-skill" tabindex="-1" aria-labelledby="add-skill "
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addSkill">បន្ថែមជំនាញ និងមុខវិជ្ជាសិក្សា</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action>
+                  <div class="mb-3">
+                    <label for="input-skill" class="form-label">បន្ថែមជំនាញ
+                      និងមុខវិជ្ជាសិក្សា</label>
+                    <input type="text" class="form-control shadow-none border border-dark"
+                      id="input-skill"
+                      aria-describedby="add-skill">
+                  </div>
+                  <button type="submit" class="btn btn-dark-blue d-block ms-auto">បន្ថែម</button>
+                </form>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <!--* add works -->
+        <div class="modal fade" id="add-work" tabindex="-1" aria-labelledby="add-work "
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addWork">បន្ថែមស្នាដែ</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="custom-file-wrapper small-file">
+                  <input type="file" class="custom-file-input" id="smallFile">
+                  <label for="smallFile" class="custom-file-label">
+                    <div class="file-icon">
+                      <i class="fa fa-plus"></i>
+                    </div>
+                    <div class="file-text">
+                      <h5>Add File</h5>
+                      <p>Compact version</p>
+                    </div>
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-dark-blue d-block ms-auto"
+                  data-bs-dismiss="modal">បន្ថែម</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--* add course -->
+        <div class="modal fade" id="add-course" tabindex="-1" aria-labelledby="add-course "
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addCourse">បន្ថែមវគ្គសិក្សា</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action>
+                  <div class="custom-file-wrapper small-file">
+                    <input type="file" class="custom-file-input" id="smallFile">
+                    <label for="smallFile" class="custom-file-label">
+                      <div class="file-icon">
+                        <i class="fa fa-plus"></i>
+                      </div>
+                      <div class="file-text">
+                        <h5>Add File</h5>
+                        <p>Compact version</p>
+                      </div>
+                    </label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="title" class="form-label">ជំនាញឬមុខវិជ្ជា</label>
+                    <input type="ext" class="form-control border-dark shadow-none" id="title"
+                      aria-describedby="title">
+                  </div>
+                </form>
+                <button type="submit" class="btn btn-dark-blue d-block ms-auto"
+                  data-bs-dismiss="modal">បន្ថែម</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--* add education -->
+        <div class="modal fade" id="add-education" tabindex="-1" aria-labelledby="add-education "
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="addEducation">បន្ថែមបទពិសោធន៍</h1>
+                <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal"
+                  aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form action>
+
+                  <div class="mb-3">
+                    <label for="date" class="form-label">បទពិសោធន៍</label>
+                    <input type="text" class="form-control border-dark shadow-none" id="experience"
+                      aria-describedby="title">
+                  </div>
+                  <div class="mb-3">
+                    <label for="date" class="form-label">កាលបរិច្ឆេទ</label>
+                    <input type="date" class="form-control border-dark shadow-none" id="date"
+                      aria-describedby="title">
+                  </div>
+                </form>
+                <button type="submit" class="btn btn-dark-blue d-block ms-auto"
+                  data-bs-dismiss="modal">បន្ថែម</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--* desktop -->
+      <section class="animate__animated animate__fadeInUp">
+        <div class="container d-none d-md-block">
+          <div class="row">
+            <a href="../../../asset/page/dashboard/dashboard.html"
+              class="btn border border-2 border-secondary rounded-circle p-2 shadow-none btn-close my-10 ms-2"
+              target="_self"></a>
+          </div>
+          <div class="bg-card-theme p-3 shadow overflow-hidden" style="height: 70vh;">
+            <div class="row h-100 pb-5">
+              <h3 class="fw-semibold mb-3">ការកំណត់</h3>
+              <div class="col-4 h-100">
+                <aside class="option p-3 h-100 bg-body-theme rounded overflow-y-scroll aside">
+                  <div
+                    class="nav flex-lg-column gap-2 nav-pills"
+                    id="v-pills-tab"
+                    role="tablist"
+                    aria-orientation="vertical">
+                    <button
+                      class="nav-link d-flex gap-2 text-start active"
+                      id="v-pills-profile-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#v-pills-profile"
+                      type="button"
+                      role="tab"
+                      aria-controls="v-pills-profile"
+                      aria-selected="true">
+                      <i class="bi bi-pencil-fill"></i>
+                      <span>កែប្រែព័ត៌មានផ្ទាល់ខ្លួន</span>
+                    </button>
+                    <button
+                      class="nav-link d-flex gap-2 text-start"
+                      id="v-pills-security-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#v-pills-security"
+                      type="button"
+                      role="tab"
+                      aria-controls="v-pills-security"
+                      aria-selected="true">
+                      <i class="bi bi-shield-fill-check"></i>
+                      <span>ប្រព័ន្ធសុវត្ថិភាព & ការកំណត់</span>
+                    </button>
+                    <button
+                      class="nav-link d-flex gap-2 text-start"
+                      id="v-pills-notification-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#v-pills-notification"
+                      type="button"
+                      role="tab"
+                      aria-controls="v-pills-notification"
+                      aria-selected="true">
+                      <i class="bi bi-bell-slash-fill"></i>
+                      <span>ការជូនដំណឹង</span>
+                    </button>
+                    <button
+                      class="nav-link d-flex gap-2 text-start"
+                      id="v-pills-password-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#v-pills-password"
+                      type="button"
+                      role="tab"
+                      aria-controls="v-pills-password"
+                      aria-selected="true">
+                      <i class="bi bi-unlock2-fill"></i>
+                      <span>លេខសម្ងាត់</span>
+                    </button>
+                    <a href="../../../index.html" class="nav-link d-flex gap-2 text-start text-danger">
+                      <i class="fa-solid fa-right-from-bracket"></i>
+                      <span>ចាកចេញពីគណនី</span>
+                    </a>
+                  </div>
+                </aside>
+              </div>
+              <div class="col-8 h-100">
+                <article class="bg-body-theme p-3 rounded h-100 overflow-y-scroll article">
+                  <div class="tab-content" id="v-pills-tabContent">
+                    <!--* profile -->
+                    <div class="tab-pane fade show active"
+                      id="v-pills-profile"
+                      role="tabpanel"
+                      aria-labelledby="v-pills-profile-tab"
+                      tabindex="0">
+                      <div class="row">
+                        <h5 class="fw-semibold mb-3">ប្រវតិ្តរូប</h5>
+                        <div class="col-12">
+                          <div class="card bg-transparent border-0">
+                            <div
+                              class="card-header border-0 bg-transparent text-center py-3">
+                              <div class="card-img rounded-circle overflow-hidden m-auto"
+                                style="width: 150px; height: 150px;">
+                                <img
+                                  src="https://i.pinimg.com/1200x/ce/d5/ea/ced5ea89d69e151b5a22f351fb6bcad0.jpg"
+                                  alt class="w-100 h-100 object-fit-cover">
+                              </div>
+                              <button type="button" class="btn btn-dark-blue mt-3"
+                                data-bs-toggle="modal"
+                                data-bs-target="#change-pfp" title="change profile"><i
+                                  class="bi bi-camera-fill"></i>&nbsp; ផ្លាស់ប្ដូររូបភាព</button>
+                            </div>
+                            <div class="card-body bg-card-theme border-0">
+                              <form action class>
+                                <div class="row">
+                                  <div class="col-lg-6 mb-3">
+                                    <label for="khmerName"
+                                      class="form-label fw-medium">ឈ្មោះខ្មែរ</label>
+                                    <input type="text"
+                                      class="form-control border-secondary shadow-none"
+                                      id="khmerName" value="តុលា">
+                                  </div>
+                                  <div class="col-lg-6 mb-3">
+                                    <label for="englishName"
+                                      class="form-label fw-medium">ឈ្មោះអង់គ្លេស</label>
+                                    <input type="text"
+                                      class="form-control border-secondary shadow-none"
+                                      id="englishName" value="Tola">
+                                  </div>
+                                  <div class="col-lg-6 mb-3">
+                                    <label for="email"
+                                      class="form-label fw-medium">អ៊ីមែល</label>
+                                    <input type="email"
+                                      class="form-control border-secondary shadow-none"
+                                      id="email" value="tola@gmail.com">
+                                  </div>
+                                  <div class="col-lg-6 mb-3">
+                                    <label for class="form-label fw-medium">ភេទ</label>
+                                    <div class="d-flex gap-5">
+                                      <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio"
+                                          name="gender" id="male" checked>
+                                        <label class="form-check-label" for="male">
+                                          ប្រុស
+                                        </label>
+                                      </div>
+                                      <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio"
+                                          name="gender" id="female">
+                                        <label class="form-check-label" for="female">
+                                          ស្រី
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6 mb-3">
+                                    <label for="phone"
+                                      class="form-label fw-medium">លេខទូរស័ព្ទ</label>
+                                    <input type="number"
+                                      class="form-control border-secondary shadow-none"
+                                      id="phone" value="012987456">
+                                  </div>
+                                  <div class="col-lg-6 mb-3">
+                                    <label for="username"
+                                      class="form-label fw-medium">@username</label>
+                                    <div
+                                      class="d-flex fs-5 align-items-center gap-1 form-control border-secondary p-0 overflow-hidden">
+                                      <span class="ps-2 pe-1 lh-1">@</span>
+                                      <input type="text"
+                                        class="form-control border-0 border-start border-secondary rounded-0 shadow-none"
+                                        id="username" value="the_weeknd">
+                                    </div>
+                                  </div>
+                                </div>
+                                <button type="button"
+                                  class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                                  data-bs-target="#saveChange">រក្សាទុកការផ្លាស់ប្តូរ</button>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--* security -->
+                    <div class="tab-pane fade"
+                      id="v-pills-security"
+                      role="tabpanel"
+                      aria-labelledby="v-pills-security-tab"
+                      tabindex="0">
+                      <div class="row gap-3">
+                        <h5 class="fw-semibold mb-3">ឯកជនភាព</h5>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ឯកជនភាពគណនីអ្នក</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                គណនីរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញជាសាធារណៈឡើយ
+                                ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬចូលមើល Profile
+                                របស់អ្នកបានទេ
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ឯកជនភាពព័ត៌មានផ្ទាល់ខ្លួន</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                                ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                                ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកបានទេ
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">
+                                  ឯកជនភាពប្រវត្តិនៃការអប់រំ
+                                </h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox">
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                ប្រវត្តិនៃការអប់រំរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                                ដោយអ្នកប្រើប្រាស់ជាសិស្សផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                                ប្រវត្តិនៃការអប់រំរបស់អ្នកបានទេ
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">
+                                  ឯកជនភាពការអប់រំបច្ចុប្បន្ន
+                                </h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox">
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                ការអប់រំបច្ចុប្បន្នរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                                ដោយអ្នកប្រើប្រាស់ជាសិស្សផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                                ការអប់រំបច្ចុប្បន្នរបស់អ្នកបានទេ
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">
+                                  ឯកជនភាពមុខជំនាញ និងមុខវិជ្ជាសិក្សា
+                                </h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox">
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                មុខជំនាញ និងមុខវិជ្ជាសិក្សារបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile
+                                ឡើយ ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                                ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកបានទេ
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card border-0 p-0">
+                            <div class="card-header border-0 p-0 mt-3 bg-transparent">
+                              <h5 class="card-title text-danger">
+                                តំបន់គ្រោះថ្នាក់
+                              </h5>
+                            </div>
+                            <div class="card-body px-0">
+                              <button class="btn btn-outline-danger d-block" data-bs-toggle="modal"
+                                data-bs-target="#disableAcc">បិទគណនី</button>
+
+                              <button class="btn btn-danger d-block my-3" data-bs-toggle="modal"
+                                data-bs-target="#deleteAcc"><i
+                                  class="bi bi-trash"></i>&nbsp; លុបគណនី</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--* notification -->
+                    <div class="tab-pane fade"
+                      id="v-pills-notification"
+                      role="tabpanel"
+                      aria-labelledby="v-pills-notification-tab"
+                      tabindex="0">
+                      <div class="row gap-3">
+                        <h5 class="fw-semibold mb-3">ការជូនដំណឹង</h5>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងថ្មីៗ</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីឯកសារ
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងអំពីអាហារូបករណ៍ក្នុងស្រុក</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីអាហារូបករណ៍ក្នុងស្រុក
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងអំពីអាហារូបករណ៍ក្រៅស្រុក</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីអាហារូបករណ៍ក្រៅស្រុក
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងអំពីការងាររដ្ធ</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងាររដ្ធ
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងអំពីការងារឯកជន</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងារឯកជន
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="card bg-card-theme">
+                            <div class="card-header border-0 bg-transparent">
+                              <div class="d-flex justify-content-between">
+                                <h5 class="card-title">ការជូនដំណឹងអំពីការងារស្ម័គ្រចិត្ត</h5>
+                                <label class="switch">
+                                  <input type="checkbox" class="checkbox" checked>
+                                  <div class="slider"></div>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="card-body">
+                              <p class="card-text" style="font-size: 18px;">
+                                បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងារស្ម័គ្រចិត្ត
+                                ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--* password -->
+                    <div class="tab-pane fade"
+                      id="v-pills-password"
+                      role="tabpanel"
+                      aria-labelledby="v-pills-password-tab"
+                      tabindex="0">
+                      <div class="row">
+                        <h5 class="fw-semibold mb-3">ផ្លាស់ប្ដូរលេខសម្ងាត់</h5>
+                        <div class="col-12">
+                          <form class="col-lg-6 mt-2">
+                            <div class="mb-3">
+                              <label for="current"
+                                class="form-label fw-medium">លេខសម្ងាត់បច្ចុប្បន្ន</label>
+                              <input type="text"
+                                class="form-control bg-card-theme border-secondary rounded shadow-none"
+                                id="current"
+                                aria-describedby="current">
+                            </div>
+                            <div class="mb-3">
+                              <label for="newPass"
+                                class="form-label fw-medium">លេខសម្ងាត់ថ្មី</label>
+                              <input type="text"
+                                class="form-control bg-card-theme border-secondary rounded shadow-none"
+                                id="newPass">
+                            </div>
+                            <div class="mb-3">
+                              <label for="confirm"
+                                class="form-label fw-medium">បញ្ជាក់លេខសម្ងាត់</label>
+                              <input type="text"
+                                class="form-control bg-card-theme border-secondary rounded shadow-none"
+                                id="confirm">
+                            </div>
+                            <a href="../login/forget.html"
+                              class="text-decoration-none d-block my-3">ភ្លេចលេខសម្ងាត់?</a>
+                            <button type="submit"
+                              class="btn btn-outline-dark-blue">ផ្លាស់ប្ដូរលេខសម្ងាត់</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--* mobile -->
+      <section class="">
+        <div class="container-fluid d-block d-md-none overflow-hidden">
+          <div class="row bg-card-theme rounded-0 p-3 animate__animated animate__fadeInDown">
+            <div class="d-flex justify-content-between align-items-center animate__animated animate__fadeInUp">
+              <h3 class="fw-semibold">ការកំណត់</h3>
+              <a
+                href="proflie.html"
+                class="btn d-flex gap-1 btn-outline-dark-blue back-to-pfp"
+                target="_self">
+                <i class="btn btn-close shadow-none text-white"></i>
+                បិទការកំណត់
+              </a>
+            </div>
+          </div>
+          <div class="row my-3 p-2">
+            <div class="bg-card-theme bg-card-theme p-3 shadow overflow-hidden animate__animated animate__fadeInUp"
+              style="height: 80vh;">
+              <aside class="option h-100 rounded overflow-x-hidden overflow-y-scroll aside">
+                <div class="row px-3 gap-3">
+                  <button
+                    class="btn fw-medium py-4 border-0 border-bottom border-secondary rounded-0 d-flex justify-content-between text-start"
+                    type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#editProfile" aria-controls="offcanvasExample">
+                    <span><i class="bi bi-pencil-fill"></i>&nbsp; កែប្រែព័ត៌មានផ្ទាល់ខ្លួន</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button
+                    class="btn fw-medium py-4 border-0 border-bottom border-secondary rounded-0 d-flex justify-content-between text-start"
+                    type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#security" aria-controls="offcanvasExample">
+                    <span><i class="bi bi-shield-fill-check"></i>&nbsp; ប្រព័ន្ធសុវត្ថិភាព &
+                      ការកំណត់</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button
+                    class="btn fw-medium py-4 border-0 border-bottom border-secondary rounded-0 d-flex justify-content-between text-start"
+                    type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#notification" aria-controls="notification">
+                    <span><i class="bi bi-bell-slash-fill"></i>&nbsp; ការជូនដំណឹង</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button
+                    class="btn fw-medium py-4 border-0 border-bottom border-secondary rounded-0 d-flex justify-content-between text-start"
+                    type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#password" aria-controls="password">
+                    <span><i class="bi bi-unlock2-fill"></i>&nbsp; លេខសម្ងាត់</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <a href="../../../index.html"
+                    class="btn fw-medium py-4 border-0 border-bottom border-secondary rounded-0 d-flex justify-content-between text-start text-danger">
+                    <span><i class="fa-solid fa-right-from-bracket"></i>&nbsp; ចាកចេញពីគណនី</span>
+                    <i class="bi bi-chevron-right"></i>
+                  </a>
+                </div>
+              </aside>
+              <article class="overflow-y-scroll">
+                <!--* profile -->
+                <div class="offcanvas offcanvas-end border-0 w-100" tabindex="-1" id="editProfile"
+                  aria-labelledby="editProfile">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-semibold">ប្រវតិ្តរូប</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body article">
+                    <div class="col-12">
+                      <div class="card bg-transparent border-0">
+                        <div
+                          class="card-header border-0 bg-transparent text-center py-3">
+                          <div class="card-img rounded-circle overflow-hidden m-auto"
+                            style="width: 150px; height: 150px;">
+                            <img
+                              src="https://i.pinimg.com/1200x/ce/d5/ea/ced5ea89d69e151b5a22f351fb6bcad0.jpg"
+                              alt class="w-100 h-100 object-fit-cover">
+                          </div>
+                          <button type="button" class="btn btn-dark-blue mt-3"
+                            data-bs-toggle="modal"
+                            data-bs-target="#change-pfp" title="change profile"><i
+                              class="bi bi-camera-fill"></i>&nbsp; ផ្លាស់ប្ដូររូបភាព</button>
+                        </div>
+                        <div class="card-body bg-card-theme border-0">
+                          <form action class>
+                            <div class="row">
+                              <div class="col-md-6 mb-3">
+                                <label for="khmerName"
+                                  class="form-label fw-medium">ឈ្មោះខ្មែរ</label>
+                                <input type="text"
+                                  class="form-control border-secondary shadow-none"
+                                  id="khmerName" value="តុលា">
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="englishName"
+                                  class="form-label fw-medium">ឈ្មោះអង់គ្លេស</label>
+                                <input type="text"
+                                  class="form-control border-secondary shadow-none"
+                                  id="englishName" value="Tola">
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="email"
+                                  class="form-label fw-medium">អ៊ីមែល</label>
+                                <input type="email"
+                                  class="form-control border-secondary shadow-none"
+                                  id="email" value="tola@gmail.com">
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for class="form-label fw-medium">ភេទ</label>
+                                <div class="d-flex gap-5">
+                                  <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio"
+                                      name="gender" id="male" checked>
+                                    <label class="form-check-label" for="male">
+                                      ប្រុស
+                                    </label>
+                                  </div>
+                                  <div class="form-check mb-2">
+                                    <input class="form-check-input" type="radio"
+                                      name="gender" id="female">
+                                    <label class="form-check-label" for="female">
+                                      ស្រី
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="phone"
+                                  class="form-label fw-medium">លេខទូរស័ព្ទ</label>
+                                <input type="number"
+                                  class="form-control border-secondary shadow-none"
+                                  id="phone" value="012987456">
+                              </div>
+                              <div class="col-md-6 mb-3">
+                                <label for="username"
+                                  class="form-label fw-medium">@username</label>
+                                <div
+                                  class="d-flex fs-5 align-items-center gap-1 form-control border-secondary p-0 overflow-hidden">
+                                  <span class="ps-2 pe-1 lh-1">@</span>
+                                  <input type="text"
+                                    class="form-control border-0 border-start border-secondary rounded-0 shadow-none"
+                                    id="username" value="the_weeknd">
+                                </div>
+                              </div>
+                            </div>
+                            <button type="button"
+                              class="btn btn-outline-dark-blue" data-bs-toggle="modal"
+                              data-bs-target="#saveChange">រក្សាទុកការផ្លាស់ប្តូរ</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--* security -->
+                <div class="offcanvas offcanvas-end border-0 w-100" tabindex="-1" id="security"
+                  aria-labelledby="editProfile">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-semibold">ប្រព័ន្ធសុវត្ថិភាព & ការកំណត់</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body article">
+                    <div class="row gap-3">
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ឯកជនភាពគណនីអ្នក</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              គណនីរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញជាសាធារណៈឡើយ
+                              ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬចូលមើល Profile
+                              របស់អ្នកបានទេ
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ឯកជនភាពព័ត៌មានផ្ទាល់ខ្លួន</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                              ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                              ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកបានទេ
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">
+                                ឯកជនភាពប្រវត្តិនៃការអប់រំ
+                              </h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox">
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              ប្រវត្តិនៃការអប់រំរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                              ដោយអ្នកប្រើប្រាស់ជាសិស្សផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                              ប្រវត្តិនៃការអប់រំរបស់អ្នកបានទេ
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">
+                                ឯកជនភាពការអប់រំបច្ចុប្បន្ន
+                              </h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox">
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              ការអប់រំបច្ចុប្បន្នរបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile ឡើយ
+                              ដោយអ្នកប្រើប្រាស់ជាសិស្សផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                              ការអប់រំបច្ចុប្បន្នរបស់អ្នកបានទេ
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">
+                                ឯកជនភាពមុខជំនាញ និងមុខវិជ្ជាសិក្សា
+                              </h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox">
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              មុខជំនាញ និងមុខវិជ្ជាសិក្សារបស់អ្នកនឹងមិនត្រូវបានបង្ហាញនៅលើ Profile
+                              ឡើយ ដោយអ្នកប្រើប្រាស់ផ្សេងទៀតនិងមិនអាចស្វែងរកឬមើល
+                              ពត៌មានផ្ទាល់ខ្លួនរបស់អ្នកបានទេ
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card border-0 p-0">
+                          <div class="card-header border-0 p-0 mt-3 bg-transparent">
+                            <h5 class="card-title text-danger">
+                              តំបន់គ្រោះថ្នាក់
+                            </h5>
+                          </div>
+                          <div class="card-body px-0">
+                            <button class="btn btn-outline-danger d-block" data-bs-toggle="modal"
+                              data-bs-target="#disableAcc">បិទគណនី</button>
+                            <button class="btn btn-danger d-block my-3" data-bs-toggle="modal"
+                              data-bs-target="#deleteAcc"><i
+                                class="bi bi-trash"></i>&nbsp; លុបគណនី</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--* notification -->
+                <div class="offcanvas offcanvas-end border-0 w-100" tabindex="-1" id="notification"
+                  aria-labelledby="notification">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-semibold">
+                      ការជូនដំណឹង</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body article">
+                    <div class="row gap-3">
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងថ្មីៗ</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីឯកសារ
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងអំពីអាហារូបករណ៍ក្នុងស្រុក</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីអាហារូបករណ៍ក្នុងស្រុក
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងអំពីអាហារូបករណ៍ក្រៅស្រុក</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីអាហារូបករណ៍ក្រៅស្រុក
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងអំពីការងាររដ្ធ</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងាររដ្ធ
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងអំពីការងារឯកជន</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងារឯកជន
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="card bg-card-theme">
+                          <div class="card-header border-0 bg-transparent">
+                            <div class="d-flex justify-content-between">
+                              <h5 class="card-title">ការជូនដំណឹងអំពីការងារស្ម័គ្រចិត្ត</h5>
+                              <label class="switch">
+                                <input type="checkbox" class="checkbox" checked>
+                                <div class="slider"></div>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <p class="card-text" style="font-size: 18px;">
+                              បើកដើម្បីអនុញ្ញាតអោយរាល់ការជូនដំណឹងអំពីការងារស្ម័គ្រចិត្ត
+                              ថ្មីៗត្រូវបានផ្ដល់ជូនអ្នកទាន់ពេលវេលា
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--* password -->
+                <div class="offcanvas offcanvas-end border-0 w-100" tabindex="-1" id="password"
+                  aria-labelledby="password">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-semibold">ផ្លាស់ប្ដូរលេខសម្ងាត់</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body article">
+                    <div class="row gap-3">
+                      <form class="mt-2">
+                        <div class="mb-3">
+                          <label for="current"
+                            class="form-label fw-medium">លេខសម្ងាត់បច្ចុប្បន្ន</label>
+                          <input type="text"
+                            class="form-control bg-card-theme border-secondary rounded shadow-none"
+                            id="current"
+                            aria-describedby="current">
+                        </div>
+                        <div class="mb-3">
+                          <label for="newPass"
+                            class="form-label fw-medium">លេខសម្ងាត់ថ្មី</label>
+                          <input type="text"
+                            class="form-control bg-card-theme border-secondary rounded shadow-none"
+                            id="newPass">
+                        </div>
+                        <div class="mb-3">
+                          <label for="confirm"
+                            class="form-label fw-medium">បញ្ជាក់លេខសម្ងាត់</label>
+                          <input type="text"
+                            class="form-control bg-card-theme border-secondary rounded shadow-none"
+                            id="confirm">
+                        </div>
+                        <a href="../login/forget.html"
+                          class="text-decoration-none d-block my-3">ភ្លេចលេខសម្ងាត់?</a>
+                        <button type="submit"
+                          class="btn btn-outline-dark-blue">ផ្លាស់ប្ដូរលេខសម្ងាត់</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <script src="../../js/bootstrap.bundle.min.js"></script>
+  <!-- aos link -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="../../js/script-folder.js"></script>
+</html>

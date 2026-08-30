@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ឱកាសការងារ</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <link rel="stylesheet" href="../../css/profile.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+    
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="bg-body-theme" data-bs-theme="light">
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../us/home.html">
+                    <img id="logo" src="../../image/project-logo/logo01.png" alt="Logo" style="width: 75px;">
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <!-- notification  -->
+                        <div class="dropdown">
+                            <a class="btn border-0 mt-1 me-2" href="../profile/notification.html" role="button">
+                                <i class="bi bi-bell px-2 position-relative fs-5">
+                                    <span class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                        style="left: 21px; padding: 3px; top: 1px;">
+                                        <span class="visually-hidden">New alerts</span>
+                                    </span>
+                                </i>
+                            </a>
+
+                            <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                                <li>
+                                    <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                        style="width: 320px;">
+                                        <div class="p-2">
+                                            <h5>សារជូនដំណឹង</h5>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- list notification  -->
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-2.svg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                ជំរាបសួរ! ខ្ញុំចង់សួរអំពីការចុះឈ្មោះសម្រាប់វគ្គសិក្សាថ្មី។
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-3.jpg"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                        <img src="../../image/project-logo/pf-1.png"
+                                            class="img-fluid rounded-circle me-3" style="width: 50px; height: 50px;"
+                                            alt>
+                                        <div class="notification">
+                                            <p class="text clamp-2">
+                                                អរគុណច្រើន សម្រាប់ព័ត៌មាន។ តើមានអាហារូបករណ៍សម្រាប់និស្សិតថ្មីទេ?
+                                            </p>
+                                        </div>
+                                        <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                    </a>
+                                </li>
+                                <div>
+                                    <a href="../profile/notification.html"
+                                        class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                                </div>
+                            </ul>
+                        </div>
+                        <!-- profile  -->
+                        <div class="dropdown">
+                            <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                    style="width: 40px; height: 40px;" alt />
+                            </a>
+                        
+                            <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                <li><a class="dropdown-item" href="../profile/proflie.html"><i
+                                            class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                                <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a>
+                                </li>
+                                <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a>
+                                </li>
+                                <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
+                                            class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <div class="d-flex justify-content-end align-items-center d-flex d-lg-none" role="search">
+                            <!-- profile  -->
+                            <div class="profile">
+                                <a href="../profile/proflie.html">
+                                    <img src="../../image/project-logo/profile-img.jpg"
+                                        class="img-fluid rounded-circle object-fit-cover"
+                                        style="width: 40px; height: 40px;" alt />
+                                </a>
+                            </div>
+                            <h5 class="pt-3 ps-2">សួស្តី!​​ តុលា</h5>
+                        </div>
+
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="assets/image/logo.png" class="img-fluid"
+                                    style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../us/home.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="../schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 active dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a></li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li><a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <!-- notification  -->
+                    <div class="dropdown">
+                        <a class="btn border-0 mt-1 me-2" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="bi bi-bell position-relative fs-5">
+                                <span
+                                    class="position-absolute translate-middle bg-danger border border-light rounded-circle"
+                                    style="left: 21px; padding: 4px; top: 1px;">
+                                    <span class="visually-hidden">New
+                                        alerts</span>
+                                </span>
+                            </i>
+                        </a>
+
+                        <ul class="dropdown-menu ms-n20 border-0 shadow-sm bg-card-theme">
+                            <li>
+                                <div class="px-3 mb-3 d-flex justify-content-between align-items-center border-1 border-bottom"
+                                    style="width: 320px;">
+                                    <div class="p-2">
+                                        <h5>សារជូនដំណឹង</h5>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- list notification  -->
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ឥឡូវនេះវគ្គអាហារូបករណ៍ថ្មីបានបើកឱ្យចុះឈ្មោះហើយ។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-2.svg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! នឹងមានព្រឹត្តិការណ៍ពិសេសនៅសប្ដាហ៍ក្រោយ សូមអញ្ជើញចូលរួម។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../profile/notification.html" class="nav-link d-flex justify-content-between p-2 border-bottom">
+                                    <img src="../../image/project-logo/pf-3.jpg" class="img-fluid rounded-circle me-3"
+                                        style="width: 50px; height: 50px;" alt>
+                                    <div class="notification">
+                                        <p class="text clamp-2">
+                                            សូមជម្រាបជូនថា! ការងារថ្មីមួយកំពុងបើកឱ្យដាក់ពាក្យ សូមចូលមើលព័ត៌មានលម្អិត។
+                                        </p>
+                                    </div>
+                                    <i class="bi bi-dot text-danger display-6 mt-n2"></i>
+                                </a>
+                            </li>
+                            <div>
+                                <a href="../profile/notification.html"
+                                    class="nav-link text-end text-primary p-2 pe-4">មើលបន្ថែម</a>
+                            </div>
+                        </ul>
+                    </div>
+                    <!-- profile  -->
+                    <div class="dropdown">
+                        <a class="nav-link px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../../image/project-logo/profile-img.jpg" class="img-fluid rounded-circle object-fit-cover"
+                                style="width: 40px; height: 40px;" alt />
+                        </a>
+                    
+                        <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                            <li><a class="dropdown-item" href="../profile/proflie.html"><i class="bi bi-person-circle me-2"></i>មើលប្រវត្តិរូប</a></li>
+                            <li><a class="dropdown-item" href="../profile/edit_profile.html"><i class="bi bi-gear me-2"></i>ការកំណត់</a></li>
+                            <li><a class="dropdown-item" href="../profile/favorite.html"><i class="bi bi-bookmark me-2"></i>រក្សាទុក</a></li>
+                            <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right me-2"></i>ចាកចេញ</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+        
+    </header>
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <main>
+        <!-- Job Application Modal -->
+        <section>
+            <!-- Job Application Modal -->
+            <div class="modal fade" id="jobModal" tabindex="-1" aria-labelledby="jobModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                    <div class="modal-content shadow-lg border-0">
+        
+                        <!-- Header -->
+                        <div class="modal-header bg-footer text-white">
+                            <h5 class="modal-title" id="jobModalLabel">ពាក្យស្នើសុំការងារ</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                                aria-label="បិទ"></button>
+                        </div>
+        
+                        <!-- Body -->
+                        <div class="modal-body">
+                            <form id="jobForm" enctype="multipart/form-data">
+                                <div class="mb-3">
+                                    <label for="fullname" class="form-label">ឈ្មោះពេញ</label>
+                                    <input type="text" class="form-control bg-card-theme" id="fullname" name="fullname"
+                                        placeholder="បញ្ចូលឈ្មោះរបស់អ្នក" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">អ៊ីមែល</label>
+                                    <input type="email" class="form-control bg-card-theme" id="email" name="email"
+                                        placeholder="example@gmail.com" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">លេខទូរស័ព្ទ</label>
+                                    <input type="tel" class="form-control bg-card-theme" id="phone" name="phone"
+                                        placeholder="0XX-XXX-XXX" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="position" class="form-label">មុខតំណែងដែលដាក់ពាក្យ</label>
+                                    <input type="text" class="form-control bg-card-theme" id="position" name="position"
+                                        placeholder="ឧ. Web Developer, Accountant" required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="experience" class="form-label">បទពិសោធន៍ការងារ</label>
+                                    <textarea class="form-control bg-card-theme" id="experience" name="experience" rows="3"
+                                        placeholder="ពិពណ៌នាអំពីបទពិសោធន៍របស់អ្នក..." required></textarea>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <label for="cv" class="form-label">CV / Resume (PDF/DOC)</label>
+                                    <input type="file" class="form-control bg-card-theme" id="cv" name="cv"
+                                        accept=".pdf,.doc,.docx" required>
+                                </div>
+                            </form>
+                        </div>
+        
+                        <!-- Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                            <button form="jobForm" class="btn btn-dark-blue" data-bs-toggle="modal" data-bs-target="#topModal">ដាក់ពាក្យ</button>
+                        </div>
+        
+                    </div>
+                </div>
+            </div>
+            <!-- success modal  -->
+            <section>
+                <div class="modal fade" id="topModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content border-0  shadow p-4 bg-success text-white text-center">
+                        <i class="bi bi-check2-circle" style="font-size: 3rem;"></i>
+                        <span class="fs-4">ទទួលបានជោគជ័យ!</span>
+                    </div>
+                </div>
+            </div>
+            </section>
+        
+        </section>
+        <div>
+            <div class="position-relative">
+                <div class="position-absolute"></div>
+                <img class="img-fluid" src="../../image/job-img/job.png" alt=""
+                    style="width: 100%; height: 350px; object-fit: cover; object-position: center;">
+            </div>
+        </div>
+        <section>
+            <div class="container">
+                <!-- detial about job -->
+                <div>
+                    <div class="row">
+                        <div class="col-10 col-sm-12 col-lg-9 z-1" style="margin-top: -10%;">
+                            <div class="card mb-3 shadow-sm">
+                                <div class="row g-0">
+                                    <div class=" col-10 col-md-4 d-flex align-items-center">
+                                        <img class="image img-fluid " src="../../image/job-img/Woori bank.jpg" alt="">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h3 class="title fw-bold mb-3">
+                                                Software Developer</h3>
+                                            <ul class="list-unstyled detail">
+                                                <li>
+                                                    <p class="card-text">
+                                                        Woori Bank Cambodia</p>
+                                                </li>
+                                                <li>
+                                                    <p class="card-text">
+                                                        ទីតាំង​ : រាជ​ធានីភ្នំពេញ</p>
+                                                </li>
+                                                <li>
+                                                    <p class="card-text">
+                                                        បង្ហោះ : 02 / 04 / 2026</p>
+                                                </li>
+                                                <li>
+                                                    <p class="card-text">
+                                                        ប្រាក់ខែ : $ 200</p>
+                                                </li>
+                                            </ul>
+                                            <div>
+                                                <button type="button"
+                                                    class="btn btn-dark-blue btn-sm btn-md btn-lg  me-2" data-bs-toggle="modal" data-bs-target="#jobModal">ដាក់ពាក្យការងារ</button>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark-blue btn-sm btn-md btn-lg" data-bs-toggle="modal" data-bs-target="#topModal"><i
+                                                        class="bi bi-bookmark"></i>រក្សាទុក</button>
+                                                <button type="button"
+                                                    class="btn btn-outline-dark-blue btn-sm btn-md btn-lg ms-2" data-bs-toggle="modal" data-bs-target="#topModal"><i
+                                                        class="bi bi-arrow-90deg-right" ></i>ចែករំលែក</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-4 mb-10 shadow-sm">
+                                <div class="card-header">
+                                    <h3 class="fw-bold">អំពីការងារ</h3>
+                                </div>
+                                <div class="card-body">
+                                    <ul>
+                                        <li>
+                                            <p>ប្រភេទការងារ​ : ហាត់ការ</p>
+                                        </li>
+                                        <li>
+                                            <p>ហាត់ការចំនួន​ 3ខែជាមុនសិន</p>
+                                        </li>
+                                        <li>
+                                            <p>ម៉ោងធ្វើការ : 7AM - 12AM</p>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        ដំណឹងជ្រើសរើសបុគ្គលិកពីក្រុមហ៊ុនឯកជនជាច្រើនកន្លែង</p>
+                                    <h4 class="fw-bold mb-4">លក្ខខណ្ឌការងារ
+                                    </h4>
+                                    <ul>
+                                        <li>
+                                            <p> ត្រូវជានិស្សិតឆ្នាំទី២ឡើងទៅ ដេប៉ាតឺម៉ង់ Management Information System
+                                                និង
+                                                Engineering</p>
+                                        </li>
+                                        <li>
+                                            <p>មានទំនាក់ទំងល្អ អាចធ្វើការងារជាក្រុមបានល្អ</p>
+                                        </li>
+                                        <li>
+                                            <p>ខិតខំធ្វើការងារ ប្រកបដោយទំនួលខុសត្រូវ
+                                                និងការយកចិត្តទុកដាក់ខ្ពស់</p>
+                                        </li>
+                                        <li>
+                                            <p>ស្មោះត្រង់ ការស្រឡាញ់​ និងមានភាពជាអ្នកដឹកនាំ</p>
+                                        </li>
+                                        <li>
+                                            <p>មានភាពបុិនប្រសពក្នុងការដោះស្រាយបញ្ហាបានរហ័ស</p>
+                                        </li>
+                                        <li>
+                                            <p>មានភាពបុិនប្រសពក្នុងការដោះស្រាយបញ្ហាបានរហ័ស</p>
+                                        </li>
+                                        <li>
+                                            <p>មានភាពបុិនប្រសពក្នុងការដោះស្រាយបញ្ហាបានរហ័ស</p>
+                                        </li>
+                                        <li>
+                                            <p>ចេះDesign UI/UX, analysis, testing, deployment, maintenance</p>
+                                        </li>
+                                        <li>
+                                            <p>រៀននិង អាចទទួលយកបច្ចេកវិទ្យាថ្មីៗ</p>
+                                        </li>
+                                    </ul>
+                                    <h4 class="fw-bold mb-4">គុណសម្បត្តិនៃការហាត់ការ</h4>
+                                    <ul>
+                                        <li>
+                                            <p>ទទូលបានប្រាក់ឧបត្ថម្ភ 100$</p>
+                                        </li>
+                                        <li>
+                                            <p>ទទូលបានបទពិសោធន៏ការងារ</p>
+                                        </li>
+                                        <li>
+                                            <p>ទទូលបាន​ចំណេះដឹង និងទម្លាប់មួយដ៏ល្អក្រោយពីធ្វើការងារ</p>
+                                        </li>
+                                        <li>
+                                            <p>បានចូលរួមកិច្ចការងារសង្គម ដែលក្រសួងចាត់ចែង</p>
+                                        </li>
+                                        <li>
+                                            <p>ស្គាល់មនុស្សថ្មី និងបង្កើតទំនាក់ទំនងល្អៗ</p>
+                                        </li>
+                                        <li>
+                                            <p>អាចក្លាយជាបុគ្គលិកពេញសិទ្ធិ ធ្វើការងារនៅក្រសួងប្រៃសណីយ៍
+                                                និងទូរគមនាគមន៏</p>
+                                        </li>
+                                        <li>
+                                            <p>កាន់តែមានភាពច្បាស់លាស់លើការងារ</p>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        មានចំណាប់អារម្មណ៍អាចធ្វើការទំនាក់ទំនង
+                                    </p>
+                                    <div class="onlin">
+                                        <p class="detail"><i class="fa-brands fa-telegram"></i> <a href="#"
+                                                class="text-decoration-none">099960498</a>
+                                            ទំនាក់ទំនងតាមតេលេក្រាម
+                                        </p>
+                                        <p class="detail"><i class="fa-solid fa-envelope"></i> <a href="#"
+                                                class="text-decoration-none">youth@gmail.com</a>
+                                            ទំនាក់ទំនងតាម <a href="#" class="text-decoration-none"> Email</a></p>
+                                    </div>
+                                    <!--  apply for job with form here -->
+                                    <h4 class="fw-bold" data-bs-toggle="modal" data-bs-target="#jobModal">ដាក់ពាក្យការងារ</h4>
+                                    <form class=" p-2" action="" method="post">
+                                        <div class="col-12 mt-3">
+                                            <label for="validationCustom01"
+                                                class="form-label detail fw-medium">ឈ្មោះ</label>
+                                            <input type="text"
+                                                class="form-control shadow-sm form-control-sm form-control-md form-control-lg p-2"
+                                                id="validationCustom01" placeholder="ឈ្មោះរបស់អ្នក" >
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <label for="validationCustom02"
+                                                class="form-label  detail fw-medium">លេខទូរស័ព្ទ</label>
+                                            <input type="text"
+                                                class="form-control shadow-sm form-control-sm form-control-md form-control-lg p-2"
+                                                id="validationCustom02" placeholder="លេខទូរសព្ទ" >
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <label for="validationCustomUsername"
+                                                class="form-label detail fw-medium">Email</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                                <input type="email "
+                                                    class="form-control shadow-sm form-control-sm form-control-md form-control-lg"
+                                                    id="validationCustomUsername" aria-describedby="inputGroupPrepend"
+                                                    placeholder="Email" >
+                                                <div class="invalid-feedback">
+                                                    Please choose a Email.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <label for="formFileLg"
+                                                class="form-label detail fw-medium">កន្លែងបញ្ជូនឯកសារ</label>
+                                            <input class="form-control shadow-sm form-control-lg" id="formFileLg" type="file">
+                                            
+                                        </div>
+                                        <div class=" col-12 mt-3">
+                                            <textarea class=" form-control shadow-sm  form-control-lg p-3 "
+                                                placeholder="សរសេរសាររបស់អ្នក..." id="floatingTextarea2"></textarea>
+                                            <label for="floatingTextarea2"
+                                                class=" shadow-sm fw-medium">សរសេរសាររបស់អ្នក...</label>
+                                        </div>
+                                        <div class="col-12 mt-3">
+                                            <button class="btn btn-dark-blue btn-md " type="submit" data-bs-toggle="modal" data-bs-target="#topModal"       >ផ្ញើរសារ</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ------------- Job location -->
+                        <div class="col-10 col-sm-12 col-xl-3 mt-5 mb-10">
+                            <div class="card position-sticky " style="top: 110px;">
+                                <div class="card-image d-flex m-auto align-items-center location-job">
+                                    <img class="card-img-top img-fluid" src="../../image/job-img/Woori bank.jpg" alt="">
+                                </div>
+                                <div class="card-body ">
+                                    <h5 class="card-title fw-semibold">Woori Bank Cambodia</h5>
+                                    <div class="location">
+                                        <div class="location">
+                                            <span style="text-decoration: none;">
+                                                <a class="text-decoration-none text-dark d-flex"
+                                                    href="https://www.google.com/maps/place/Woori+Bank-+Tuol+Kouk+-+Tuek+L'ak+Ti+Muoy/@11.5589869,104.8759119,14z/data=!4m10!1m2!2m1!1sWoori+Bank!3m6!1s0x310951386bf27de1:0x9a0faa7af54921e!8m2!3d11.5680244!4d104.8885815!15sCgpXb29yaSBCYW5rIgOIAQGSAQRiYW5rqgFdCg0vZy8xMWJjNmhuM3BmCgkvbS8wOWYwa2sQASoOIgp3b29yaSBiYW5rKAAyHxABIhsopEm8m7iaRH9n-npMMiAqhsQ-M2neXZIFgBAyDhACIgp3b29yaSBiYW5r4AEA!16s%2Fg%2F11yd01nq_7?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D">
+                                                    <i class="fa-solid fa-location-dot me-2 fs-4"></i>
+                                                    <p>អាស័យដ្ឋាន និង ទីតាំងការងារ</p>
+                                                </a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <a type="button" href="../login/login.html"
+                                        class="btn btn-outline-dark-blue text-center btn-sm btn-md btn-lg btn_apply mt-3 fs-6" data-bs-toggle="modal" data-bs-target="#jobModal">ដាក់ពាក្យការងារ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+   <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script.js"></script>
+<script src="../../js/script-folder.js"></script>
+
+</html>

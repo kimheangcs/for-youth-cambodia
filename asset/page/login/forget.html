@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ផ្លាស់ប្តូរពាក្យសម្ងាត់ថ្មី​</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/bootstrap.css" />
+  <link rel="stylesheet" href="../../css/theme.css" />
+   <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+  <!-- aos link -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- swiper  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<style>
+  /* This section sets up the container for the floating label */
+  .form-floating {
+    position: relative;
+  }
+
+  /* This styles the input field itself */
+  .form-floating .form-control {
+    height: 60px;
+    padding: 20px 15px 5px 15px;
+    border-color: #1d263e;
+    border-radius: 20px;
+    background-color: #fff;
+    /* Default background */
+    transition: background-color 0.5s ease-in-out;
+  }
+
+  /* This changes the input background AFTER you type in it */
+  .form-floating .form-control:not(:placeholder-shown) {
+    background-color: #eef2fa;
+    /* Current background for filled input */
+  }
+
+  /* This styles the label in its default position */
+  .form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  /* This styles the label WHEN it floats up */
+  .form-floating .form-control:focus~label,
+  .form-floating .form-control:not(:placeholder-shown)~label {
+    transform: scale(0.85) translateY(-0.9rem) translateX(20px);
+    background-color: #ffffff;
+    padding: 0 5px;
+    height: auto;
+  }
+
+  /* This styles the input field when you click on it */
+  .form-floating .form-control:focus {
+    border-color: #1d263e;
+    border-width: 2px;
+    box-shadow: none;
+  }
+
+  /* This styles the input field when you click on it */
+  .form-floating .form-control:focus {
+    border-color: #1d263e;
+    border-width: 2px;
+    box-shadow: none;
+  }
+
+  /* This NEW rule fixes the TEXT position inside the input box */
+  .form-floating .form-control {
+    padding-left: 0.75rem;
+    /* This fixes the text alignment */
+    border-color: #1d263e !important;
+    border-radius: 20px;
+    background-color: #fff;
+  }
+
+  /* Your other styles */
+  .form-floating .form-control:focus {
+    border-color: #1d263e;
+    border-width: 2px;
+    border-radius: 20px;
+    box-shadow: none !important;
+  }
+
+  /* This new rule changes the input background AFTER you type */
+  .form-floating .form-control:not(:placeholder-shown) {
+    background-color: #fff;
+    /* Light blue example color */
+  }
+
+  /* Style for the line separating the login options */
+  .line-login {
+    position: relative;
+    text-align: center;
+  }
+
+  .line-login::before,
+  .line-login::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background-color: #ccc;
+  }
+
+  .line-login::before {
+    left: 0;
+  }
+
+  .line-login::after {
+    right: 0;
+  }
+</style>
+<main>
+
+  <body style="background: #fff">
+    <section class="d-flex align-items-center" style="height: 100vh">
+      <div class="container">
+        <div class="row flex-row">
+          <div class="col-lg-6">
+            <form action="" target="_blank" method="post" class="px-2">
+              <div class="card border-0 bg-transparent pt-lg-15">
+                <div class="card-header bg-transparent border-0">
+                  <div class="text-center">
+                    <h2 class="fs-4 mb-3">ផ្លាស់ប្តូរពាក្យសម្ងាត់ថ្មី​</h2>
+                    <p class="text-muted mb-4">
+                      បញ្ជូលពាក្យសម្ងាត់ថ្មី និងបញ្ជាក់ពាក្យសម្ងាត់
+                    </p>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="password" placeholder="Password" aria-label=""
+                      required />
+                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i>ពាក្យសម្ងាត់ថ្មី</label>
+                  </div>
+                  <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="c_password" placeholder="Password" aria-label=""
+                      required />
+                    <label for="c_password" class="form-label"><i class="fa-solid fa-lock"></i>បញ្ជាក់ពាក្យសម្ងាត់</label>
+                  </div>
+                    <a href="../../page/us/home.html" type="submit" class="btn btn-gunmetal w-100 d-flex justify-content-center mb-3">
+                      បញ្ជូន
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-6 d-none d-lg-block">
+            <div class="card border-0 bg-white">
+              <img src="../../image/login-img/reset-password.jpg" class="img-fluid" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</main>
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/srcipt.js"></script>
+
+</html>

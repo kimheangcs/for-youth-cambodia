@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>សម្រាប់យុវជនកម្ពុជា</title>
+    <link rel="stylesheet" href="asset/css/style.css" />
+    <link rel="stylesheet" href="asset/css/bootstrap.css" />
+    <link rel="stylesheet" href="asset/css/theme.css" />
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="asset/image/project-logo/logo01.png" media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="asset/image/project-logo/logo02.png" media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    /* ---- Sliding Card for University List ---- */
+
+    /* 1. Set the parent container as the positioning reference */
+    .text-list {
+        position: relative;
+    }
+
+    /* 2. Style the text item itself and prepare it for layering */
+    .text-item {
+        position: relative;
+        /* Needed for z-index to work correctly */
+        z-index: 1;
+        /* Ensures text content stays on top */
+        padding: 1rem;
+        /* Adds some space around the text */
+        border-radius: var(--bs-border-radius-lg);
+        /* Matches the background's curve */
+    }
+
+    /* 3. Style the background card element */
+    .text-item .bg {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bs-tertiary-bg);
+        /* A theme-friendly color */
+        border-radius: var(--bs-border-radius-lg);
+        /* Rounded corners */
+        z-index: -1;
+        /* Places it BEHIND the text */
+        opacity: 0;
+        /* Hidden by default */
+        transform: scale(0.9);
+        /* Start slightly smaller */
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    }
+
+    /* 4. Show the background card when the text item is active */
+    .text-item.active .bg {
+        opacity: 1;
+        transform: translateX(0);
+        /* Move to final position */
+    }
+
+    /* --- Make University Swiper Match Text Height --- */
+
+    /* 1. Make the main swiper container fill the full height of its column */
+    .custom-swiper-container {
+        height: 350px;
+    }
+
+    /* 2. Make the image fill its container without stretching */
+    .custom-swiper-container .swiper-slide img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        /* This is the key part: it crops the image to fit, preserving its aspect ratio */
+    }
+</style>
+
+<body>
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">
+                    <img id="logo" src="asset/image/project-logo/logo01.png" alt="Logo" style="width: 75px" />
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <a href="asset/page/login/login.html" class="text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-dark-blue ">
+                                ចូលគណនី
+                            </button>
+                        </a>
+                        <a href="asset/page/login/register.html"
+                            class="ps-2 text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-outline-dark-blue">
+                                បង្កើតគណនី
+                            </button>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="asset/image/project-logo/logo01.png" id="logo2"
+                                    class="img-fluid" style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active px-3" aria-current="page" href="#"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="asset/page-Copy/direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="asset/page-Copy/direction/uni-show.html">សកលវិទ្យាល័យ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="asset/page-Copy/schoolarship/schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="asset/page-Copy/schoolarship/schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item"
+                                            href="asset/page-Copy/work/public-work.html">ការងាររដ្ឋ</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="asset/page-Copy/work/private-work.html">ការងារឯកជន</a></li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                            href="asset/page-Copy/work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <li class="nav-item">
+                                <a href="asset/page-Copy/us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+                        <div
+                            class="d-flex justify-content-center pt-5 align-items-center d-flex d-lg-none bg-body-theme d-md-none ">
+                            <a href="asset/page/login/login.html" class="text-white text-decoration-none">
+                                <button class="btn btn-dark-blue ">
+                                    ចូលគណនី
+                                </button>
+                            </a>
+                            <a href="asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                                <button class="btn btn-outline-dark-blue">
+                                    បង្កើតគណនី
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <a href="asset/page/login/login.html" class="text-white text-decoration-none">
+                        <button class="btn btn-dark-blue">ចូលគណនី</button>
+                    </a>
+                    <a href="asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                        <button class="btn btn-outline-dark-blue">
+                            បង្កើតគណនី
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="mt-12">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-5">
+                        <span class=" fs-5 clamp-1" data-aos="fade-up">សូមស្វាគមន៍</span>
+                        <h1 class="my-4 fs-2 clamp-2" data-aos="fade-up">
+                            " រៀនជំនាញដែលទីផ្សារការងារត្រូវការ កសាងអនាគតភ្លឺស្វាងរបស់អ្នក "
+                        </h1>
+                        <p class="clamp-2" data-aos="fade-up">
+                            កុំរៀនត្រឹមតែយកសញ្ញាបត្រ តែត្រូវរៀនដើម្បីទទួលបានការងារល្អ
+                            និងប្រាក់ខែខ្ពស់។ យើងនឹងជួយអ្នកជ្រើសរើសជំនាញដែលស័ក្តិសម
+                            និងមានតម្រូវការខ្ពស់ក្នុងពេលបច្ចុប្បន្ន។
+                        </p>
+                        <p class="mt-5" data-aos="fade-up">
+                            <a href="asset/page/login/login.html"
+                                class="btn btn-dark-blue">ស្វែងរកជំនាញដែលពេញនិយមឥឡូវនេះ!</a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-7" data-aos="fade-up" data-aos-delay="400">
+                        <div class=" mb-5 mb-lg-0">
+                            <div class="swiper mySwiper rounded-3 w-75 float-end">
+                                <div class="swiper-wrapper ">
+                                    <div class="swiper-slide">
+                                        <img src="asset/image/lending-img/job_search.jpg" alt="Image"
+                                            class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="asset/image/lending-img/diary-planning.jpg" alt="Image"
+                                            class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="asset/image/lending-img/Engineering-C2-1.jpg" alt="Image"
+                                            class="img-fluid" />
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-15">
+            <div class="container" data-aos="fade-up">
+                <h2 class="text-center pb-8 clamp-1">ជំនាញពេញនិយម</h2>
+                <div class="row gy-4">
+                    <div class="col-md-6 col-lg-4 we-have">
+                        <div class="card shadow-sm border-0 bg-white bg-card-theme card-hover" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <a href="asset/page/login/login.html" class="d-block">
+                                <img src="asset/image/lending-img/computer-science-program-banner.jpg" alt="Image"
+                                    class="card-img-top" /></a>
+
+                            <div class="card-body we-have">
+                                <h3 class="card-title">
+                                    <a href="asset/page/login/login.html"
+                                        class="text-decoration-none text-dark fw-bold clamp-1  bg-card-theme">ព័ត៌មានវិទ្យា​</a>
+                                </h3>
+                                <p class="card-text clamp-4">
+                                    ពិភពលោកបច្ចុប្បន្នដំណើរការដោយបច្ចេកវិទ្យា។ ការរៀនជំនាញ IT
+                                    ដូចជា Software Development, Web Development ឬ Data Science
+                                    នឹងផ្តល់ឱកាសការងារមិនចេះរីងស្ងួត។
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 we-have">
+                        <div class="card shadow-sm border-0 bg-white  bg-card-theme card-hover" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <a href="asset/page/login/login.html" class="thumb d-block"><img
+                                    src="asset/image/lending-img/digital marketing.jpg" alt="Image"
+                                    class="card-img-top" /></a>
+
+                            <div class="card-body we-have">
+                                <h3 class="card-title">
+                                    <a href="asset/page/login/login.html"
+                                        class="text-decoration-none text-dark fw-bold clamp-1  bg-card-theme">ទីផ្សារឌីជីថល​</a>
+                                </h3>
+                                <p class="card-text clamp-4">
+                                    ជំនាញទីផ្សារឌីជីថលចាំបាច់សម្រាប់គ្រប់អាជីវកម្មទាំងអស់។
+                                    រៀនពីរបៀបបង្កើតយុទ្ធសាស្ត្រ Content Marketing, Social Media
+                                    Marketing និង SEO ដើម្បីជួយក្រុមហ៊ុនរីកចម្រើន។
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 we-have">
+                        <div class="card shadow-sm border-0 bg-white  bg-card-theme card-hover" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <a href="asset/page/login/login.html" class="thumb d-block"><img
+                                    src="asset/image/lending-img/business1.jpg" alt="Image" class="card-img-top" /></a>
+
+                            <div class="card-body we-have">
+                                <h3 class="card-title">
+                                    <a href="asset/page/login/login.html"
+                                        class="text-decoration-none text-dark fw-bold clamp-1  bg-card-theme">ការគ្រប់គ្រងអាជីវកម្ម​</a>
+                                </h3>
+                                <p class="card-text clamp-4">
+                                    គ្រប់ក្រុមហ៊ុនត្រូវការអ្នកមានសមត្ថភាពគ្រប់គ្រង។
+                                    ជំនាញនេះបង្រៀនអ្នកពីរបៀបដឹកនាំក្រុម, ធ្វើផែនការអាជីវកម្ម
+                                    និងវិភាគហិរញ្ញវត្ថុ ដើម្បីក្លាយជាអ្នកដឹកនាំដ៏ល្អនៅថ្ងៃអនាគត។
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-15 d-none d-lg-block ">
+            <div class="container ">
+                <h2 class="text-center pb-8 clamp-1">
+                    សាកលវិទ្យាល័យ
+                </h2>
+                <div class="content-wrapper">
+                    <div class="row gy-2" data-aos="fade-up">
+                        <div class="col-md-12 col-lg-5">
+                            <div class="text-list pb-5" id="textList">
+                                <div class="text-item active">
+                                    <div class="bg"></div>
+                                    <a href="asset/page/login/login.html"
+                                        class="d-flex active text-decoration-none pb-2">
+                                        <div class="card-body text-dark" data-aos="fade-left"
+                                            data-aos-delay="0">
+                                            <h3 class="card-title text-dark fw-bold fs-4 clamp-1 ">
+                                                សាកលវិទ្យាភូមិន្ទភ្នំពេញ​​ (RUPP)
+                                            </h3>
+                                            <p class="card-text pt-2 fs-6 clamp-2">
+                                                ជំនាញពេញនិយម: ផ្នែកគណិតវិទ្យា ព័ត៌មានវិទ្យា (IT)
+                                                ជីវវិទ្យា អក្សរសាស្ត្រអង់គ្លេស និងប្រព័ន្ធផ្សព្វផ្សាយ។
+                                            </p>    
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="text-item">
+                                    <div class="bg"></div>
+                                    <a href="asset/page/login/login.html" class="text-decoration-none d-flex pb-2"
+                                        data-aos="fade-left" data-aos-delay="300">
+                                        <div class="card-body text-dark">
+                                            <h3 class="card-title text-dark fs-4 clamp-1 fw-bold">
+                                                សាកលវិទ្យាល័យជាតិគ្រប់គ្រង (NUM)
+                                            </h3>
+                                            <p class="card-text pt-2 fs-6 clamp-1">
+                                                ជំនាញពេញនិយម: ហិរញ្ញវត្ថុ និងធនាគារ គណនេយ្យ
+                                                គ្រប់គ្រងអាជីវកម្ម និងទីផ្សារ។
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="text-item">
+                                    <div class="bg"></div>
+                                    <a href="asset/page/login/login.html" class="d-flex text-decoration-none pb-2"
+                                        data-aos="fade-left" data-aos-delay="100">
+                                        <div class="card-body text-dark">
+                                            <h3 class="card-title text-dark fs-4 fw-bold clamp-1">
+                                                វិទ្យាស្ថានបច្ចេកវិទ្យាកម្ពុជា (ITC)
+                                            </h3>
+                                            <p class="card-text pt-2 fs-6 clamp-2">
+                                                ជំនាញពេញនិយម: វិស្វកម្មសំណង់ស៊ីវិល វិស្វកម្មអគ្គិសនី
+                                                វិស្វកម្មមេកានិក និងព័ត៌មានវិទ្យា។
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-7">
+                            <div class="swiper custom-swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide custom-swiper-slide">
+                                        <img src="asset/image/lending-img/rupp.jpg" alt="Image" class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide custom-swiper-slide">
+                                        <img src="asset/image/lending-img/num.jpg" alt="Image" class="img-fluid" />
+                                    </div>
+                                    <div class="swiper-slide custom-swiper-slide">
+                                        <img src="asset/image/lending-img/ITC.jpg" alt="Image" class="img-fluid" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-12">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-center pb-8 clamp-1">អ្វីដែលអ្នកអាចស្វែងរកបាននៅទីនេះ</h2>
+                <div class="row gy-4">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <a href="asset/page-Copy/direction/major.html" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm rounded-3 overflow-hidden card-hover">
+                                <div class="row g-0 align-items-stretch">
+                        
+                                    <!-- Image (left side) -->
+                                    <div class="col-md-6">
+                                        <img src="asset/image/lending-img/find major.jpg" class="img-fluid h-100 object-fit-cover"
+                                            alt="Find Major" />
+                                    </div>
+                        
+                                    <!-- Content (right side) -->
+                                    <div class="col-md-6 d-flex">
+                                        <div class="card-body bg-white bg-card-theme d-flex flex-column justify-content-center">
+                        
+                                            <p class="badge text-bg-danger fw-light mb-2 clamp-1" style="width: fit-content;">
+                                                មុខជំនាញ
+                                            </p>
+                        
+                                            <h5 class="card-title fw-bold clamp-1 text-dark">
+                                                ស្វែងយល់ពីជំនាញនីមួយៗ
+                                            </h5>
+                        
+                                            <p class="card-text text-muted small clamp-3">
+                                                ការជ្រើសរើសជំនាញសិក្សាដែលត្រូវនឹងតម្រូវការទីផ្សារ
+                                                គឺជាគន្លឹះដើម្បីធានាបាននូវឱកាសការងារខ្ពស់
+                                                និងប្រាក់ខែល្អនៅពេលបញ្ចប់ការសិក្សា។
+                                            </p>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                        <a href="asset/page-Copy/direction/uni-show.html" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm rounded-3 overflow-hidden card-hover">
+                                <div class="row g-0 align-items-stretch">
+                        
+                                    <!-- Image -->
+                                    <div class="col-md-6">
+                                        <img src="asset/image/lending-img/university.jpg" class="img-fluid h-100 object-fit-cover"
+                                            alt="University" />
+                                    </div>
+                        
+                                    <!-- Content -->
+                                    <div class="col-md-6 d-flex">
+                                        <div class="card-body bg-white bg-card-theme d-flex flex-column justify-content-center">
+                        
+                                            <p class="badge text-bg-danger fw-light mb-2 clamp-1" style="width: fit-content;">
+                                                សកលវិទ្យាល័យ
+                                            </p>
+                        
+                                            <h5 class="card-title fw-bold clamp-1 text-dark">
+                                                ស្វែងរកសកលវិទ្យាល័យ
+                                            </h5>
+                        
+                                            <p class="card-text text-muted small clamp-3">
+                                                ការស្វែងយល់ពីសាកលវិទ្យាល័យក៏សំខាន់ដែរ។
+                                                មានទាំងសាកលវិទ្យាល័យរដ្ឋ និងឯកជននៅកម្ពុជា
+                                                ដែលនីមួយៗមានលក្ខណៈពិសេសរៀងៗខ្លួន។
+                                            </p>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                        <a href="asset/page-Copy/schoolarship/schoolarship-in.html" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm rounded-3 overflow-hidden card-hover">
+                                <div class="row g-0 align-items-stretch">
+                        
+                                    <!-- Image -->
+                                    <div class="col-md-6">
+                                        <img src="asset/image/lending-img/schorlaship.jpg" class="img-fluid h-100 object-fit-cover"
+                                            alt="Scholarship" />
+                                    </div>
+                        
+                                    <!-- Content -->
+                                    <div class="col-md-6 d-flex">
+                                        <div class="card-body bg-white bg-card-theme d-flex flex-column justify-content-center">
+                        
+                                            <p class="badge text-bg-danger fw-light mb-2 clamp-1" style="width: fit-content;">
+                                                អាហារូបករណ៍
+                                            </p>
+                        
+                                            <h5 class="card-title fw-bold text-dark clamp-1">
+                                                ស្វែងរកអាហារូបករណ៍
+                                            </h5>
+                        
+                                            <p class="card-text text-muted small clamp-3">
+                                                អាហារូបករណ៍ត្រូវបានបែងចែកជាពីរប្រភេទធំៗ
+                                                អាហារូបករណ៍សិក្សានៅក្នុងប្រទេស និង
+                                                អាហារូបករណ៍សិក្សានៅក្រៅប្រទេស។
+                                            </p>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+                        <a href="asset/page-Copy/work/public-work.html" class="text-decoration-none">
+                            <div class="card border-0 shadow-sm rounded-3 overflow-hidden we-have  card-hover">
+                                <div class="row g-0 align-items-stretch">
+                        
+                                    <!-- Image -->
+                                    <div class="col-md-6">
+                                        <img src="asset/image/lending-img/job.jpg" class="img-fluid h-100 object-fit-cover"
+                                            alt="Job Opportunities" />
+                                    </div>
+                        
+                                    <!-- Content -->
+                                    <div class="col-md-6 d-flex">
+                                        <div class="card-body bg-white bg-card-theme d-flex flex-column justify-content-center">
+                        
+                                            <p class="badge text-bg-danger fw-light mb-2 clamp-1" style="width: fit-content;">
+                                                ការងារ
+                                            </p>
+                        
+                                            <h5 class="card-title fw-bold text-dark clamp-1">
+                                                ស្វែងរកការងារទៅលើវិស័យនីមួយៗ
+                                            </h5>
+                        
+                                            <p class="card-text text-muted small clamp-3">
+                                                យើងនឹងនាំយកមកនូវឱកាសការងារជាច្រើន
+                                                ដែលត្រូវទៅតាមតម្រូវការចាំបាច់សម្រាប់អ្នកទាំងអស់គ្នា។
+                                                ការងារមានទាំងក្នុងស្ថាប័នរដ្ឋ និងឯកជន។
+                                            </p>
+                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-18 z-0">
+            <div class="container">
+                <h2 class="text-center pb-5" data-aos="fade-up" data-aos-delay="100">សំណួរដែលសួរញឹកញាប់ ( FAQ )</h2>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item bg-card-theme border-0 shadow-sm mt-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo" data-aos="fade-up" data-aos-delay="300">
+                                ១.
+                                តើជំនាញអ្វីខ្លះដែលមានតម្រូវការខ្ពស់នៅក្នុងទីផ្សារការងារបច្ចុប្បន្ន?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                ជំនាញដែលកំពុងពេញនិយមខ្លាំងរួមមាន បច្ចេកវិទ្យាព័ត៌មាន (IT),
+                                ទីផ្សារឌីជីថល (Digital Marketing), និង ជំនាញភាសា។
+                                ជំនាញទាំងនេះផ្តល់ឱកាសការងារច្រើន និងប្រាក់ខែខ្ពស់។
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-card-theme border-0 shadow-sm mt-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree" data-aos="fade-up" data-aos-delay="400">
+                                ២. តើគួរជ្រើសរើសសាកលវិទ្យាល័យរដ្ឋ ឬឯកជន?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                វាអាស្រ័យលើគោលដៅ និងស្ថានភាពរបស់អ្នក។ សាកលវិទ្យាល័យរដ្ឋ (ដូចជា
+                                RUPP, ITC) ល្បីខាងគុណភាពអប់រំ និងមានតម្លៃសមរម្យ។ ចំណែក
+                                សាកលវិទ្យាល័យឯកជន (ដូចជា AUPP, PUC) មានកម្មវិធីសិក្សាថ្មីៗ
+                                និងសម្ភារបរិក្ខារទំនើបជាង។
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-card-theme border-0 shadow-sm mt-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFour" aria-expanded="false"
+                                aria-controls="flush-collapseFour" data-aos="fade-up" data-aos-delay="500">
+                                ៣. តើខ្ញុំអាចស្វែងរកអាហារូបករណ៍បានដោយរបៀបណា?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFour" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                មានប្រភពជាច្រើនដូចជា ក្រសួងអប់រំ សាកលវិទ្យាល័យផ្ទាល់
+                                ស្ថានទូតបរទេស ឬអង្គការអន្តរជាតិ។
+                                គន្លឹះសំខាន់គឺត្រូវមានលទ្ធផលសិក្សាល្អ
+                                និងត្រៀមឯកសារឲ្យបានត្រឹមត្រូវ។
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-card-theme border-0 shadow-sm mt-2">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseFive" aria-expanded="false"
+                                aria-controls="flush-collapseFive" data-aos="fade-up" data-aos-delay="600">
+                                ៤. រៀនចប់ហើយ តើខ្ញុំត្រូវរៀបចំខ្លួនដើម្បីរកការងារដោយរបៀបណា?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFive" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                ត្រូវរៀបចំ CV ឲ្យមានគុណភាព បង្កើន ជំនាញទន់ (Soft Skills)
+                                និងស្វែងរកព័ត៌មានការងារតាមគេហទំព័រ ឬបណ្តាញសង្គម។
+                                ការចូលរួមពិព័រណ៍ការងារក៏ជាវិធីល្អមួយដែរ។
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-18">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-center pb-5" data-aos="fade-up" data-aos-delay="100">
+                    ទំទាក់ទំទងមកយើង
+                </h2>
+                <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="col-md-6">
+                        <div
+                            class="card p-3 d-flex flex-row align-items-start shadow-sm border-0 bg-white we-have bg-card-theme card-hover">
+                            <div class="me-3 d-flex justify-content-center align-items-center rounded-3">
+                                <i class="bi bi-geo-alt fs-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="card-title fw-bold fs-6 mb-1">
+                                    អាស័យដ្ឋានរបស់យើង
+                                </h4>
+
+                                <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                    class="nav-link text-white">
+                                    <p class="card-text text-secondary pb-1 clamp-1">
+                                        #86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ ទួលគោក,
+                                        ភ្នំពេញ
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="card p-3 d-flex flex-row align-items-start shadow-sm border-0 bg-white we-have bg-card-theme card-hover">
+                            <div class="me-3 d-flex justify-content-center align-items-center rounded-3">
+                                <i class="bi bi-envelope fs-5"></i>
+                            </div>
+                            <div>
+                                <p class="card-title fw-bold fs-6 mb-1">Email</p>
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-secondary mb-0">foryouthcambodia@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="card p-3 d-flex flex-row align-items-start shadow-sm border-0 bg-white we-have bg-card-theme card-hover">
+                            <div class="me-3 d-flex justify-content-center align-items-center rounded-3">
+                                <i class="bi bi-telephone fs-5"></i>
+                            </div>
+                            <div>
+                                <p class="card-title fw-bold fs-6 mb-1">លេខទូរស័ព្ទ:</p>
+                                <a class="card-text text-secondary mb-0 text-decoration-none"
+                                    href="tel:+11234567890">(+885) 456 7890</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div
+                            class="card p-3 d-flex flex-row align-items-start shadow-sm border-0 bg-white we-have bg-card-theme card-hover">
+                            <div class="me-3 d-flex justify-content-center align-items-center rounded-3">
+                                <i class="bi bi-clock fs-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="card-title fw-bold fs-6 mb-1">ម៉ោងបើកដំណើរការ</h4>
+                                <p class="card-text text-secondary mb-0 pb-2">
+                                    ចន្ទ-សុក្រ: 9AM - 6PM
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="card mt-4 p-4 shadow-sm bg-white mb-18 bg-card-theme card-hover" data-aos="fade-up"
+                            data-aos-delay="400">
+                            <div class="card-body we-have">
+                                <h3 class="mb-3 border-start border-primary border-4 ps-3 fw-bold">
+                                    មានបញ្ហាទាក់ទងនឹងបច្ចេកទេសផ្សេងៗ​ ?
+                                </h3>
+                                <p class="text-secondary mb-4">
+                                    ទាក់ទងមកយើងតាមរយៈ formខាងក្រោមនេះ
+                                    ក្រុមការងាររបស់ពួកយើងនឹងទាក់ទងទៅអ្នកក្នុងរយៈពេល 24h
+                                </p>
+
+                                <form action="" method="post">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <input type="text" name="name" class="form-control" id="name"
+                                                placeholder="សូមបញ្ចូលឈ្មោះរបស់អ្នក"  />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="សូមបញ្ចូលអ៊ីម៊ែលរបស់អ្នក"  />
+                                        </div>
+                                    </div>
+                                    <div class="mt-3">
+                                        <textarea class="form-control" name="message" rows="5"
+                                            placeholder="តើអ្នកមានបញ្ហាអ្វីដែល?" style="resize: none;"></textarea>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center flex-wrap mt-4">
+                                        <a href="asset/page/login/login.html" class="btn btn-dark-blue">
+                                            បញ្ជូនសារ
+                                        </a>
+                                        <div class="social-links d-flex gap-3">
+                                            <a href="#" class="text-secondary"><i class="bi bi-twitter fs-5"></i></a>
+                                            <a href="#" class="text-secondary"><i class="bi bi-facebook fs-5"></i></a>
+                                            <a href="#" class="text-secondary"><i class="bi bi-instagram fs-5"></i></a>
+                                            <a href="#" class="text-secondary"><i class="bi bi-linkedin fs-5"></i></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand" href="#">
+                        <img src="asset/image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="asset/page/us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="asset/page/us/contact.html" class="nav-link text-white">ទំទាក់ទំនងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="asset/page/direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="asset/page/us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="asset/page/schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="asset/page/schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="asset/page/work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="asset/js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="asset/js/srcipt.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    const textItems = document.querySelectorAll(".text-item");
+
+    var swiper = new Swiper(".custom-swiper-container", {
+        loop: true,
+        autoplay: { delay: 2500, disableOnInteraction: false },
+        speed: 300, // Explicitly set speed to 300ms
+        pagination: {
+            el: ".custom-swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".custom-swiper-button-next",
+            prevEl: ".custom-swiper-button-prev",
+        },
+    });
+
+    // Function to update the active text item
+    function updateActiveTextItem() {
+        const activeIndex = swiper.realIndex;
+
+        textItems.forEach((item) => {
+            item.classList.remove("active");
+        });
+
+        textItems[activeIndex].classList.add("active");
+    }
+
+    // Use a more reliable event for loop mode
+    swiper.on("transitionEnd", updateActiveTextItem);
+
+    // Allow clicking text to change slide
+    textItems.forEach((item, index) => {
+        item.addEventListener("click", () => {
+            swiper.slideToLoop(index);
+        });
+    });
+
+    // Call the function initially to set the correct active state on page load
+    updateActiveTextItem();
+</script>
+
+<script>
+    AOS.init({
+        once: true, // animation happens only once
+    });
+</script>
+
+</html>

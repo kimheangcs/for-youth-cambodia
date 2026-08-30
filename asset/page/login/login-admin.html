@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ចូលគណនី</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../../css/bootstrap.css" />
+    <link rel="stylesheet" href="../../css/theme.css" />
+     <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- swiper  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <style>
+    /* This section sets up the container for the floating label */
+    .form-floating {
+      position: relative;
+    }
+
+  /* This styles the input field itself */
+  .form-floating .form-control {
+    height: 60px;
+    padding: 20px 15px 5px 15px;
+    border-color: #1d263e;
+    border-radius: 20px;
+    background-color: #fff; /* Default background */
+    transition: background-color 0.5s ease-in-out; 
+  }
+  
+  /* This changes the input background AFTER you type in it */
+  .form-floating .form-control:not(:placeholder-shown) {
+    background-color: #eef2fa; /* Current background for filled input */
+  }
+
+  /* This styles the label in its default position */
+  .form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem .75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out;
+  }
+
+    /* This styles the label WHEN it floats up */
+    .form-floating .form-control:focus ~ label,
+    .form-floating .form-control:not(:placeholder-shown) ~ label {
+      transform: scale(0.85) translateY(-0.9rem) translateX(20px);
+      background-color: #ffffff;
+      padding: 0 5px;
+      height: auto;
+    }
+
+    /* This styles the input field when you click on it */
+    .form-floating .form-control:focus {
+      border-color: #1d263e;
+      border-width: 2px;
+      box-shadow: none;
+    }
+
+    /* This styles the input field when you click on it */
+    .form-floating .form-control:focus {
+      border-color: #1d263e;
+      border-width: 2px;
+      box-shadow: none;
+    }
+
+    /* This NEW rule fixes the TEXT position inside the input box */
+    .form-floating .form-control {
+      padding-left: 0.75rem; /* This fixes the text alignment */
+      border-color: #1d263e !important;
+      border-radius: 20px;
+      background-color: #fff;
+    }
+
+    /* Your other styles */
+    .form-floating .form-control:focus {
+      border-color: #1d263e;
+      border-width: 2px;
+      border-radius: 20px;
+      box-shadow: none !important;
+    }
+
+    /* This new rule changes the input background AFTER you type */
+    .form-floating .form-control:not(:placeholder-shown) {
+      background-color: #fff; /* Light blue example color */
+    }
+
+    .check-box a {
+      text-decoration: none;
+      color: #1d263e;
+      font-weight: 500;
+    }
+
+    .form-check-input {
+      box-shadow: none !important;
+      border-color: #1d263e;
+      background-color: #fff;
+    }
+
+    .form-check-input:checked {
+      background-color: #1d263e;
+      border-color: #1d263e;
+    }
+
+    .line-login {
+      position: relative;
+      text-align: center;
+    }
+
+    .line-login::before,
+    .line-login::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background-color: #ccc;
+    }
+
+    .line-login::before {
+      left: 0;
+    }
+
+    .line-login::after {
+      right: 0;
+    }
+  </style>
+
+<body style="background: #fff;">
+  <main>
+    <section class="d-flex align-items-center" style="height: 100vh;">
+      <div class="container">
+        <div class="row flex-row">
+          <div class="col-lg-6">
+            <form id="loginForm" action="" target="_blank" method="post" class="px-2">
+              <div class="card border-0 bg-transparent">
+                <div class="card-header bg-transparent border-0">
+                  <span class="fs-3 fw-medium">ចូលគណនី</span>
+                </div>
+                <div class="card-body">
+                  <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="email" placeholder="អ៊ីម៉ែល" aria-label="" />
+                    <label for="email" class="form-label pb-1"><i
+                        class="bi bi-envelope-fill pe-1"></i>សូមបញ្ចូលអ៊ីម៉ែល</label>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="password" placeholder="Password" aria-label=""
+                      />
+                    <label for="password" class="form-label"><i class="fa-solid fa-lock"></i>សូមបញ្ចូលលេខសម្ងាត់</label>
+                  </div>
+                </div>
+                <div class="card-footer bg-transparent border-0">
+                  <div class="d-flex check-box justify-content-between mb-4">
+                    <div class="form-check">
+                      <input class="form-check-input" id="Remember" type="checkbox" name="lang" value="Remember"
+                        aria-label="Password" />
+                      <label for="Remember" class="form-check-label">ចងចាំខ្ញុំ</label>
+                    </div>
+                    <a href="verify_email.html">ភ្លេចពាក្យសម្ងាត់?</a>
+                  </div>
+                  <a id="loginBtn" type="submit" 
+                    class="btn btn-gunmetal w-100 d-flex justify-content-center mb-3">
+                    ចូលគណនី
+                  </a>
+                  <div class="connect-login">
+                    <p class="mb-3">
+                      មិនទាន់មានគណនីមែនទេ?<span class="connext"><a href="register.html"
+                          class="fw-normal px-1">បង្កើតគណនី</a></span>
+                    </p>
+                    <div class="text-center">
+                      <p class="fs-6 line-login">Or login with</p>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <a href="#"><i class="bi bi-facebook fs-3 text-dark px-5" ></i></a>
+                    <a href="#"><i class="bi bi-github fs-3 ps-2 text-dark px-5" ></i></a>
+                    <a href=""> <i class="bi bi-google fs-3 ps-2 text-dark px-5"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+            <div class="col-lg-6 d-none d-lg-block">
+              <div class="card border-0 bg-white">
+                <img
+                  src="../../image/login-img/login.png"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/srcipt.js"></script>
+<script>
+  document.getElementById('loginBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default link behavior
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    const correctEmail = "admin@gmail.com";
+    const correctPassword = "123";
+
+    if (email === correctEmail && password === correctPassword) {
+        window.location.href = '../dashboard/dashboard.html';
+    } else {
+        window.location.href = '../us/home.html';
+    }
+});
+</script>
+
+</html>

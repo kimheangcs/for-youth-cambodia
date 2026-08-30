@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ទំព័រដើម</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <!-- Light mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo01.png"
+        media="(prefers-color-scheme: light)">
+
+    <!-- Dark mode favicon -->
+    <link rel="icon" type="image/png" href="../../image/project-logo/logo02.png"
+        media="(prefers-color-scheme: dark)">
+    <!-- icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <!-- aos link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- swiper  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<style>
+    .skill {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .skill:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        transform: translateY(-0.125rem);
+    }
+
+    .progress-bar {
+        background-color: #979090 !important;
+    }
+
+    .program:hover {
+        transform: translateY(-8px);
+    }
+
+    .program-1 {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .program-1:hover {
+        transform: translateX(18px);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        top: var(--swiper-navigation-top-offset, 88%) !important;
+        color: #ccc !important;
+    }
+
+    body[data-bs-theme="dark"] .swiper-button-next,
+    .swiper-button-prev {
+        top: var(--swiper-navigation-top-offset, 88%) !important;
+        color: #ccc !important;
+    }
+</style>
+
+<body>
+
+    <header class="sticky-top z-3">
+        <nav class="navbar navbar-expand-lg border-bottom bg-body-theme">
+            <div class="container">
+                <a class="navbar-brand" href="../../../index.html">
+                    <img id="logo" src="asset/image/project-logo/logo01.png" alt="Logo" style="width: 75px" />
+                </a>
+                <div class="d-flex">
+                    <!-- profile lg-none  -->
+                    <div class="d-flex justify-content-end align-items-center d-flex d-lg-none bg-body-theme">
+                        <button id="themeToggle" class="theme-toggle border-0 px-3 bg-transparent">
+                            <i id="themeIcon" class="bi bi-brightness-high-fill icon-animate"></i>
+                        </button>
+                        <a href="/asset/page/login/login.html" class="text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-dark-blue ">
+                                ចូលគណនី
+                            </button>
+                        </a>
+                        <a href="/asset/page/login/register.html"
+                            class="ps-2 text-white text-decoration-none d-none d-md-block">
+                            <button class="btn btn-outline-dark-blue">
+                                បង្កើតគណនី
+                            </button>
+                        </a>
+                    </div>
+                    <button class="navbar-toggler ms-auto border-0" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <!-- silde bar  -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title bg-body-theme" id="offcanvasNavbarLabel">
+                            <a class="navbar-brand" href="#"><img src="../../image/project-logo/logo01.png" id="logo2"
+                                    class="img-fluid" style="width: 60px" alt /></a>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+    
+                    <div class="offcanvas-body bg-body-theme align-items-center">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link px-3" aria-current="page" href="../../../index.html"><i
+                                        class="bi bi-house-fill mx-1"></i>ទំព័រដើម</a>
+                            </li>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-lightbulb-fill mx-1"></i>តម្រង់ទិស
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item" href="../direction/major.html">មុខជំនាញ</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="../direction/uni-show.html">សកលវិទ្យាល័យ</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-mortarboard-fill mx-1"></i>អាហារូបករណ៍
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li>
+                                        <a class="dropdown-item" href="schoolarship-in.html">អាហារូបករណ៍ក្នងស្រុក</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="schoolarship-out.html">អាហារូបករណ៍ក្រៅស្រុក</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <a class="nav-link px-3 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="bi bi-buildings-fill me-1"></i>ឱកាសការងារ
+                                </a>
+    
+                                <ul class="dropdown-menu border-0 shadow-sm bg-body-theme">
+                                    <li><a class="dropdown-item" href="../work/public-work.html">ការងាររដ្ឋ</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="../work/private-work.html">ការងារឯកជន</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="../work/volunteer.html">ការងារស័គ្ម្រចិត្ត</a>
+                                    </li>
+                                </ul>
+    
+                            </div>
+                            <li class="nav-item">
+                                <a href="../us/event.html" class="nav-link px-3 ">
+                                    <i class="bi bi-calendar-event-fill me-1"></i>ព្រឹត្តិការណ៍
+                                </a>
+                            </li>
+                        </ul>
+                        <div
+                            class="d-flex justify-content-center pt-5 align-items-center d-flex d-lg-none bg-body-theme d-md-none ">
+                            <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                                <button class="btn btn-dark-blue">ចូលគណនី</button>
+                            </a>
+                            <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                                <button class="btn btn-outline-dark-blue">
+                                    បង្កើតគណនី
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- profile lg-flex  -->
+                <div class="d-flex justify-content-end align-items-center d-none d-lg-flex">
+                    <button id="themeToggle2" class="theme-toggle border-0 px-3 bg-transparent">
+                        <i id="themeIcon2" class="bi bi-brightness-high-fill icon-animate"></i>
+                    </button>
+                    <a href="/asset/page/login/login.html" class="text-white text-decoration-none">
+                        <button class="btn btn-dark-blue">ចូលគណនី</button>
+                    </a>
+                    <a href="/asset/page/login/register.html" class="ps-2 text-white text-decoration-none">
+                        <button class="btn btn-outline-dark-blue">
+                            បង្កើតគណនី
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+    
+                <div class="modal-header bg-footer text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">បញ្ជាក់ការចេញ</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="បិទ"></button>
+                </div>
+    
+                <div class="modal-body">
+                    តើអ្នកពិតជាចង់ចេញឬទេ?
+                </div>
+    
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark-blue" data-bs-dismiss="modal">បោះបង់</button>
+                    <!-- ផ្លាស់ប្តូរ href ទៅ script logout របស់អ្នក -->
+                    <a href="../login/login.html" class="btn btn-danger">បាទ/ចាស</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+    <main>
+        <section class="mt-15">
+            <div class="container">
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <h1 class="pb-3 clamp-3">ស្វែងរកអនាគតរបស់អ្នក ជ្រើសរើសជំនាញសិក្សាដែលស័ក្តិសមជាមួយអ្នក</h1>
+                        <p class="pb-2 clamp-2">កុំបារម្ភទៀត! យើងជួយអ្នកស្វែងយល់ពីចំណង់ចំណូលចិត្ត ជំនាញ
+                            និងជំនាញការងារដែលទីផ្សារត្រូវការ
+                            ដើម្បីកសាងអាជីពដ៏ភ្លឺស្វាង។</p>
+                        <div class="d-flex justify-content-between align-items-center text-center pb-5">
+                            <div class=" mb-4 mb-md-0">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="display-5 fw-bolder counter" data-countto="2837"
+                                        data-duration="2000">0</span>
+                                    <span class="fw-bold">ការងារ</span>
+                                </div>
+                            </div>
+
+                            <div class=" mb-4 mb-md-0">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="display-5 fw-bolder counter" data-countto="8790"
+                                        data-duration="3000">0</span>
+                                    <span class="fw-bold">ជំនាញ</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-4 mb-md-0">
+                                <div class="d-flex flex-column align-items-center">
+                                    <span class="display-5 fw-bolder counter" data-countto="5261"
+                                        data-duration="2500">0</span>
+                                    <span class="fw-bold">អាហារូបករណ៍</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="../direction/major.html" class="btn btn-gunmetal">ចាប់ផ្តើមឥឡូវនេះ</a>
+                    </div>
+                    <div class="col-lg-6 " data-aos="zoom-in" data-aos-delay="200">
+                        <img src="../../image/lending-img/scolarship.jpg" alt="Education"
+                            class="img-fluid shadow-sm rounded-3 position-relative">
+                        <div class="card-img-overlay "></div>
+                        <div class="image-overlay">
+                            <div class="badge position-absolute bg-dark p-3 rounded-pill bg-card-theme shadow-sm"
+                                style="bottom:-15px; right: -12px;">
+                                <i class="bi bi-patch-check-fill fs-6 px-1"></i>
+                                <span class="fs-5">ឆ្ពោះទៅរកឧត្តមភាព</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-15">
+            <div class="" data-aos="fade-up" data-aos-delay="300">
+                <div class="container ">
+                    <div class="row gy-4">
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme">
+                                <div class="card-body d-flex">
+                                    <div class="fs-1">
+                                        <i class="bi bi-book-fill ps-1 pe-2 "></i>
+                                    </div>
+                                    <div class="">
+                                        <h3 class="fw-bold pt-3 clamp-1">ជំនាញគ្រប់វិស័យ</h3>
+                                        <p class="clamp-2">ជំនាញបច្ចេកវិទ្យាព័ត៌មាន,
+                                            ទីផ្សារឌីជីថល,
+                                            វិស្វកម្ម,
+                                            ទំនាក់ទំនង និងភាសាបរទេស,
+                                            សិល្បៈឌីជីថល និងរចនា</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme">
+                                <div class="card-body d-flex">
+                                    <div class="fs-1">
+                                        <i class="bi bi-laptop-fill ps-1 pe-2 "></i>
+                                    </div>
+                                    <div class="">
+                                        <h3 class="fw-bold pt-3 clamp-1">ឱកាសការងារជាច្រើន</h3>
+                                        <p class="clamp-2">ឱកាសការងារជាច្រើនដែលមាននៅក្នុងប្រទេសកម្ពុជា ការងារហាត់ការ
+                                            ការងារតាមស្ថាប័នរដ្ឋ និងឯកជន </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="card bg-white border-0 shadow-sm p-2 bg-card-theme">
+                                <div class="card-body d-flex">
+                                    <div class="fs-1">
+                                        <i class="bi bi-people-fill  ps-1 pe-2"></i>
+                                    </div>
+                                    <div class="">
+                                        <h3 class="fw-bold pt-3 clamp-1">ការជោគជ័យ</h3>
+                                        <p class="clamp-2">និស្សិតជាច្រើននាក់ទទួលបានការជោគជ័យ និងអាចរកការងារបានយ៉ាងស្រួល
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- skills-section -->
+        <section class="mt-15">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row align-items-center">
+                    <div class="col-lg-5">
+                        <div class="card mb-5 mb-lg-0 border-0 ">
+                            <div class="card-body">
+                                <h3 class="fw-bold mb-4 clamp-1">ជំនាញដែលកំពុងពេញនិយមនាពេលបច្ចុប្បន្ន
+                                </h3>
+                                <p class="mb-6 text-body-theme clamp-4">
+                                    នា​ពេល​បច្ចុប្បន្ន និង​ក្នុង​ពេល​អនាគត​ដ៏​ខ្លី​ខាង​មុខ
+                                    ទីផ្សារ​ការងារ​នៅ​កម្ពុជា​កំពុង​មាន​តម្រូវការ​ខ្ពស់​លើ​ជំនាញ​មួយ​ចំនួន
+                                    ដែល​រួម​មាន​ទាំង​ជំនាញ​ផ្នែក​បច្ចេកវិទ្យា និង​ជំនាញ​ទន់​ផង​ដែរ។
+                                    ការ​វិវត្តន៍​នៃ​បច្ចេកវិទ្យា និង​ការ​រីក​ចម្រើន​នៃ​វិស័យ​នានា
+                                    បាន​ជំរុញ​ឲ្យ​មាន​តម្រូវការ​អ្នក​មាន​សមត្ថភាព​កាន់​តែ​ច្រើន។
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0">
+                        <div class="" data-aos="fade-left" data-aos-delay="200">
+                            <!-- Skill Item -->
+                            <div class="row gy-3">
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between  ">
+                                            <h6 class="fw-bold ">Project Management
+                                            </h6>
+                                            <span class="fw-bold ">95%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3 ">
+                                            <div class="progress-bar " role="progressbar" style="width: 0;"
+                                                aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">ផែនការយុទ្ធសាស្ត្រ និងការអនុវត្ត</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="fw-bold">Web Development</h6>
+                                            <span class="fw-bold">88%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 0;"
+                                                aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">គ្រោងការណ៍ និងបច្ចេកវិទ្យាទំនើប</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="fw-bold">Data Analysis</h6>
+                                            <span class="fw-bold">82%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 0;"
+                                                aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">បញ្ញាពាណិជ្ជកម្ម និងការយល់ដឹង</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="fw-bold ">Digital Marketing</h6>
+                                            <span class="fw-bold">78%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 0;"
+                                                aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">ការគ្រប់គ្រងយុទ្ធនាការពហុប៉ុស្តិ៍</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="fw-bold ">Quality Assurance</h6>
+                                            <span class="fw-bold">92%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3">
+                                            <div class="progress-bar" role="progressbar" style="width: 0;"
+                                                aria-valuenow="92" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">ពិធីការសាកល្បងដ៏ទូលំទូលាយ</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div
+                                        class="card bg-white px-6 pb-1 pt-3 rounded-3 border-0 shadow-sm skill bg-card-theme">
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="fw-bold ">Client Relations</h6>
+                                            <span class="fw-bold">96%</span>
+                                        </div>
+                                        <div class="progress rounded-full overflow-hidden mb-3 ">
+                                            <div class="progress-bar" role="progressbar" style="width: 0;"
+                                                aria-valuenow="96" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        <p class="text-sm clamp-1">ការកសាងភាពជាដៃគូរយៈពេលវែង</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-15">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="mb-6" data-aos="fade-up">
+                    <h2>យើងមានអាហារូបករណ៍ជាច្រើនដែលអ្នកអាចស្វែងរកបាន</h2>
+                    <p>អាហារូបករណ៍ដែលអ្នកអាចស្វែងរកបាននៅទីនេះមានទាំងក្នុងស្រុក​ និង​ ក្រៅស្រុកទៅតាមជំនាញដែលអ្នកត្រូវការ
+                    </p>
+                </div>
+                <div class="row gy-5">
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                        <div class="card border-0 rounded-2 overflow-hidden shadow-sm program bg-card-theme "
+                            style=" transition: transform 0.4s ease, box-shadow 0.4s ease;">
+                            <img src="../../image/lending-img/Engineering & Technology.webp" alt="Program"
+                                class="img-fluid position-relative overflow-hidden h-50">
+                            <div class="card-body">
+                                <div class="position-absolute " style="top: 300px; left: 40px;">
+                                    <span class="badge text-bg-danger">ពេញនិយម</span>
+                                </div>
+                                <div class="">
+                                    <h3 class="card-title">វិស្វកម្ម និង បច្ចេកវិទ្យា</h3>
+                                    <div class="card-text">
+                                        <span><i class="bi bi-people-fill px-1"></i> 450+ និស្សិត</span>
+                                        <span><i class="bi bi-award-fill px-1"></i> 95% អត្រានៃភាពជោគជ័យ</span>
+                                    </div>
+                                </div>
+                                <p class="card-text pt-2 clamp-2">វិស្វកម្ម និងបច្ចេកវិទ្យា
+                                    ជាមុខជំនាញដ៏សំខាន់សម្រាប់យុវជនបច្ចុប្បន្ន។
+                                    ជំនាញទាំងនេះមិនត្រឹមតែជួយដល់ការអភិវឌ្ឍប្រទេសទេ ថែមទាំងផ្តល់ឱកាសការងារខ្ពស់
+                                    និងប្រាក់ខែល្អទៀតផង។</p>
+                                <div class="mb-3">
+                                    <div class="fw-bold">
+                                        <i class="bi bi-calendar-check px-1"></i>
+                                        <span>រយះពេល: 4 ឆ្នាំ</span>
+                                    </div>
+                                    <div class="fw-bold">
+                                        <i class="bi bi-mortarboard-fill px-1"></i>
+                                        <span>បរិញ្ញាបត្រ</span>
+                                    </div>
+                                </div>
+                                <a href="../schoolarship/schoolarship-in.html"
+                                    class="btn btn-dark-blue">ស្វែងយល់បន្ថែម</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="row gy-3">
+                                <div class="col-lg-12 program-1">
+                                    <div class="card bg-white rounded-4 border-0 shadow-sm p-1 d-flex align-items-center bg-card-theme"
+                                        data-aos="fade-left" data-aos-delay="100">
+                                        <div class="card-body ">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-4 flex-shrink-0 " style="width: 70px; height: 70px;">
+                                                    <img src="../../image/lending-img/Business-Management-1.png"
+                                                        alt="Program" class="img-fluid w-100 h-100 object-fit-cover">
+                                                </div>
+                                                <div class="">
+                                                    <h5 class="fw-bold mb-2 clamp-1">Business Management</h5>
+                                                    <p class="mb-2 small text-secondary-emphasis clamp-2">
+                                                        ជំនាញនេះផ្តោតលើការរៀបចំផែនការ ដឹកនាំ
+                                                        និងគ្រប់គ្រងធនធានរបស់ក្រុមហ៊ុនដើម្បីសម្រេចគោលដៅ។</p>
+                                                    <div class="d-flex me-3 small text-secondary-emphasis">
+                                                        <span>4 ឆ្នាំ</span>
+                                                        <span class="ps-3">បរិញ្ញាបត្រ</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-4">
+                                                    <a href="../schoolarship/schoolarship-in.html"><i
+                                                            class="bi bi-arrow-right fs-4 transition-all text-decoration-none "
+                                                            style="color: #ccc;"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-12 program-1">
+                                    <div class="card bg-white rounded-4 border-0 shadow-sm p-1 d-flex align-items-center bg-card-theme"
+                                        data-aos="fade-left" data-aos-delay="200">
+                                        <div class="card-body ">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-4 flex-shrink-0" style="width: 70px; height: 70px;">
+                                                    <img src="../../image/lending-img/Digital_Marketing-1.png"
+                                                        alt="Program" class="img-fluid w-100 h-100 object-fit-cover">
+                                                </div>
+                                                <div class="">
+                                                    <h5 class="fw-bold mb-2 clamp-1">Digital Marketing</h5>
+                                                    <p class="mb-2 small text-secondary-emphasis clamp-2">ទីផ្សារឌីជីថល
+                                                        ជាជំនាញដ៏ពេញនិយម
+                                                        និងមានតម្រូវការខ្ពស់បំផុតក្នុងយុគសម័យបច្ចេកវិទ្យា។
+                                                        ជំនាញនេះផ្តោតលើការផ្សព្វផ្សាយផលិតផល ឬសេវាកម្មតាមរយៈបណ្តាញអនឡាញ។
+                                                    </p>
+                                                    <div class="d-flex me-3 small text-secondary-emphasis">
+                                                        <span>2 ឆ្នាំ</span>
+                                                        <span class="ps-3">វិញ្ញាបនបត្រ</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-4">
+                                                    <a href="../schoolarship/schoolarship-in.html"><i
+                                                            class="bi bi-arrow-right fs-4 transition-all text-decoration-none "
+                                                            style="color: #ccc;"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 program-1">
+                                    <div class="card bg-white rounded-4 border-0 shadow-sm p-1 d-flex align-items-center bg-card-theme"
+                                        data-aos="fade-left" data-aos-delay="200">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-4  flex-shrink-0" style="width: 70px; height: 70px;">
+                                                    <img src="../../image/lending-img/Health_Sciences.png" alt="Program"
+                                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                                </div>
+                                                <div class="">
+                                                    <h5 class="fw-bold mb-2 clam">Health Sciences</h5>
+                                                    <p class="mb-2 small text-secondary-emphasis clamp-2">
+                                                        វិទ្យាសាស្ត្រសុខាភិបាល
+                                                        គឺជាជំនាញដែលផ្តោតលើការថែទាំសុខភាព និងសុខុមាលភាពរបស់មនុស្ស។
+                                                        ការងារក្នុងវិស័យនេះទាមទារភាពទទួលខុសត្រូវខ្ពស់
+                                                        និងក្រមសីលធម៌វិជ្ជាជីវៈ។</p>
+                                                    <div class="d-flex me-3 small text-secondary-emphasis">
+                                                        <span>5 ឆ្នាំ</span>
+                                                        <span class="ps-3">បរិញ្ញាបត្រ</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-4">
+                                                    <a href="../schoolarship/schoolarship-in.html"><i
+                                                            class="bi bi-arrow-right fs-4 transition-all text-decoration-none"
+                                                            style="color: #ccc;"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-12 program-1">
+                                    <div class="card bg-white rounded-4 border-0 shadow-sm p-1 d-flex align-items-center bg-card-theme"
+                                        data-aos="fade-left" data-aos-delay="200">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="me-4  flex-shrink-0" style="width: 70px; height: 70px;">
+                                                    <img src="../../image/lending-img/Creative_Arts.png" alt="Program"
+                                                        class="img-fluid w-100 h-100 object-fit-cover">
+                                                </div>
+                                                <div class="">
+                                                    <h5 class="fw-bold mb-2 clamp-1">Creative Arts</h5>
+                                                    <p class="mb-2 small text-secondary-emphasis clamp-2">
+                                                        ជំនាញនេះមិនត្រឹមតែសំខាន់សម្រាប់វប្បធម៌ប៉ុណ្ណោះទេ
+                                                        ថែមទាំងមានតម្រូវការខ្ពស់ក្នុងវិស័យពាណិជ្ជកម្ម និងកម្សាន្តទៀតផង។
+                                                    </p>
+                                                    <div class="d-flex me-3 small text-secondary-emphasis">
+                                                        <span>3 ឆ្នាំ</span>
+                                                        <span class="ps-3">បរិញ្ញាបត្រ</span>
+                                                    </div>
+                                                </div>
+                                                <div class="ms-4">
+                                                    <a href="../schoolarship/schoolarship-in.html"><i
+                                                            class="bi bi-arrow-right fs-4 transition-all text-decoration-none"
+                                                            style="color: #ccc;"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="mt-15 bg-white pb-7 pt-9 shadow-sm bg-card-theme rounded-0">
+            <div class="container">
+                <div class="text-center pb-12">
+                    <h3 class="fs-3 text-center pb-3">
+                        អ្នកអាចស្វែងរកការងារទៅតាមស្ថាប័នជាច្រើននៅទីនេះ</h3>
+                    <p class="fs-5">
+                        ពួកយើងបានរៀបចំបែងចែកប្រភេទការងារទៅតាមស្ថាប័នរដ្ឋ និងឯកជនដើម្បីអោយអ្នកងាយស្វែងរក
+                        ហើយមិនចំណាយពេលយូរ
+                    </p>
+                </div>
+
+                <div class="swiper mySwiper pb-3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/Ministry_Dcc.png"
+                                class="img-fluid  h-75 w-75 object-fit-cover " alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/partner-ntr-logo.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/partner-Ministry of Commerce.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/partner-logo-debc.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/ministry_of_labour.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/partner-rma.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/Ministry-of-Economy-and-Finance.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/chip mong.png"
+                                class="img-fluid h-75 w-75 object-fit-cover" alt="">
+                        </div>
+                        <div class="swiper-slide bg-card-theme">
+                            <img src="../../image/lending-img/acleda.png" class="img-fluid h-75 w-75 object-fit-cover"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="pt-18">
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-19 mb-22">
+            <div class="container">
+                <div class="text-center pb-12">
+                    <h3 class="fs-3 text-center pb-3">
+                        មតិយោបល់របស់សិស្ស</h3>
+                    <p class="fs-5 clamp-2">
+                        FYC បានជួយសិស្សជាច្រើនក្នុងដំណើរនៃការសិក្សារបស់ពួកគេទាំងការណែនាំពី
+                        ជំនាញនិងការងារដែលត្រូវនឹងទេពកោសល្យនិងទីផ្សារការងារ
+                        ហើយយើងមានព័ត៍មានទាក់ទងនឹងអាហារូបករណ៍ជាច្រើនទាំងក្នុងស្រុក និងក្រៅស្រុក
+                    </p>
+                </div>
+                <div class="row gy-5">
+                    <div class="col-lg-9">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme rounded-4 p-4">
+                                    <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                        style="font-size: 5rem; line-height: 1; opacity: 0.2;">"</div>
+                                    <div class="stars text-warning mt-4 mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="mb-4 fst-italic clamp-4">"ខ្ញុំបានទទួលមេរៀន
+                                        និងចំណេះដឹងជាច្រើនតាមរយះការទទួលយោលបល់ជុំវិញជម្រើសនៃការសិក្សាថាតើជំនាញមួយណាដែលត្រូវនឹងខ្ញុំពិតប្រាកដ"
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme rounded-4 p-4">
+                                    <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                        style="font-size: 5rem; line-height: 1; opacity: 0.2;">"</div>
+                                    <div class="stars text-warning mt-4 mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <p class="mb-4 fst-italic clamp-5">
+                                        "ទីនេះបានជួយបង្រៀនណែនាំខ្ញុំជាច្រើនទាក់ទងនឹងជំនាញដែលមានសក្តានុពលនិងត្រូវនឹងឱកាសទីផ្សារការងារ
+                                        ដែលងាយស្រួលឱ្យខ្ញុំសម្រេចចិត្តជ្រើសរើសជំនាញក្នុងការសិក្សាបន្ត"</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card h-100 border-0 shadow-sm bg-white bg-card-theme rounded-4 p-4">
+                                    <div class="position-absolute top-0 start-0 ps-3 pt-1"
+                                        style="font-size: 5rem; line-height: 1; opacity: 0.2;">"</div>
+                                    <div class="stars text-warning mt-4 mb-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <p class="mb-4 fst-italic clamp-4">
+                                        "ខ្ញុំបានទទួលបានព័តមានអាហារូបករណ៍ជាច្រើនដែលមានទាំងក្នុងស្រុក និងក្រៅស្រុក
+                                        ពិសេសបំពុតនោះគឺខ្ញុំអាចរកព័តមានការងារជាច្រើនយ៉ាងអាយស្រួល"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Overall Rating -->
+                    <div class="col-lg-3">
+                        <div class="text-center">
+                            <div class="card shadow-sm bg-white bg-card-theme border-0 rounded-4 p-4 d-inline-block">
+                                <div class="rating-number fw-bold text-dark display-5 bg-card-theme">4.8</div>
+                                <div class="rating-stars text-warning mb-3">
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-fill"></i>
+                                    <i class="bi bi-star-half"></i>
+                                </div>
+                                <p class="mb-3 fs-5 clamp-1">Based on 230+ reviews</p>
+                                <div class="d-flex flex-wrap justify-content-center gap-3">
+                                    <span class="fw-bold">ព័ត៌មានក្បោះក្បាយ</span>
+                                    <span class="fw-bold clamp-1">ងាយស្រួល &amp; ចំណេញពេលវេលា</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+    <footer class="bg-footer" data-aos="fade-up">
+        <div class="container py-5">
+            <div class="row text-white">
+                <div class="col-11 col-lg-5 col-xl-4 pt-4">
+                    <a class="navbar-brand " href="#">
+                        <img src="../../image/project-logo/logo02.png" alt="Logo" style="width: 75px" />
+                    </a>
+                    <span class="footer-text clamp-3 my-3">
+                        ប្រធានបទ “សម្រាប់យុវជនកម្ពុជា” ត្រូវបានជ្រើសរើស
+                        ដោយសារនិស្សិតបរិញ្ញាបត្រកើនឡើង
+                        ប៉ុន្តែមានបញ្ហាក្នុងការជ្រើសរើសជំនាញ។ ដើម្បីដោះស្រាយ បញ្ហានេះ
+                        គេបង្កើតគេហទំព័រមួយដែលអាចប្រើប្រាស់បានលើ Browser និងទូរស័ព្ទចល័ត។
+                        គេហទំព័រនេះផ្តល់ព័ត៌មានអំពីមុខជំនាញ វិស័យការងារ សាកលវិទ្យា
+                        អាហារូបករណ៍ និងឱកាសការងារ
+                        ដើម្បីជួយសិស្សសម្រេចចិត្តជ្រើសរើសជំនាញដែលខ្លួនចូលចិត្ត
+                        និងរកការងារផ្ទាល់ខ្លួនបន្ទាប់ពីបញ្ចប់ការសិក្សា។"
+                    </span>
+                    <a href="#"><i class="bi bi-facebook media fs-3 text-white"></i></a>
+                    <a href="#"><i class="bi bi-youtube media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-tiktok media fs-3 ps-2 text-white"></i></a>
+                    <a href="#"><i class="bi bi-github media fs-3 ps-2 text-white"></i></a>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មានអំពីយើង</h5>
+                        <li class="nav-item">
+                            <a href="../us/about.html" class="nav-link text-white">អំពីយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/contact.html" class="nav-link text-white">ទំទាក់ទំទងមកយើង</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../direction/major.html" class="nav-link text-white">ការតម្រង់ទិស</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../us/event.html" class="nav-link text-white">ព្រឹត្តិការណ៍</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-3 col-xl-2 py-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">ព័ត៌មាន</h5>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-in.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្នុងស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../schoolarship/schoolarship-out.html"
+                                class="nav-link text-white">អាហារូបករណ៍ក្រៅស្រុក</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../work/volunteer.html" class="nav-link text-white">ការងារស័គ្ម្រចិត្ត</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-lg-6 col-xl-4 py-xl-4">
+                    <ul class="navbar-nav">
+                        <h5 class="nav-title fw-bold">អាស័យដ្ឋានរបស់យើង</h5>
+                        <li class="nav-item">
+                            <a href="https://www.google.com/maps/search/%2386B,+Street+313+corner+606,+Sangkat+Boeungk%C3%A2k+2,+Khan+Toulkok,+Phnom+Penh/@11.5659433,104.8975444,15z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDgyNC4wIKXMDSoASAFQAw%3D%3D"
+                                class="nav-link text-white">#86B, ផ្លូវលេខ 313 កែង 606, សង្កាត់ បឹងកក់ ២, ខណ្ឌ
+                                ទួលគោក, ភ្នំពេញ</a>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                Email:
+                                <a href="mailto:foryouthcambodia@gmail.com"
+                                    class="text-decoration-none text-white">foryouthcambodia@gmail.com</a>
+                            </p>
+                        </li>
+                        <li class="nav-item">
+                            <p class="nav-link text-white">
+                                លេខទូរស័ព្ទ:
+                                <a class="fw-bold text-decoration-none text-white" href="tel:+11234567890">(+885) 456
+                                    7890</a>
+                            </p>
+                        </li>
+                        <li class="nav-link">
+                            <a href="#" class="nav-item"><img src="assets/image/app1 (1).png" class="img-fluid img-app"
+                                    alt="" /></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="text-white py-1" />
+            <div class="row">
+                <div class="col-12 footer-copyright d-flex justify-content-between">
+                    <p class="text-white">&copy; រក្សាសិទ្ធិដោយ: FYC 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+<!-- aos link -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="../../js/script-folder.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        document.querySelectorAll('.progress-bar').forEach(el => {
+            const value = el.getAttribute('aria-valuenow');
+            el.style.width = value + '%';
+        });
+    });
+</script>
+<script>
+    // Your provided JavaScript code
+    $(document).ready(function () { // Ensure DOM is ready
+        $(".counter").each(function () {
+            var $this = $(this),
+                countTo = $this.attr("data-countto");
+            countDuration = parseInt($this.attr("data-duration"));
+            $({ counter: $this.text() }).animate(
+                {
+                    counter: countTo
+                },
+                {
+                    duration: countDuration,
+                    easing: "linear",
+                    step: function () {
+                        $this.text(Math.floor(this.counter));
+                    },
+                    complete: function () {
+                        $this.text(this.counter);
+                    }
+                }
+            );
+        });
+    });
+</script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true, // This enables continuous looping
+        autoplay: {
+            delay: 2500, // Time in ms between slide transitions
+            disableOnInteraction: false, // Autoplay won't stop when the user interacts
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 50,
+            },
+        },
+    });
+</script>
+<script>
+    AOS.init({
+        once: true, // animation happens only once
+    });
+</script>
+
+</html>
